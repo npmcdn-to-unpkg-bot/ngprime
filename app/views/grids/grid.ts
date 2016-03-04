@@ -7,7 +7,7 @@ import {Button} from '../../components/button/button';
 import {Growl} from '../../components/growl/growl';
 import {Message} from '../../components/api/message';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
-import {Car} from '../domain/car';
+import {Car} from '../../views/domain/car';
 
 @Component({
     templateUrl: 'app/views/grids/grid.html',

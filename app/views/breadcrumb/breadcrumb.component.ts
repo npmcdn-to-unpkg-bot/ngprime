@@ -5,7 +5,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
 selector: 'breadcrumb',
-	templateUrl: 'app/components/breadcrumb/breadcrumb.html',
+	templateUrl: 'app/views/breadcrumb/breadcrumb.html',
 	directives: [ROUTER_DIRECTIVES, Breadcrumb]
 })
 export class BreadcrumbComponent {
