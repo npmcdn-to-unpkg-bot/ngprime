@@ -1,14 +1,19 @@
 import {Component} from 'angular2/core';
-import {InputText} from 'primeng/primeng';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {BreadcrumbComponent} from './components/breadcrumb/breadcrumb.component';
+import {SidenavComponent} from './components/sidenav/sidenav.component';
+import {CarouselDemo} from './views/grids/grid';
+
 
 @Component({
 	selector: 'my-app',
-	template: `
-        <h1>My First 2 App</h1>
-        <input type="text" pInputText/>
-    `,
-    directives: [InputText]
+	templateUrl: 'app/components/layout/layout.html',
+	directives: [ROUTER_DIRECTIVES, BreadcrumbComponent, SidenavComponent, CarouselDemo]
 })
+@RouteConfig([
+    
+])
 export class AppComponent {
 
+    
 }

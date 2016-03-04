@@ -5,15 +5,30 @@
 
     <link rel="stylesheet" type="text/css" href="app/resources/delta/theme.css" />
     <link rel="stylesheet" type="text/css" href="app/resources/icons/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="node_modules/angular-material/angular-material.css" />
     <link rel="stylesheet" type="text/css" href="app/resources/primeui.css" />
-
+    
+    <link rel="stylesheet" type="text/css" href="app/assets/css/animations.css" />
+    <link rel="stylesheet" type="text/css" href="app/assets/css/component.css" />
+    <link rel="stylesheet" type="text/css" href="app/assets/css/multilevelmenu.css" />
+    <link rel="stylesheet" type="text/css" href="app/assets/css/nav-component.css" />
+    <link rel="stylesheet" type="text/css" href="app/assets/css/app.css" />
     <!-- 1. Load libraries -->
+ 
+
+
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+    <script src="node_modules/angular2/bundles/http.dev.js"></script>
     <script src="app/resources/jquery.js"></script>
     <script src="app/resources/jquery-ui.js"></script>
     <script src="app/resources/primeui.js"></script>
+    <script src="showcase/resources/js/charts.min.js"></script>
+    <script src="showcase/resources/js/moment.js"></script>
+    <script src="showcase/resources/js/fullcalendar.js"></script>
 
     <!-- 2. Configure SystemJS -->
     <script>
@@ -29,14 +44,26 @@
       System.import('app/boot').then(null, console.error.bind(console));
     </script>
 
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    
 
   </head>
 
   <!-- 3. Display the application -->
   <body>
     <my-app>Loading...</my-app>
+
+
+
+    <!-- <script src="app/assets/js/modernizr-custom.js"></script>
+    <script src="app/assets/js/jquery.dlmenu.js"></script>
+    <script src="app/assets/js/nav-component.js"></script>
+    <script src="app/assets/js/pagetransitions.js"></script>
+    <script src="app/assets/js/app.js"></script> -->
+
+
+
+
+
   </body>
 
 </html>
