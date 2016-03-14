@@ -1,0 +1,80 @@
+{
+  "results" : {
+    "shows" : {
+      "xfiles" : {
+        "seasons" : {
+          "seriesSeason" : {
+            "note" : "xyz",
+            "fiscalYear" : 2013,
+            "broadcastSeason" : 12,
+            "roughFormat" : "hd",
+            "episodeCount" : 12,
+            "programCategory" : "11",
+            "name" : "exampleName",
+            "showCode" : "showCode",
+            "productionNumber" : 1,
+            "status" : "active",
+            "episodes" : {
+              "episode" : {
+                "name" : "dreamland I",
+                "code" : "drf",
+                "linkCode" : "dlink",
+                "episodeNumber" : 6,
+                "seriesEpisodeNumber" : 109,
+                "days" : "monday",
+                "runTimeDuration" : "00:30:00",
+                "originalAirDate" : "12/12/2012"
+              }
+            },
+            "commitments" : {
+              "record1" : {
+                "type" : "test contract",
+                "category" : "full",
+                "code" : "2",
+                "range" : "xrm",
+                "ammount" : "1",
+                "estimate" : "4.2",
+                "notes" : "xyz"
+              }
+            },
+            "nonLinearSchedulingRules" : {
+              "record1" : {
+                "status" : "active",
+                "networkTargets" : "fox",
+                "ruleType" : "xrm",
+                "windowGroup" : "active",
+                "maxStreamingDays" : "24",
+                "rollingCount" : "44",
+                "sunsetRule" : "true",
+                "numberOfDays" : "55"
+              }
+            },
+            "staff" : {
+              "record 1" : {
+                "name" : "staff name",
+                "title" : "vp",
+                "contact" : "cc@fox.com"
+              }
+            },
+            "rights" : {
+              "record1" : {
+              }
+            }
+          },
+          "contracts" : {
+            "type" : "test contract",
+            "category" : "full",
+            "code" : "3",
+            "range" : "1/12",
+            "estimate" : "3.4",
+            "notes" : "xyz"
+          },
+          "broadcastSeasons" : {
+          }
+        }
+      },
+      "fargo" : {
+      }
+    }
+  }
+}

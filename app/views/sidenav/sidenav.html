@@ -1,0 +1,170 @@
+<p-panelMenu>
+        <div>
+            <div><a data-icon="fa-file-o"><span>Program</span></a></div>
+            <div>
+                <ul>
+                    <li><a><span>General Info</span></a></li>
+                    <li><a><span>Production</span></a>
+                        <ul>
+                            <li><a><span>Series Season (7)</span></a><ul>
+                            <li><a><span>Episodes (505)</span></a></li>
+                            <li><a><span>Contracts</span></a></li>
+                            <li><a><span>Non-Linear Scheduling Rules</span></a></li>
+                            <li><a><span>Staff</span></a></li>
+                            </ul>
+                            </li>
+                            <li><a><span>Broadcast Seasons</span></a></li>
+                            <li><a><span>Contract / Air Dates</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a><span>Created By</span></a></li>
+                    <li><a><span>Program Titles</span></a></li>
+                    <li><a><span>Images</span></a></li>
+                    <li><a><span>Videos</span></a></li>
+                    <li><a><span>Alternate Names</span></a></li>
+                    <li><a><span>Format</span></a></li>
+                    <li><a><span>Air Dates</span></a></li>
+                    <li><a><span>Media</span></a></li>
+                    <li><a><span>Submissions</span></a></li>
+                    <li><a><span>Program Schedule Names</span></a></li>
+                    <li><a><span>Creative Staff</span></a></li>
+                    <li><a><span>Linked Program</span></a></li>
+                    <li><a><span>Cast Note</span></a></li>
+                    <li><a><span>Air Window Note</span></a></li>
+                    <li><a><span>Synopsis</span></a></li>
+                    <li><a><span>Editorial and S&P Notes</span></a></li>
+                    <li><a><span>Operation Notes</span></a></li>
+                    <li><a><span>Program Schedule Names</span></a></li>
+                    <li><a><span>Production Schedule</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div><a data-icon="fa-edit"><span>Edit</span></a></div>
+            <div>
+                <ul>
+                    <li><a data-icon="fa-mail-forward"><span>Undo</span></a></li>
+                    <li><a data-icon="fa-mail-reply"><span>Redo</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div><a data-icon="fa-question"><span>Help</span></a></div>
+            <div>
+                <ul>
+                    <li><a><span>Contents</span></a></li>
+                    <li><a data-icon="fa-search"><span>Search</span></a>
+                        <ul>
+                            <li><a><span>Text</span></a>
+                                <ul>
+                                    <li><a><span>Workspace</span></a></li>
+                                </ul>
+                            </li>
+                            <li><a><span>File</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div><a data-icon="fa-gear"><span>Actions</span></a></div>
+            <div>
+                <ul>
+                    <li><a data-icon="fa-pencil"><span>Edit</span></a>
+                        <ul>
+                            <li><a data-icon="fa-save"><span>Save</span></a></li>
+                            <li><a data-icon="fa-save"><span>Update</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a data-icon="fa-phone"><span>Other</span></a>
+                        <ul>
+                            <li><a data-icon="fa-minus"><span>Delete</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </p-panelMenu>
+
+<!-- <ul id="tree" class="tree" ng-controller="MainController">
+
+        <li> <a href="#" class="active-route">Program</a>
+          <ul>
+            <li><a href="#" class="show-gen-info">General Info</a></li>
+            <li><span class="collapse">Production</span>
+              <ul>
+                <li><span class="collapse show-seasons"><a href="/Show/X-Files/Seasons">Series Seasons (7)</a></span>
+                  <ul>
+                    <li><a class="show-episodes" href="/Show/X-Files/Season/Episodes/:episodeId/">Episodes (505) </a></li>
+                    <li><a href=":tabId#Contracts">Contracts</a></li>
+                    <li><a href="#">Non-Linear Scheduling Rules</a></li>
+                    <li><a href="#">Staff</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Broadcast Seasons</a></li>
+                <li><a href="#">Contract / Air Dates</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#">Created By</a></li>
+            <li><a href="#">Program Titles</a></li>
+            <li><a href="#">Images</a></li>
+            <li><a href="#">Images</a></li>
+            <li><a href="#">Videos</a></li>
+            <li><a href="#">Alternate Names</a></li>
+            <li><a href="#">Format</a></li>
+            <li><a href="#">Air Dates</a></li>
+            <li><a href="#">Media</a></li>
+            <li><a href="#">Submissions</a></li>
+            <li><a href="#">Program Schedule Names</a></li>
+            <li><a href="#">Creative Staff</a></li>
+            <li><a href="#">Linked Program</a></li>
+            <li><a href="#">Cast Note</a></li>
+            <li><a href="#">Air Window Note</a></li>
+            <li><a href="#">Synopsis</a></li>
+            <li><a href="#">Editorial and S&P Notes</a></li>
+            <li><a href="#">Operation Notes</a></li>
+            <li><a href="#">Program Schedule Names</a></li>
+            <li><a href="#">Production Schedule</a></li>
+
+          </ul>
+        </li>
+      </ul> -->
+
+
+      <ul id="edit-tree" class="tree" style="display: none;">
+        <li> <a href="#">Program</a>
+          <ul>
+            <li><a href="#" class="genInfo">General Info</a></li>
+            <li><span class="collapse">Production</span>
+              <ul>
+                <li><span class="collapse">Series Seasons / Episodes</span>
+                  <ul>
+                    <li><a href="#" class="genInfo">General Info</a></li>
+                    <li><a href="#">Format</a></li>
+                    <li><a href="#">Program Schedule Names</a></li>
+                    <li><a href="#">Non-Linear</a></li>
+                  </ul>
+                  <li>Program Schedules Names</li>
+                  <li>Non-Linear</li>
+              </ul>
+
+              <li><a href="#">Created By</a></li>
+              <li><a href="#">Program Titles</a></li>
+              <li><a href="#">Images</a></li>
+              <li><a href="#">Videos</a></li>
+              <li><a href="#">Alternative Names</a></li>
+              <li><a href="#">Format</a></li>
+              <li><a href="#">Episode Note</a></li>
+              <li><a href="#">Air Dates</a></li>
+              <li><a href="#">Media</a></li>
+              <li><a href="#">Submissions</a></li>
+              <li><a href="#">Program Schedule Names</a></li>
+              <li><a href="#">Creative Staff</a></li>
+              <li><a href="#">Linked Program</a></li>
+              <li><a href="#">Non-Linear Acquired</a></li>
+              <li><a href="#">Program Links</a></li>
+          </ul>
+          </li>
+
+      </ul>

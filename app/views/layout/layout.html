@@ -1,23 +1,7 @@
 
 <div>
-
-  <md-toolbar>
-    <div class="md-toolbar-tools">
-      <md-button class="go-back" aria-label="Go Back">
-        Go Back
-      </md-button>
-      <h2>
-          
-        </h2>
-      <span flex><i class="fa fa-sitemap show-seasons-toggle"></i> &nbsp;<i class="fa fa-th-large show-grid-layout"></i></span>
-      <md-button class="md-raised accent" aria-label="Learn More">
-        Learn More
-      </md-button>
-      <md-button class="md-fab md-mini" aria-label="Favorite">
-        <md-icon md-svg-icon="assets/svg/favorite.svg"></md-icon>
-      </md-button>
-    </div>
-  </md-toolbar>
+<topHeader></topHeader>
+  
 
 
   <div layout="row">
@@ -29,38 +13,13 @@
 
 
     <div flex="80" tabIndex="-1" role="main">
-      <breadcrumb></breadcrumb>
-     <p-growl [value]="msgs"></p-growl>
 
-    <p-carousel headerText="Cars" [value]="cars">
-        <template #car>
-            <li>
-                <div class="ui-grid ui-grid-responsive">
-                    <div class="ui-grid-row">
-                        <div class="ui-grid-col-12"><img src="showcase/resources/demo/images/car/{{car.brand}}.gif" /></div>
-                    </div>
-                    <div class="ui-grid-row">
-                        <div class="ui-grid-col-6">Vin</div>
-                        <div class="ui-grid-col-6">{{car.vin}}</div>
-                    </div>
-                    <div class="ui-grid-row">
-                        <div class="ui-grid-col-6">Year</div>
-                        <div class="ui-grid-col-6">{{car.year}}</div>
-                    </div>
-                    <div class="ui-grid-row">
-                        <div class="ui-grid-col-6">Color</div>
-                        <div class="ui-grid-col-6">{{car.color}}</div>
-                    </div>
-                    <div class="ui-grid-row">
-                        <div class="ui-grid-col-12">
-                            <button type="button" pButton icon="fa-search" (click)="selectCar(car)"></button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </template>
-    </p-carousel>
+      <breadcrumb></breadcrumb>
+
+     <outlet></outlet>
  
+
+
     </div>
 
 

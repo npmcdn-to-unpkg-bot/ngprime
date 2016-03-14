@@ -522,7 +522,7 @@ table th { white-space: nowrap;}
 
 
 
-
+.ui-menubar{ display: inline-block; float: right; }
 
 
 
@@ -536,12 +536,15 @@ table th { white-space: nowrap;}
 
 
 
+.ui-menubar .ui-menuitem-link{ padding: 0; }
+
+.ui-menu { width: auto;  padding: 0; }
 
 
+.ui-menu .ui-menuitem-link{ line-height: 22px; }
 
 
-
-
+.ui-widget-content a {color: gray;}
 
 
 

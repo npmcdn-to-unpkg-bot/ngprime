@@ -1,0 +1,133 @@
+<!-- <md-toolbar>
+
+    <div class="md-toolbar-tools">
+      <md-button class="go-back" aria-label="Go Back">
+        Go Back
+      </md-button>
+      <h2>
+          
+        </h2>
+      <span flex><i class="fa fa-sitemap show-seasons-toggle"></i> &nbsp;<i class="fa fa-th-large show-grid-layout"></i></span>
+      <md-button class="md-raised accent" aria-label="Learn More">
+        Learn More
+      </md-button>
+      <md-button class="md-fab md-mini" aria-label="Favorite">
+        <md-icon md-svg-icon="assets/svg/favorite.svg"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar> -->
+
+
+
+<md-toolbar layout="row" layout-wrap>
+  <div class="md-toolbar-tools">
+    <div flex="none">
+      <button type="button" pButton icon="fa-hand-o-left '" (click)="onclick()" iconPos="left">Go Back</button>
+    </div>
+    <div flex>
+      [flex]
+    </div>
+    <div flex="nogrow">
+      <p-megaMenu>
+        <ul>
+          <li><a data-icon="fa-video-camera">Season</a>
+            <div>
+              <div class="ui-grid">
+                <div class="ui-grid-row">
+                  <div class="ui-grid-col-6">
+                    <ul>
+                      <li>
+                        <h3>Season.1</h3></li>
+                      <li><a><span>Season 1.1</span></a></li>
+                      <li><a><span>Season 1.2</span></a></li>
+                    </ul>
+
+                    <ul>
+                      <li>
+                        <h3>Season.2</h3></li>
+                      <li><a><span>Season 2.1</span></a></li>
+                      <li><a><span>Season 2.2</span></a></li>
+                      <li><img src="app/resources/demo/images/sopranos/sopranos1_small.jpg" alt="Sopranos" /></li>
+                    </ul>
+                  </div>
+
+                  <div class="ui-grid-col-6">
+                    <ul>
+                      <li>
+                        <h3>Season.3</h3></li>
+                      <li><a><span>Season 3.1</span></a></li>
+                      <li><a><span>Season 3.2</span></a></li>
+                    </ul>
+
+                    <ul>
+                      <li>
+                        <h3>Season.4</h3></li>
+                      <li><a><span>Season 4.1</span></a></li>
+                      <li><a><span>Season 4.2</span></a></li>
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a data-icon="fa-television">Episode</a>
+            <div>
+              <div class="ui-grid">
+                <div class="ui-grid-row">
+                  <div class="ui-grid-col-4">
+                    <ul>
+                      <li>
+                        <h3>Episode.1</h3></li>
+                      <li><a><span>Episode 1.1</span></a></li>
+                      <li><a><span>Episode 1.2</span></a></li>
+                    </ul>
+
+                    <ul>
+                      <li>
+                        <h3>Episode.2</h3></li>
+                      <li><a><span>Episode 2.1</span></a></li>
+                      <li><a><span>Episode 2.2</span></a></li>
+                    </ul>
+                  </div>
+
+                  <div class="ui-grid-col-4">
+                    <ul>
+                      <li>
+                        <h3>Episode.3</h3></li>
+                      <li><a><span>Episode 3.1</span></a></li>
+                      <li><a><span>Episode 3.2</span></a></li>
+                    </ul>
+
+                    <ul>
+                      <li>
+                        <h3>Episode.4</h3></li>
+                      <li><a><span>Episode 4.1</span></a></li>
+                      <li><a><span>Episode 4.2</span></a></li>
+                    </ul>
+                  </div>
+
+                  <div class="ui-grid-col-4">
+                    <ul>
+                      <li>
+                        <h3>Episode.5</h3></li>
+                      <li><a><span>Episode 5.1</span></a></li>
+                      <li><a><span>Episode 5.2</span></a></li>
+                    </ul>
+
+                    <ul>
+                      <li>
+                        <h3>Episode.6</h3></li>
+                      <li><a><span>Episode 6.1</span></a></li>
+                      <li><a><span>Episode 6.2</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>          
+        </ul>
+      </p-megaMenu>
+    </div>
+  </div>
+</md-toolbar>

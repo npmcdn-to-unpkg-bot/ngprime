@@ -1,5 +1,5 @@
 export interface Car {
-    seasonName;
+    vin;
     year;
     brand;
     color;
