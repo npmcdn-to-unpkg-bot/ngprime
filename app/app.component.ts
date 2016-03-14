@@ -6,18 +6,6 @@ import {SidenavComponent} from './views/sidenav/sidenav.component';
 import {Header} from './views/header/header.component';
 import {PaginatorDemo} from "./views/paginator/paginatordemo";
 import {DataTableDemo} from "./views/grids/datatabledemo";
-import {DataTableEditableDemo} from "./views/grids/datatableeditabledemo";
-import {DataTableFacetsDemo} from "./views/grids/datatablefacetsdemo";
-import {DataTablePaginatorDemo} from "./views/grids/datatablepaginatordemo";
-import {DataTableSortDemo} from "./views/grids/datatablesortdemo";
-import {DataTableResponsiveDemo} from "./views/grids/datatableresponsivedemo";
-import {DataTableSelectionDemo} from "./views/grids/datatableselectiondemo";
-import {DataTableFilterDemo} from "./views/grids/datatablefilterdemo";
-import {DataTableColResizeDemo} from "./views/grids/datatablecolresizedemo";
-import {DataTableScrollDemo} from "./views/grids/datatablescrolldemo";
-import {DataTableGroupDemo} from "./views/grids/datatablegroupdemo";
-import {DataTableCrudDemo} from "./views/grids/datatablecruddemo";
-import {DataTableLazyDemo} from "./views/grids/datatablelazydemo";
 
 @Component({
 	selector: 'my-app',
@@ -26,6 +14,7 @@ import {DataTableLazyDemo} from "./views/grids/datatablelazydemo";
 })
 @RouteConfig([
 	{path: '/datatable', name: 'DataTableDemo', component: DataTableDemo},
+	{path: '/1', name: 'BreadcrumbComponent', component: BreadcrumbComponent},
     
     
 ])

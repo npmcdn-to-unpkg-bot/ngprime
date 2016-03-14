@@ -5,6 +5,7 @@ import {DataTable} from '../../components/datatable/datatable';
 import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter';
 import {TabView} from '../../components/tabview/tabview';
 import {TabPanel} from '../../components/tabview/tabpanel';
+import {Message} from '../../components/api/message';
 import {Car} from '../../views/domain/car';
 import {CarService} from '../service/carservice';
 import {Column} from '../../components/api/column';
@@ -37,7 +38,7 @@ export class DataTableDemo implements OnInit {
         this.carService.getCarsSmall().then(cars => this.cars = cars);
 
         this.cols = [
-            {field: 'seasonName', header: 'Season Name', sortable: true, filter: true, editable: true},
+            {field: 'vin', header: 'Season Name', sortable: true, filter: true, editable: true},
             {field: 'brand', header: 'Brand', sortable: true, filter: true, editable: true},
             {field: 'year', header: 'Year', sortable: true, filter: true, editable: true},
             {field: 'color', header: 'Color', sortable: true, filter: true, editable: true}

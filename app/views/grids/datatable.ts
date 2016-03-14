@@ -8,12 +8,11 @@ import {TabPanel} from '../../components/tabview/tabpanel';
 import {Car} from '../../views/domain/car';
 import {Column} from '../../components/api/column';
 import {Header} from '../../components/common/header';
-import {DataTableSubmenu} from '../../views/grids/datatablesubmenu.component';
 import {CarService} from '../service/carservice';
 
 @Component({
     templateUrl: 'app/views/grids/datatablefilterdemo.html',
-    directives: [DataTable,Header,DataTableSubmenu,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
+    directives: [DataTable,Header,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
     providers: [HTTP_PROVIDERS,CarService]
 })
 export class DataTableFilterDemo implements OnInit {
