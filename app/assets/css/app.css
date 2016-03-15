@@ -475,9 +475,9 @@ table th { white-space: nowrap;}
 
 .toggle-vis{ cursor: pointer; }
 
+.ui-widget .ui-widget a{font-size: .8em;}
 
-
-
+.ui-state-highlight td{ color: #fff;}
 .buttons-excel span, .buttons-pdf span,  .buttons-copy span{ display: none; }
 
 .buttons-excel:before {

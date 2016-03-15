@@ -8,14 +8,12 @@ import {TabPanel} from '../../components/tabview/tabpanel';
 import {Button} from '../../components/button/button';
 import {Growl} from '../../components/growl/growl';
 import {Message} from '../../components/api/message';
-import {DataTableDemo} from "../../views/grids/datatabledemo";
 import {ROUTER_DIRECTIVES} from 'angular2/router';
-import {Car} from '../../views/domain/car';
 
 @Component({
     selector:'outlet',
     templateUrl: 'app/views/grids/grid.html',
-    directives: [Carousel, DataTableDemo, TabPanel,TabView,Button,Growl,CodeHighlighter,  ROUTER_DIRECTIVES],
+    directives: [Carousel,TabPanel,TabView,Button,Growl,CodeHighlighter, ROUTER_DIRECTIVES],
     styles: [`
         .ui-grid-row {
             text-align: center;

@@ -1,6 +1,6 @@
 {
     "data": [
-        {"fiscalYear": "2002", "note": "", "status": "Active", "productionNumber": 1, "showCode": "drm-3", "seasonName": "Season 1" , "broadcastSeason": "1" , "roughFormat": "HD", "episodeCount": "14", "programCategory": "14"},
+        {"fiscalYear": "2002", "note": "", "status": "Active", "productionNumber": 1, "showCode": "drm-3ll", "seasonName": "Season 1" , "broadcastSeason": "551" , "roughFormat": "HD", "episodeCount": "14", "programCategory": "14"},
         {"fiscalYear": "2003", "note": "", "status": "Active", "productionNumber": 2, "showCode": "xrm-1", "seasonName": "Season 2", "broadcastSeason": "2" , "roughFormat": "HD", "episodeCount": "14", "programCategory": "14"},
         {"fiscalYear": "2004", "note": "", "status": "Active", "productionNumber": 3, "showCode": "drm-1", "seasonName": "Season 3", "broadcastSeason": "3" , "roughFormat": "HD", "episodeCount": "14", "programCategory": "14"},
         {"fiscalYear": "2005", "note": "", "status": "Active", "productionNumber": 4, "showCode": "xrm-1", "seasonName": "Season 4", "broadcastSeason": "4" , "roughFormat": "HD", "episodeCount": "14", "programCategory": "14"},

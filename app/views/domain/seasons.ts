@@ -1,6 +1,12 @@
-export interface Car {
-    vin;
-    year;
-    brand;
-    color;
+export interface Season {
+    seasonName;
+    showCode;
+    productionNumber;
+    status;
+    note;
+    fiscalYear;
+    broadcastSeason;
+    roughFormat;
+    episodeCount;
+    programCategory;
 }

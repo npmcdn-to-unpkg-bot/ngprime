@@ -14,11 +14,11 @@ import {Growl} from '../../components/growl/growl';
 import {Message} from '../../components/api/message';
 
 @Component({
-    templateUrl: 'app/views/grids/datatabledemo.html',
+    templateUrl: 'app/views/grids/nonLinearSchedulingRulesDatatable.html',
     directives: [DataTable, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
     providers: [HTTP_PROVIDERS,SeasonService]
 })
-export class SeasonsDatatable implements OnInit {
+export class NonLinearSchedulingRulesDatatable implements OnInit {
 
     msgs: Message[];
 

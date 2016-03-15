@@ -5,8 +5,8 @@ import {DataTable} from '../../components/datatable/datatable';
 import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter';
 import {TabView} from '../../components/tabview/tabview';
 import {TabPanel} from '../../components/tabview/tabpanel';
-import {Season} from '../../views/domain/seasons';
-import {SeasonService} from '../service/seasonservice';
+import {Contract} from '../../views/domain/contracts';
+import {ContractService} from '../service/contractService';
 import {Column} from '../../components/api/column';
 import {Header} from '../../components/common/header';
 import {Footer} from '../../components/common/footer';
@@ -14,37 +14,37 @@ import {Growl} from '../../components/growl/growl';
 import {Message} from '../../components/api/message';
 
 @Component({
-    templateUrl: 'app/views/grids/datatabledemo.html',
+    templateUrl: 'app/views/grids/contractsDatatable.html',
     directives: [DataTable, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
-    providers: [HTTP_PROVIDERS,SeasonService]
+    providers: [HTTP_PROVIDERS,ContractService]
 })
-export class SeasonsDatatable implements OnInit {
+export class ContractsDatatable implements OnInit {
 
     msgs: Message[];
 
-    seasons: Season[];
+    contracts: Contract[];
 
     cols: Column[];
 
-    selectedSeason1: Season;
+    selectedContract1: Contract;
 
-    selectedSeason2: Season;
+    selectedContract2: Contract;
 
-    selectedSeasons: Season[];
+    selectedContract: Contract[];
 
-    constructor(private seasonService: SeasonService) { }
+    constructor(private contractService: ContractService) { }
 
     ngOnInit() {
-        this.seasonService.getSeasonsSmall().then(seasons => this.seasons = seasons);
+        this.contractService.getContractSmall().then(contracts => this.contracts = contracts);
 
         this.cols = [
-            {field: 'seasonName', header: 'Name', sortable: true, filter: true},
+            {field: 'ContractName', header: 'Name', sortable: true, filter: true},
             {field: 'showCode', header: 'Show Code', sortable: true, filter: true},
             {field: 'productionNumber', header: 'Production #', sortable: true, filter: true},
             {field: 'status', header: 'Status', sortable: true, filter: true},
             {field: 'note', header: 'Note', sortable: true, filter: true},
             {field: 'fiscalYear', header: 'Fiscal Year', sortable: true, filter: true},
-            {field: 'broadcastSeason', header: 'Broadcast Season', sortable: true, filter: true},
+            {field: 'broadcastContract', header: 'Broadcast Contract', sortable: true, filter: true},
             {field: 'roughFormat', header: 'Rough Format', sortable: true, filter: true},
             {field: 'episodeCount', header: 'Episode Count', sortable: true, filter: true},
             {field: 'programCategory', header: 'Program Category', sortable: true, filter: true}
@@ -52,11 +52,11 @@ export class SeasonsDatatable implements OnInit {
     }
      onRowSelect(event) {
         this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Season Selected', detail: event.data.seasonName + ' - ' + event.data.fiscalYear});
+        this.msgs.push({severity: 'info', summary: 'Contract Selected', detail: event.data.ContractName + ' - ' + event.data.fiscalYear});
     }
 
     onRowUnselect(event) {
         this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Season Unselected', detail: event.data.seasonName + ' - ' + event.data.fiscalYear});
+        this.msgs.push({severity: 'info', summary: 'Contract Unselected', detail: event.data.ContractName + ' - ' + event.data.fiscalYear});
     }
 }

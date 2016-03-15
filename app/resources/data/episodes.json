@@ -1,0 +1,20 @@
+{
+    "data": [
+        {"episodeTitle": "The Begining", "code": "DX1", "linkCode": "DX&1", "episodeNumber": 1, 
+        "seriesEpisodeNumber": "drm-1", "days": "33", "runTimeDuration": "125", "origAirDate": "12/13/15" },
+        {"episodeTitle": "Drive", "code": "DX2", "linkCode": "DX&2", "episodeNumber": 2, 
+        "seriesEpisodeNumber": "drm-2", "days": "33", "runTimeDuration": "125", "origAirDate": "12/18/15" },
+        {"episodeTitle": "Triangle", "code": "DX3", "linkCode": "DX&3", "episodeNumber": 3, 
+        "seriesEpisodeNumber": "drm-3", "days": "33", "runTimeDuration": "125", "origAirDate": "12/25/15" },
+        {"episodeTitle": "Dreamland I", "code": "DX4", "linkCode": "DX&4", "episodeNumber": 4, 
+        "seriesEpisodeNumber": "drm-4", "days": "33", "runTimeDuration": "125", "origAirDate": "1/13/15" },
+        {"episodeTitle": "Dreamland II", "code": "DX5", "linkCode": "DX&5", "episodeNumber": 5, 
+        "seriesEpisodeNumber": "drm-5", "days": "33", "runTimeDuration": "125", "origAirDate": "1/18/15" },
+        {"episodeTitle": "How the Ghosts Stole Christmas", "code": "DX6", "linkCode": "DX&6", "episodeNumber": 6, 
+        "seriesEpisodeNumber": "drm-6", "days": "33", "runTimeDuration": "125", "origAirDate": "12/13/15" },
+        {"episodeTitle": "Terms of Endearment", "code": "DX7", "linkCode": "DX&7", "episodeNumber": 7, 
+        "seriesEpisodeNumber": "drm-7", "days": "33", "runTimeDuration": "125", "origAirDate": "2/13/15" },
+        {"episodeTitle": "The Rain King", "code": "DX8", "linkCode": "DX&8", "episodeNumber": 8, 
+        "seriesEpisodeNumber": "drm-8", "days": "33", "runTimeDuration": "125", "origAirDate": "10/13/45" }
+    ]
+}
