@@ -14,6 +14,7 @@ import {Growl} from '../../components/growl/growl';
 import {Message} from '../../components/api/message';
 
 @Component({
+    selector: 'seasonsGrid',
     templateUrl: 'app/views/grids/seasonsDatatable.html',
     directives: [DataTable, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
     providers: [HTTP_PROVIDERS,SeasonService]

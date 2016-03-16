@@ -91,7 +91,7 @@ md-card{ margin: 0;}
 
 }
 .ui-button-icon-left {
-    left: 5px;    margin-top: -11px!important;
+    left: 5px;
 }
 .ui-button-text-icon-left .ui-button-text{padding: 3px 8px 3px 38px;}
 .content .md-button.contact {
@@ -330,8 +330,7 @@ ol ol {
 .mc-controls{ list-style: none;}
 
 .season-tabs{  }
-
-
+.ui-menu .ui-menuitem-link .ui-menuitem-icon{ position: relative; top: 3px; margin-right: 4px;}
 
 
 /*slide bottom drawer*/

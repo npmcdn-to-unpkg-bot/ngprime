@@ -27,8 +27,8 @@ import {StaffDatatable} from "./views/grids/staff";
 	{path: '/nonLinearSchedulingRules', name: 'NonLinearSchedulingRulesDatatable', component: NonLinearSchedulingRulesDatatable},
 	{path: '/staff', name: 'StaffDatatable', component: StaffDatatable},
 	{path: '/1', name: 'BreadcrumbComponent', component: BreadcrumbComponent},
-    
-    
+
+
 ])
 export class AppComponent {
 goBack() {

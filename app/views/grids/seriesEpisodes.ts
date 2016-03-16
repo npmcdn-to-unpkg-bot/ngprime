@@ -7,6 +7,7 @@ import {TabView} from '../../components/tabview/tabview';
 import {TabPanel} from '../../components/tabview/tabpanel';
 import {Episode} from '../../views/domain/episodes';
 import {EpisodeService} from '../service/episodeService';
+import {SeasonsDatatable} from "../../views/grids/seriesSeasons";
 import {Column} from '../../components/api/column';
 import {Header} from '../../components/common/header';
 import {Footer} from '../../components/common/footer';
@@ -15,7 +16,7 @@ import {Message} from '../../components/api/message';
 
 @Component({
     templateUrl: 'app/views/grids/seriesEpisodeDatatable.html',
-    directives: [DataTable, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
+    directives: [DataTable, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter,SeasonsDatatable,ROUTER_DIRECTIVES],
     providers: [HTTP_PROVIDERS,EpisodeService]
 })
 export class SeriesEpisodesDatatable implements OnInit {

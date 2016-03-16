@@ -2,7 +2,7 @@
 
 /* move from / to  */
 
-.pt-page-moveToLeft {
+.pt-page-moveToLeft{
 	-webkit-animation: moveToLeft .6s ease both;
 	animation: moveToLeft .6s ease both;
 }
@@ -713,7 +713,7 @@
 	-webkit-animation: rotateSlideOut 1s both ease;
 	animation: rotateSlideOut 1s both ease;
 }
-.pt-page-rotateSlideIn {
+.pt-page-rotateSlideIn,.ContentSideSections {
 	-webkit-animation: rotateSlideIn 1s both ease;
 	animation: rotateSlideIn 1s both ease;
 }

@@ -7,23 +7,28 @@
     "tsc:w": "tsc -w",
     "lite": "lite-server",
     "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
-    "typings" : "typings"
+    "typings": "typings"
   },
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.5.0",
+    "angular-animate": "^1.5.0",
+    "angular-aria": "^1.5.0",
+    "angular-material": "^1.0.6",
+    "angular-messages": "^1.5.0",
     "angular2": "2.0.0-beta.7",
-    "systemjs": "0.19.22",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.3",
+    "primeng": "0.5.0",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",
-    "zone.js": "0.5.15",
-    "primeng": "0.5.0"
+    "systemjs": "0.19.22",
+    "zone.js": "0.5.15"
   },
   "devDependencies": {
     "concurrently": "^1.0.0",
     "lite-server": "^2.0.1",
     "typescript": "^1.7.5",
-    "typings":"^0.6.8"
+    "typings": "^0.6.8"
   }
 }

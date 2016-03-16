@@ -14,7 +14,7 @@ import {Growl} from '../../components/growl/growl';
 import {Message} from '../../components/api/message';
 
 @Component({
-    templateUrl: 'app/views/grids/contractsDatatable.html',
+    templateUrl: 'app/views/grids/contractAirDatesDatatable.html',
     directives: [DataTable, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
     providers: [HTTP_PROVIDERS,ContractService]
 })
