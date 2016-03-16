@@ -90,7 +90,10 @@ md-card{ margin: 0;}
 .content  {
 
 }
-
+.ui-button-icon-left {
+    left: 5px;    margin-top: -11px!important;
+}
+.ui-button-text-icon-left .ui-button-text{padding: 3px 8px 3px 38px;}
 .content .md-button.contact {
   background-color: transparent;
   border: none;

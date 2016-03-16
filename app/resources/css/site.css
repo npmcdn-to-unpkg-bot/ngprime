@@ -387,7 +387,7 @@ input.searchInput {
 
 .Source .ui-tabview.ui-tabview-top > .ui-tabview-nav li{top:0px !important;}
 .Source .ui-tabview.ui-tabview-top .ui-tabview-nav.ui-widget-header{border-bottom:0px none !important;}
-
+.ui-button-text-icon-left .ui-button-text{padding: 3px 8px;}
 /** Responsive **/
 @media (min-width: 961px) {
     .PFTopLinks {

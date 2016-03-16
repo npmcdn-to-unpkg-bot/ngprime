@@ -1,0 +1,50 @@
+{
+  "data": [{
+    "status": "Active",
+    "networkTargets": "FOX",
+    "ruleType": "I",
+    "windowGroup": "1",
+    "maxStreamingDays": "55",
+    "rollingCount": "432",
+    "broadcastSeason": "4",
+    "roughFormat": "drm-ll",
+    "sunsetRule": "11/12/12",
+    "numberOfDays": "22"
+  },
+  {
+    "status": "Active",
+    "networkTargets": "ABC",
+    "ruleType": "IV",
+    "windowGroup": "1",
+    "maxStreamingDays": "65",
+    "rollingCount": "432",
+    "broadcastSeason": "4",
+    "roughFormat": "drm-3ll",
+    "sunsetRule": "04/12/04",
+    "numberOfDays": "57"
+  },
+  {
+    "status": "Active",
+    "networkTargets": "FOX",
+    "ruleType": "V",
+    "windowGroup": "1",
+    "maxStreamingDays": "565",
+    "rollingCount": "432",
+    "broadcastSeason": "4",
+    "roughFormat": "drm-3ll",
+    "sunsetRule": "01/05/14",
+    "numberOfDays": "44"
+  },
+  {
+    "status": "Active",
+    "networkTargets": "FOX",
+    "ruleType": "II",
+    "windowGroup": "1",
+    "maxStreamingDays": "565",
+    "rollingCount": "432",
+    "broadcastSeason": "4",
+    "roughFormat": "drm-3ll",
+    "sunsetRule": "11/12/04",
+    "numberOfDays": "11"
+  }]
+}

@@ -38,25 +38,23 @@ export class ContractsDatatable implements OnInit {
         this.contractService.getContractSmall().then(contracts => this.contracts = contracts);
 
         this.cols = [
-            {field: 'ContractName', header: 'Name', sortable: true, filter: true},
-            {field: 'showCode', header: 'Show Code', sortable: true, filter: true},
-            {field: 'productionNumber', header: 'Production #', sortable: true, filter: true},
-            {field: 'status', header: 'Status', sortable: true, filter: true},
-            {field: 'note', header: 'Note', sortable: true, filter: true},
-            {field: 'fiscalYear', header: 'Fiscal Year', sortable: true, filter: true},
-            {field: 'broadcastContract', header: 'Broadcast Contract', sortable: true, filter: true},
-            {field: 'roughFormat', header: 'Rough Format', sortable: true, filter: true},
-            {field: 'episodeCount', header: 'Episode Count', sortable: true, filter: true},
-            {field: 'programCategory', header: 'Program Category', sortable: true, filter: true}
+            {field: 'numberOfRuns', header: 'Number of Runs', sortable: true, filter: true},
+            {field: 'runCount', header: 'Run Count', sortable: true, filter: true},
+            {field: 'adjRunCount', header: 'Adj Run Count', sortable: true, filter: true},
+            {field: 'usageRestrictions', header: 'Usage Restrictions', sortable: true, filter: true},
+            {field: 'airDateRestriction', header: 'Air Date Restrictions', sortable: true, filter: true},
+            {field: 'restrictionByEpisodeSeason', header: 'Restriction By Episode', sortable: true, filter: true},
+            {field: 'marathonRules', header: 'Marathon Rules', sortable: true, filter: true},
+            {field: 'windowStartDate', header: 'Windows Start Date', sortable: true, filter: true}
         ];
     }
      onRowSelect(event) {
         this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Contract Selected', detail: event.data.ContractName + ' - ' + event.data.fiscalYear});
+        this.msgs.push({severity: 'info', summary: 'Contract Selected', detail: event.data.windowStartDate + ' - ' + event.data.windowStartDate});
     }
 
     onRowUnselect(event) {
         this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Contract Unselected', detail: event.data.ContractName + ' - ' + event.data.fiscalYear});
+        this.msgs.push({severity: 'info', summary: 'Contract Unselected', detail: event.data.numberOfRuns + ' - ' + event.data.numberOfRuns});
     }
 }

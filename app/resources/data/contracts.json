@@ -1,14 +1,13 @@
 {
-    "data": [
-        {"fiscalYear": "2002", "note": "", "status": "Active", "productionNumber": 1, "showCode": "drm-3ll", "seasonName": "Season 1" , "broadcastSeason": "551" , "roughFormat": "HD", "episodeCount": "14", "programCategory": "14"},
-        {"fiscalYear": "2003", "note": "", "status": "Active", "productionNumber": 2, "showCode": "xrm-1", "seasonName": "Season 2", "broadcastSeason": "2" , "roughFormat": "HD", "episodeCount": "14", "programCategory": "14"},
-        {"fiscalYear": "2004", "note": "", "status": "Active", "productionNumber": 3, "showCode": "drm-1", "seasonName": "Season 3", "broadcastSeason": "3" , "roughFormat": "HD", "episodeCount": "14", "programCategory": "14"},
-        {"fiscalYear": "2005", "note": "", "status": "Active", "productionNumber": 4, "showCode": "xrm-1", "seasonName": "Season 4", "broadcastSeason": "4" , "roughFormat": "HD", "episodeCount": "14", "programCategory": "14"},
-        {"fiscalYear": "2006", "note": "", "status": "Inactive", "productionNumber": 5, "showCode": "xrm-5", "seasonName": "Season 5", "broadcastSeason": "5" , "roughFormat": "HD", "episodeCount": "14", "programCategory": "14"},
-        {"fiscalYear": "2007", "note": "xyz", "status": "Active", "productionNumber": 6, "showCode": "xrm-1", "seasonName": "Season 6", "broadcastSeason": "6" , "roughFormat": "HD", "episodeCount": "14", "programCategory": "14"},
-        {"fiscalYear": "2008", "note": "", "status": "Active", "productionNumber": 7, "showCode": "drm-4", "seasonName": "Season 7", "broadcastSeason": "7" , "roughFormat": "HD", "episodeCount": "14", "programCategory": "14"},
-        {"fiscalYear": "2009", "note": "", "status": "Inactive", "productionNumber": 8, "showCode": "xrm-1", "seasonName": "Season 8", "broadcastSeason": "8" , "roughFormat": "HD", "episodeCount": "14", "programCategory": "14"},
-        {"fiscalYear": "2000", "note": "", "status": "Active", "productionNumber": 9, "showCode": "xrm-1", "seasonName": "Season 9", "broadcastSeason": "9" , "roughFormat": "HD", "episodeCount": "14", "programCategory": "14"},
-        {"fiscalYear": "2001", "note": "", "status": "Inactive", "productionNumber": 10, "showCode": "drm-2", "seasonName": "Season 10", "broadcastSeason": "10" , "roughFormat": "HD", "episodeCount": "14", "programCategory": "14"}
-    ]
+  "data": [{
+    "numberOfRuns": "173",
+    "runCount": "21",
+    "adjRunCount": "31",
+    "usageRestrictions": "1",
+    "airDateRestriction": "11/12/04 - 112/12/05",
+    "networkTargets": "FOX",
+    "restrictionByEpisodeSeason": "drm-3ll",
+    "marathonRules": "drm-3ll",
+    "windowStartDate": "11/12/04"
+  }]
 }

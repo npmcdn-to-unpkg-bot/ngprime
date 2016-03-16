@@ -1,12 +1,11 @@
 export interface Contract {
-    seasonName;
-    showCode;
-    productionNumber;
-    status;
-    note;
-    fiscalYear;
-    broadcastSeason;
-    roughFormat;
-    episodeCount;
-    programCategory;
+    numberOfRuns;
+    runCount;
+    adjRunCount;
+    usageRestrictions;
+    airDateRestriction;
+    networkTargets;
+    restrictionByEpisodeSeason;
+    marathonRules;
+    windowStartDate;
 }

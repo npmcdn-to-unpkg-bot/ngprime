@@ -31,6 +31,7 @@ import {StaffDatatable} from "./views/grids/staff";
     
 ])
 export class AppComponent {
-
-    
+goBack() {
+  window.history.back();
+}
 }

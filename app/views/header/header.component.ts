@@ -12,7 +12,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
     directives: [MegaMenu,TabPanel,TabView,CodeHighlighter, Button, ROUTER_DIRECTIVES]
 })
 export class Header {
- onclick() {
-		console.log("go back");
-    }
+goBack() {
+  window.history.back();
+}
 }
