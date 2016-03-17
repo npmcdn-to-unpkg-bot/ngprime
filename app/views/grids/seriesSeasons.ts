@@ -1,6 +1,7 @@
 import {Component,OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {HTTP_PROVIDERS}    from 'angular2/http';
+import {NgClass} from 'angular2/common';
 import {DataTable} from '../../components/datatable/datatable';
 import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter';
 import {TabView} from '../../components/tabview/tabview';
@@ -16,7 +17,7 @@ import {Message} from '../../components/api/message';
 @Component({
     selector: 'seasonsGrid',
     templateUrl: 'app/views/grids/seasonsDatatable.html',
-    directives: [DataTable, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
+    directives: [DataTable, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter, ROUTER_DIRECTIVES],
     providers: [HTTP_PROVIDERS,SeasonService]
 })
 export class SeasonsDatatable implements OnInit {
@@ -60,4 +61,12 @@ export class SeasonsDatatable implements OnInit {
         this.msgs = [];
         this.msgs.push({severity: 'info', summary: 'Season Unselected', detail: event.data.seasonName + ' - ' + event.data.fiscalYear});
     }
+
+    sayOpen() {
+    console.log('open!');
+  }
+
+  sayClose() {
+    console.log('close!');
+  }
 }

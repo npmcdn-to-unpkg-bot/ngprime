@@ -1,25 +1,34 @@
 import {Component,OnInit} from 'angular2/core';
+import {View, ElementRef} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {HTTP_PROVIDERS}    from 'angular2/http';
+import {NgClass} from 'angular2/common';
 import {DataTable} from '../../components/datatable/datatable';
 import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter';
 import {TabView} from '../../components/tabview/tabview';
 import {TabPanel} from '../../components/tabview/tabpanel';
 import {Episode} from '../../views/domain/episodes';
 import {EpisodeService} from '../service/episodeService';
-import {SeasonsDatatable} from "../../views/grids/seriesSeasons";
 import {Column} from '../../components/api/column';
 import {Header} from '../../components/common/header';
 import {Footer} from '../../components/common/footer';
 import {Growl} from '../../components/growl/growl';
 import {Message} from '../../components/api/message';
+import {ShowParent} from '../../views/buttons/showParent';
 
 @Component({
     templateUrl: 'app/views/grids/seriesEpisodeDatatable.html',
-    directives: [DataTable, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter,SeasonsDatatable,ROUTER_DIRECTIVES],
+    directives: [DataTable, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter,NgClass, ShowParent,ROUTER_DIRECTIVES],
     providers: [HTTP_PROVIDERS,EpisodeService]
 })
 export class SeriesEpisodesDatatable implements OnInit {
+
+    isOpen = false;
+
+    toggleOpen(event) {
+        event.preventDefault();
+        this.isOpen = !this.isOpen;
+    }
 
     msgs: Message[];
 
@@ -58,4 +67,13 @@ export class SeriesEpisodesDatatable implements OnInit {
         this.msgs = [];
         this.msgs.push({severity: 'info', summary: 'Episode Unselected', detail: event.data.episodeTitle + ' - ' + event.data.episodeNumber});
     }
+
+    isOn = false;
+    isDisabled = false;
+    toggle(newState) {
+        if (!this.isDisabled) {
+          this.isOn = newState;
+        }
+  }
+
 }

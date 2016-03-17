@@ -1,6 +1,7 @@
 
 <p-growl [value]="msgs"></p-growl>
-<seasonsGrid></seasonsGrid>
+
+<toggle-button> </toggle-button>
 
 <div class="ContentSideSections Implementation">
     <p-dataTable [value]="episodes" [columns]="cols" selectionMode="single" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" resizableColumns="true" columnResizeMode="expand" reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3">

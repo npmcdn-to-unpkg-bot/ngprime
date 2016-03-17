@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {NgClass} from 'angular2/common';
 import {MegaMenu} from '../../components/megamenu/megamenu';
 import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter';
 import {TabView} from '../../components/tabview/tabview';
@@ -15,4 +16,13 @@ export class Header {
 goBack() {
   window.history.back();
 }
+
+splitScreen() {
+  console.log('split screen');
+}
+
+showParent() {
+  console.log('show parent');
+}
+
 }

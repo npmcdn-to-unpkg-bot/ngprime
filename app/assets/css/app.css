@@ -44,6 +44,7 @@ html, body {
   top: 100px;
   right: 100px;
 }
+topheader i { color: #fff; cursor: pointer; }
 /* Sidenav area */
 
 md-list .md-button {
@@ -493,8 +494,8 @@ table th { white-space: nowrap;}
     cursor: pointer;
 }
 
-
-
+.parentGrid{ display: none;}
+.panel-open.parentGrid {display: block;}
 .buttons-pdf:before {
       display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
