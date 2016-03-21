@@ -1,4 +1,4 @@
-import {Component,OnInit} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {HTTP_PROVIDERS}    from 'angular2/http';
 import {NgClass} from 'angular2/common';
@@ -13,28 +13,31 @@ import {Header} from '../../components/common/header';
 import {Footer} from '../../components/common/footer';
 import {Growl} from '../../components/growl/growl';
 import {Message} from '../../components/api/message';
+import {SharedServices} from '../../sharedServices';
+import {ShowParent} from "../../views/buttons/showParent";
 
 @Component({
     selector: 'seasonsGrid',
     templateUrl: 'app/views/grids/seasonsDatatable.html',
-    directives: [DataTable, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter, ROUTER_DIRECTIVES],
-    providers: [HTTP_PROVIDERS,SeasonService]
+    directives: [DataTable, Header, Footer, NgClass, Growl, TabPanel, TabView, CodeHighlighter, ShowParent, ROUTER_DIRECTIVES],
+    providers: [HTTP_PROVIDERS, SeasonService, SharedServices]
 })
 export class SeasonsDatatable implements OnInit {
 
-    msgs: Message[];
+    msgs:Message[];
 
-    seasons: Season[];
+    seasons:Season[];
 
-    cols: Column[];
+    cols:Column[];
 
-    selectedSeason1: Season;
+    selectedSeason1:Season;
 
-    selectedSeason2: Season;
+    selectedSeason2:Season;
 
-    selectedSeasons: Season[];
+    selectedSeasons:Season[];
 
-    constructor(private seasonService: SeasonService) { }
+    constructor(private seasonService:SeasonService, service: SharedServices) {
+    }
 
     ngOnInit() {
         this.seasonService.getSeasonsSmall().then(seasons => this.seasons = seasons);
@@ -52,21 +55,23 @@ export class SeasonsDatatable implements OnInit {
             {field: 'programCategory', header: 'Program Category', sortable: true, filter: true}
         ];
     }
-     onRowSelect(event) {
+
+    onRowSelect(event) {
         this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Season Selected', detail: event.data.seasonName + ' - ' + event.data.fiscalYear});
+        this.msgs.push({
+            severity: 'info',
+            summary: 'Season Selected',
+            detail: event.data.seasonName + ' - ' + event.data.fiscalYear
+        });
     }
 
     onRowUnselect(event) {
         this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Season Unselected', detail: event.data.seasonName + ' - ' + event.data.fiscalYear});
+        this.msgs.push({
+            severity: 'info',
+            summary: 'Season Unselected',
+            detail: event.data.seasonName + ' - ' + event.data.fiscalYear
+        });
     }
 
-    sayOpen() {
-    console.log('open!');
-  }
-
-  sayClose() {
-    console.log('close!');
-  }
 }

@@ -1,5 +1,4 @@
-import {Component,OnInit} from 'angular2/core';
-import {View, ElementRef} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {HTTP_PROVIDERS}    from 'angular2/http';
 import {NgClass} from 'angular2/common';
@@ -14,35 +13,34 @@ import {Header} from '../../components/common/header';
 import {Footer} from '../../components/common/footer';
 import {Growl} from '../../components/growl/growl';
 import {Message} from '../../components/api/message';
-import {ShowParent} from '../../views/buttons/showParent';
+import {SeasonsDatatable} from "../../views/grids/seriesSeasons";
+import {SharedServices} from '../../sharedServices';
+import {ShowParent} from "../../views/buttons/showParent";
 
 @Component({
     templateUrl: 'app/views/grids/seriesEpisodeDatatable.html',
-    directives: [DataTable, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter,NgClass, ShowParent,ROUTER_DIRECTIVES],
-    providers: [HTTP_PROVIDERS,EpisodeService]
+    directives: [DataTable, Header, Footer, Growl, TabPanel, TabView, CodeHighlighter, NgClass, SeasonsDatatable, ShowParent, ROUTER_DIRECTIVES],
+    providers: [HTTP_PROVIDERS, EpisodeService, SharedServices]
 })
 export class SeriesEpisodesDatatable implements OnInit {
 
-    isOpen = false;
+    msgs:Message[];
 
-    toggleOpen(event) {
-        event.preventDefault();
-        this.isOpen = !this.isOpen;
+    episodes:Episode[];
+
+    cols:Column[];
+
+    selectedEpisode1:Episode;
+
+    selectedEpisode2:Episode;
+
+    selectedEpisodes:Episode[];
+
+
+
+    constructor(private episodeService:EpisodeService, service: SharedServices) {
+
     }
-
-    msgs: Message[];
-
-    episodes: Episode[];
-
-    cols: Column[];
-
-    selectedEpisode1: Episode;
-
-    selectedEpisode2: Episode;
-
-    selectedEpisodes: Episode[];
-
-    constructor(private episodeService: EpisodeService) { }
 
     ngOnInit() {
         this.episodeService.getEpisodesSmall().then(episodes => this.episodes = episodes);
@@ -58,22 +56,23 @@ export class SeriesEpisodesDatatable implements OnInit {
             {field: 'origAirDate', header: 'Original Air Date Format', sortable: true, filter: true}
         ];
     }
-     onRowSelect(event) {
+
+    onRowSelect(event) {
         this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Episode Selected', detail: event.data.episodeTitle + ' - ' + event.data.episodeNumber});
+        this.msgs.push({
+            severity: 'info',
+            summary: 'Episode Selected',
+            detail: event.data.episodeTitle + ' - ' + event.data.episodeNumber
+        });
     }
 
     onRowUnselect(event) {
         this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Episode Unselected', detail: event.data.episodeTitle + ' - ' + event.data.episodeNumber});
+        this.msgs.push({
+            severity: 'info',
+            summary: 'Episode Unselected',
+            detail: event.data.episodeTitle + ' - ' + event.data.episodeNumber
+        });
     }
-
-    isOn = false;
-    isDisabled = false;
-    toggle(newState) {
-        if (!this.isDisabled) {
-          this.isOn = newState;
-        }
-  }
 
 }

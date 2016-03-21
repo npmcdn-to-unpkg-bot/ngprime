@@ -1,25 +1,30 @@
 import {Component} from 'angular2/core';
 import {NgClass} from 'angular2/common';
-import {DataTable} from '../../components/datatable/datatable';
-import {SeasonsDatatable} from "../../views/grids/seriesSeasons";
+import {SharedServices} from '../../sharedServices';
+
 @Component({
-  selector: 'toggle-button',
-  inputs: ['isDisabled'],
-  directives: [NgClass, SeasonsDatatable],
-  template: `
-     <div class="button" (click)="toggleOpen($event)">
-         Click me!
-     </div>
-<seasonsGrid [ngClass]="{'panel-open': isOpen}" class="parentGrid"></seasonsGrid>
-     `
+    selector: 'show-parent',
+    inputs: ['isDisabled'],
+    directives: [NgClass],
+    templateUrl: 'app/views/buttons/showParent.html',
 })
 export class ShowParent {
-  isOpen = false;
+    constructor(private service: SharedServices) {
 
-  toggleOpen(event) {
-    event.preventDefault();
-    this.isOpen = !this.isOpen;
-  }
+    }
+
+    isOpen = false;
+    isSplit = false;
+
+    toggleOpen(event) {
+        event.preventDefault();
+        this.isOpen = !this.isOpen;
+    }
+
+    toggleSplitScreen(event) {
+        event.preventDefault();
+        this.isSplit = !this.isSplit;
+    }
 }
 
 

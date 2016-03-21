@@ -1,0 +1,26 @@
+import {Component} from 'angular2/core';
+import {ShowParent} from '../../views/buttons/showParent';
+import { ROUTER_DIRECTIVES} from 'angular2/router';
+
+
+@Component({
+    selector: 'layout',
+    templateUrl: 'app/components/breadcrumb/breadcrumb.html',
+    directives: [ROUTER_DIRECTIVES, ShowParent]
+})
+export class LayoutComponent {
+
+    isOpen = false;
+    isSplit = false;
+
+    toggleOpen(event) {
+        event.preventDefault();
+        this.isOpen = !this.isOpen;
+    }
+
+    toggleSplitScreen(event) {
+        event.preventDefault();
+        this.isSplit = !this.isSplit;
+    }
+
+}
