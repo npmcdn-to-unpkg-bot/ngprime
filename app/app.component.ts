@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {NgClass} from 'angular2/common';
 import {BreadcrumbComponent} from './views/breadcrumb/breadcrumb.component';
 import {GridsView} from './views/grids/grid';
@@ -24,7 +24,7 @@ import {SharedServices} from './sharedServices';
     {path: '/broadcastSeriesSeason', name: 'BroadcastSeasonsDatatable', component: BroadcastSeasonsDatatable},
     {path: '/contracts', name: 'ContractsDatatable', component: ContractsDatatable},
     {path: '/contractAirDates', name: 'ContractAirDatesDatatable', component: ContractAirDatesDatatable},
-    {path: '/seriesEpisodes', name: 'SeriesEpisodesDatatable', component: SeriesEpisodesDatatable},
+    {path: 'seriesSeason/seriesEpisodes', name: 'SeriesEpisodesDatatable', component: SeriesEpisodesDatatable},
     {
         path: '/nonLinearSchedulingRules',
         name: 'NonLinearSchedulingRulesDatatable',
@@ -37,12 +37,19 @@ import {SharedServices} from './sharedServices';
 ])
 export class AppComponent {
 
-
-    constructor(private service: SharedServices) {
-
-    }
-
     goBack() {
         window.history.back();
+    }
+
+    public routeConfig: String[];
+
+    constructor(private router: Router, service:SharedServices) {
+        // Read the RouteConfig annotation so we can pass it to the breadcrumb component
+        let annotations = Reflect.getOwnMetadata('annotations', AppComponent);
+        for (let i = 0; i < annotations.length; i += 1) {
+            if (annotations[i].constructor.name === 'RouteConfig') {
+                this.routeConfig = annotations[i].configs;
+            }
+        }
     }
 }

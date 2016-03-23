@@ -13,13 +13,9 @@
 
 /* Component containers
 ----------------------------------*/
-.ui-button{ font-size:.8em;}
-.ui-widget .ui-widget { font-size: 1em; }
-.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Arial,Helvetica,sans-serif; font-size: 1em; }
-.ui-widget-content { border: 1px solid #D5D5D5; background: #ffffff; color: #222222; }
-.ui-widget-content a { color: #222222; }
+
 .ui-widget-header { border: 1px solid #D5D5D5; background: #cccccc; color: #222222; font-weight: bold; }
-.ui-widget-header { 
+.ui-widget-header {
 	border: 1px solid #d9d9d9;
 	color: #1b1d1f;
 	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
@@ -45,7 +41,7 @@
 
 /* Interaction Cues
 ----------------------------------*/
-.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight  {border: 1px solid #14A4FF; background: #14A4FF; color: #FFFFFF; }
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight  {border: 1px solid #88b9cb; background: #88bbd0; color: #FFFFFF; }
 .ui-state-highlight a, .ui-widget-content .ui-state-highlight a,.ui-widget-header .ui-state-highlight a { color: #363636; }
 .ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {border: 1px solid #cd0a0a; background: #fef1ec; color: #cd0a0a; }
 .ui-state-error a, .ui-widget-content .ui-state-error a, .ui-widget-header .ui-state-error a { color: #cd0a0a; }
@@ -317,7 +313,7 @@
  */
 .ui-dialog { position: absolute; padding: .2em; width: 300px; overflow: visible; border: 0 none; -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.75); -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.75); box-shadow: 0 1px 4px rgba(0,0,0,0.75); }
 .ui-dialog .ui-dialog-titlebar { position: relative; background: transparent !important; padding: 0 0 8px 0; margin: 20px 20px 5px 20px; border: solid #e5e5e5; border-width: 0 0 1px 0; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
-.ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .1em 0; color: #353536; font-size: 20px !important; } 
+.ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .1em 0; color: #353536; font-size: 20px !important; }
 .ui-dialog .ui-dialog-titlebar-close { position: absolute; right: -16px !important; top: -16px !important; margin: 0; width: 30px; height: 30px; background: url(images/modalClose.png) 0 0 no-repeat; border: 0 !important; z-index: 10000; padding: 0px !important;}
 .ui-dialog .ui-dialog-titlebar-close span { display: none !important; }
 .ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus { padding: 0; }
@@ -354,9 +350,9 @@
 .ui-slider-vertical .ui-slider-range-max { top: 0; }
 
 
-.ui-datepicker {padding: 0px !important;} 
+.ui-datepicker {padding: 0px !important;}
 .ui-datepicker .ui-datepicker-header { position: relative; padding:.4em 0; border: 1px solid #3b3e40; }
-.ui-datepicker .ui-datepicker-header { 
+.ui-datepicker .ui-datepicker-header {
 	background: #595c5d; /* Old browsers */
 	background: -moz-linear-gradient(top,  #595c5d 0%, #474a4b 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#595c5d), color-stop(100%,#474a4b)); /* Chrome,Safari4+ */
@@ -401,13 +397,13 @@
 .ui-datepicker .ui-datepicker-title { margin: 0 2.3em; line-height: 1.8em; text-align: center; color: #e8e9ea; text-shadow: 0 -1px 0 rgba(0,0,0,0.4); }
 .ui-datepicker .ui-datepicker-title select { font-size:1em; margin:1px 0; }
 .ui-datepicker select.ui-datepicker-month-year {width: 100%;}
-.ui-datepicker select.ui-datepicker-month, 
+.ui-datepicker select.ui-datepicker-month,
 .ui-datepicker select.ui-datepicker-year { width: 49%;}
 .ui-datepicker table {width: 1px; font-size: .9em; border-collapse: collapse; margin: -1px 0 0 0 !important; }
 .ui-datepicker th { padding: .7em 0; text-align: center; font-weight: bold; border: 0; font-size: 10px; color: #acacac; border-bottom: 1px solid #cdcdcd !important; }
 .ui-datepicker td { border: 0; padding: 0 !important; border: 1px solid #cdcdcd; }
 .ui-datepicker td a { display: block; padding: 0 !important; border: 0 none !important;/*border: 1px solid #cdcdcd !important;*/ line-height: 30px; text-align: center !important; font-size: 12px; text-decoration: none; font-weight: bold !important; }
-.ui-datepicker td a.ui-state-default { 
+.ui-datepicker td a.ui-state-default {
 	color: #5d5d5d;
 	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
 	background: #e8e9ea; /* Old browsers */
@@ -521,52 +517,52 @@ td.ui-datepicker-unselectable {
 }
 
 .ui-tabs {
-    position: relative; 
-    zoom: 1; 
-    border: none !important; 
-    background: none; 
+    position: relative;
+    zoom: 1;
+    border: none !important;
+    background: none;
 }
 
-.ui-tabs .ui-tabs-nav { 
-    background: none; 
+.ui-tabs .ui-tabs-nav {
+    background: none;
     border: 0;
 }
 
-.ui-tabs .ui-tabs-nav li { 
-    list-style: none; 
-    float: left; 
-    position: relative; 
-    margin: 0 .2em 1px 0; 
-    padding: 0; 
-    white-space: nowrap; 
+.ui-tabs .ui-tabs-nav li {
+    list-style: none;
+    float: left;
+    position: relative;
+    margin: 0 .2em 1px 0;
+    padding: 0;
+    white-space: nowrap;
 }
 
-.ui-tabs .ui-tabs-nav li a { 
-    float: left; 
-    padding: .5em 1em; 
-    text-decoration: none; 
-    font-size: 14px; 
+.ui-tabs .ui-tabs-nav li a {
+    float: left;
+    padding: .5em 1em;
+    text-decoration: none;
+    font-size: 14px;
     font-weight: bold;
 }
 
-.ui-tabs .ui-tabs-nav li.ui-tabs-selected { 
-    margin-bottom: 0; 
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+    margin-bottom: 0;
 }
 
-.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, 
-.ui-tabs .ui-tabs-nav li.ui-state-disabled a, 
-.ui-tabs .ui-tabs-nav li.ui-state-processing a { 
-    cursor: text; 
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a,
+.ui-tabs .ui-tabs-nav li.ui-state-disabled a,
+.ui-tabs .ui-tabs-nav li.ui-state-processing a {
+    cursor: text;
 }
 
 .ui-tabs .ui-tabs-nav li a,
-.ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { 
-    cursor: pointer; 
+.ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a {
+    cursor: pointer;
 }
 
-.ui-tabs .ui-tabs-panel { 
+.ui-tabs .ui-tabs-panel {
     border-width: 0px !important;
-    padding: 1em 1.4em; background: #FFF; 
+    padding: 1em 1.4em; background: #FFF;
 }
 
 .ui-tabs.ui-tabs-top .ui-tabs-nav {

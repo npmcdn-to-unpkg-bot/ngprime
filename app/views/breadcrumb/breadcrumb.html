@@ -1,10 +1,10 @@
-<p-breadcrumb>
+<!--<p-breadcrumb>
     <ul>
-        <li><a href="#"><span>Label of item 1</span></a></li>
-        <li><a href="#"><span>Label of item 2</span></a></li>
-        <li><a href="#"><span>Label of item 3</span></a></li>
+        <li><a href="#"><span>Label of item 1 {{$routeParams.showId }}</span></a></li>
+        <li><a href="#"><span>Label of item 2 {{ $routeParams.seasonId}}</span></a></li>
+        <li><a href="#"><span>Label of item 3 {{ $routeParams.episodeId}}</span></a></li>
     </ul>
-</p-breadcrumb>
+</p-breadcrumb>-->
 
 <!--
 <ul class="crumb-holder">
@@ -13,4 +13,5 @@
 
     <li><a href="" class="show-episodes crumb"> {{ $routeParams.episodeId}}  </a> </li>
 
-</ul>-->
+</ul>-->test
+<breadcrumb [routeConfig]="routeConfig"></breadcrumb>

@@ -1,46 +1,1499 @@
 <p-panelMenu>
+    <div>
+        <div><a><span>Program</span></a></div>
         <div>
-            <div><a><span>Program</span></a></div>
-            <div>
-                <ul>
-                    <li><a><span>General Info</span></a></li>
-                    <li><a><span>Production</span></a>
-                        <ul>
-                            <li><a [routerLink]="['SeasonsDatatable']">Series Season (7)</a><ul>
-                            <li><a [routerLink]="['SeriesEpisodesDatatable']"><span>Episodes (505)</span></a></li>
-                            <li><a [routerLink]="['ContractsDatatable']"><span>Rights</span></a></li>
-                            <li><a [routerLink]="['NonLinearSchedulingRulesDatatable']"><span>Non-Linear Scheduling Rules</span></a></li>
-                            <li><a [routerLink]="['StaffDatatable']"><span>Staff</span></a></li>
+            <ul>
+                <li><a><span>General Info</span></a></li>
+                <li><a><span>Production</span></a>
+                    <ul>
+                        <li><a [routerLink]="['SeasonsDatatable']">Series Season (7)</a>
+                            <ul>
+                                <li><a [routerLink]="['SeriesEpisodesDatatable']"><span>Episodes (505)</span></a></li>
+                                <li><a [routerLink]="['ContractsDatatable']"><span>Rights</span></a></li>
+                                <li><a [routerLink]="['NonLinearSchedulingRulesDatatable']"><span>Non-Linear Scheduling Rules</span></a>
+                                </li>
+                                <li><a [routerLink]="['StaffDatatable']"><span>Staff</span></a></li>
                             </ul>
-                            </li>
-                            <li><a [routerLink]="['BroadcastSeasonsDatatable']"><span>Broadcast Seasons</span></a></li>
-                            <li><a [routerLink]="['ContractAirDatesDatatable']"><span>Contract / Air Dates</span></a></li>
+                        </li>
+                        <li><a [routerLink]="['BroadcastSeasonsDatatable']"><span>Broadcast Seasons</span></a></li>
+                        <li><a [routerLink]="['ContractAirDatesDatatable']"><span>Contract / Air Dates</span></a></li>
+                    </ul>
+                </li>
+                <li><a><span>Created By</span></a></li>
+                <li><a><span>Program Titles</span></a></li>
+                <li><a><span>Images</span></a></li>
+                <li><a><span>Videos</span></a></li>
+                <li><a><span>Alternate Names</span></a></li>
+                <li><a><span>Format</span></a></li>
+                <li><a><span>Air Dates</span></a></li>
+                <li><a><span>Media</span></a></li>
+                <li><a><span>Submissions</span></a></li>
+                <li><a><span>Program Schedule Names</span></a></li>
+                <li><a><span>Creative Staff</span></a></li>
+                <li><a><span>Linked Program</span></a></li>
+                <li><a><span>Cast Note</span></a></li>
+                <li><a><span>Air Window Note</span></a></li>
+                <li><a><span>Synopsis</span></a></li>
+                <li><a><span>Editorial and S&P Notes</span></a></li>
+                <li><a><span>Operation Notes</span></a></li>
+                <li><a><span>Program Schedule Names</span></a></li>
+                <li><a><span>Production Schedule</span></a></li>
+            </ul>
+        </div>
+    </div>
+</p-panelMenu>
+
+<p-panelMenu>
+
+    <div>
+        <div><a><span>Search Networks</span></a></div>
+        <div>
+
+            <div flex layout="row" layout-align="end center"><span class="label label-primary"> (154 Available 1 Selected)</span>
+            </div>
+
+            <div class="input-group search-row">
+                <span class="input-group-addon">Filter</span>
+                <input type="text" class="form-control fa fa-times-circle" placeholder="Network"
+                       aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group search-row">
+                <span class="input-group-addon">Select</span>
+                <select class="form-control">
+                    <option>Networks by Group</option>
+                </select>
+            </div>
+            <div class="input-group search-row">
+                <div flex layout="row" layout-align="start center">
+                    <select multiple class="form-control">
+                        <option>CW</option>
+                        <option>EMPIRE</option>
+                        <option>FBC SPORTS</option>
+                        <option>FOX</option>
+                        <option>FOX COLLEGE SPORTS</option>
+                    </select>
+                </div>
+                <div flex layout="row" layout-align="end center">
+                    <input class="btn btn-default" type="button" value="All">
+                    <input class="btn btn-default" type="button" value="None">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <div><a><span>Search Programs</span></a></div>
+        <div>
+            <div class="input-group search-row">
+                <span class="input-group-addon">Type</span>
+                <select class="form-control">
+                    <option>Select</option>
+                </select>
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="ShowTitle">Input group with success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
                         </ul>
-                    </li>
-                    <li><a><span>Created By</span></a></li>
-                    <li><a><span>Program Titles</span></a></li>
-                    <li><a><span>Images</span></a></li>
-                    <li><a><span>Videos</span></a></li>
-                    <li><a><span>Alternate Names</span></a></li>
-                    <li><a><span>Format</span></a></li>
-                    <li><a><span>Air Dates</span></a></li>
-                    <li><a><span>Media</span></a></li>
-                    <li><a><span>Submissions</span></a></li>
-                    <li><a><span>Program Schedule Names</span></a></li>
-                    <li><a><span>Creative Staff</span></a></li>
-                    <li><a><span>Linked Program</span></a></li>
-                    <li><a><span>Cast Note</span></a></li>
-                    <li><a><span>Air Window Note</span></a></li>
-                    <li><a><span>Synopsis</span></a></li>
-                    <li><a><span>Editorial and S&P Notes</span></a></li>
-                    <li><a><span>Operation Notes</span></a></li>
-                    <li><a><span>Program Schedule Names</span></a></li>
-                    <li><a><span>Production Schedule</span></a></li>
-                </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="ShowTitle"
+                           aria-describedby="ShowTitle" placeholder="Show Title">
+                </div><!-- /input-group -->
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span class="sr-only">(success)</span>
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="ShowCode">Input group with success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="ShowCode"
+                           aria-describedby="ShowCode" placeholder="Show Code">
+                </div><!-- /input-group -->
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span class="sr-only">(success)</span>
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="ScheduleTitle">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="ScheduleTitle"
+                           aria-describedby="ScheduleTitle" placeholder="Schedule Title">
+                </div><!-- /input-group -->
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="AirDate">Input group with success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="AirDate"
+                           aria-describedby="AirDate" placeholder="Air Date Title">
+                </div><!-- /input-group -->
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="8">Input group with success</label>
+                <div class="input-group">
+                    <span class="input-group-addon">Filter</span>
+                    <input type="text" class="form-control" placeholder="Program Category" id="8"
+                           aria-describedby="8Status">
+                </div>
+            </div>
+
+            <div class="input-group search-row">
+                <div flex layout="row" layout-align="start center">
+                    <select multiple class="form-control">
+                        <option>COMPETITION</option>
+                        <option>DRAMA</option>
+                        <option>EVENT SERIES</option>
+                        <option>GAME SHOW</option>
+                        <option>MOVIES</option>
+                    </select>
+                </div>
+                <div flex="" layout="row">
+                    <div flex="50" layout-align="start center" layout="row">
+                        <div flex="50">
+                            <div class="input-group">
+                                <span class="checkbox-node">
+                                    <input type="checkbox" aria-label="And">
+                                </span> And
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                        <div flex="50">
+                            <div class="input-group">
+                                <span class="checkbox-node">
+                                  <input type="checkbox" aria-label="...">
+                                </span> Or
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                    <div flex="50" layout-align="end center" layout="row">
+                        <input class="btn btn-default" type="button" value="All">
+                        <input class="btn btn-default" type="button" value="None">
+                    </div>
+                </div>
+
+                <div class="input-group search-row">
+                    <div class="has-success">
+                        <div class="">
+                            <label>
+                                <input type="checkbox" id="checkboxSuccess" value="option1">
+                                Include Alternatives
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-row">
+                    <label class="control-label sr-only" for="Descriptions">Input group with
+                        success</label>
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Contains</a></li>
+                                <li><a href="#">Starts with</a></li>
+                                <li><a href="#">Equals</a></li>
+                                <li><a href="#">Is Empty</a></li>
+                            </ul>
+                        </div><!-- /btn-group -->
+                        <input type="text" class="form-control" id="Descriptions"
+                               aria-describedby="Descriptions" placeholder="Descriptions">
+                    </div><!-- /input-group -->
+                </div>
+
+                <div class="input-group search-row">
+                    <span class="input-group-addon">Run Time Duration</span>
+                    <select class="form-control">
+                        <option>Select</option>
+                    </select>
+                </div>
+
+                <div class="input-group search-row">
+                    <span class="input-group-addon">Production Company</span>
+                    <select class="form-control">
+                        <option>Select</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <div class="has-success">
+                        <div class="">
+                            <label>
+                                <input type="checkbox" value="option1">
+                                Active
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="has-success">
+                        <div class="">
+                            <label>
+                                <input type="checkbox" value="option1">
+                                Inactive
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div>
+        <div><a><span>Search Suppliers</span></a></div>
+        <div>
+            <div class="search-row">
+                <label class="control-label sr-only" for="Name">Input group with success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="Name"
+                           aria-describedby="Name" placeholder="Name">
+                </div><!-- /input-group -->
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span class="sr-only">(success)</span>
+            </div>
+
+            <div class="search-row">
+
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" aria-label="..." placeholder="City">
+                </div><!-- /input-group -->
+
+            </div>
+
+            <div class="input-group search-row">
+                <span class="input-group-addon">State</span>
+                <select class="form-control">
+                    <option>Select</option>
+                </select>
+            </div>
+
+
+        </div>
+    </div>
+    <div>
+        <div><a><span>Search Production Cycles</span></a></div>
+        <div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="ProductionCycleTitle">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="ProductionCycleTitle"
+                           aria-describedby="ProductionCycleTitle"
+                           placeholder="Production Cycle Title">
+                </div><!-- /input-group -->
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span class="sr-only">(success)</span>
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="ProductionNumber">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">= <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"> = </a></li>
+                            <li><a href="#"> <= </a></li>
+                            <li><a href="#"> >= </a></li>
+                            <li><a href="#"> < </a></li>
+                            <li><a href="#"> > </a></li>
+                            <li><a href="#"> Range </a></li>
+                            <li><a href="#"> Is Empty </a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="ProductionNumber"
+                           aria-describedby="ProductionNumber" placeholder="Production Number">
+                </div><!-- /input-group -->
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span class="sr-only">(success)</span>
+            </div>
+
+            <div class="input-group search-row">
+                <div flex layout="row" layout-align="start center">
+                    <select multiple class="form-control">
+                        <option selected>Fiscal 2006</option>
+                        <option>Fiscal 2005</option>
+                        <option>Fiscal 2004</option>
+                        <option>Fiscal 2003</option>
+                        <option>Fiscal 2002</option>
+                        <option>Fiscal 2001</option>
+                    </select>
+                </div>
+                <div flex layout="row" layout-align="end center">
+                    <input class="btn btn-default" type="button" value="All">
+                    <input class="btn btn-default" type="button" value="None">
+                </div>
+            </div>
+
+            <div class="input-group search-row">
+                <span class="input-group-addon">Status</span>
+                <select class="form-control">
+                    <option>Select</option>
+                </select>
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">= <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"> = </a></li>
+                            <li><a href="#"> <= </a></li>
+                            <li><a href="#"> >= </a></li>
+                            <li><a href="#"> < </a></li>
+                            <li><a href="#"> > </a></li>
+                            <li><a href="#"> Range </a></li>
+                            <li><a href="#"> Is Empty </a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <p-calendar [(value)]="dateValue" placeholder="Creation Date"></p-calendar>
+                    <span class="fa fa-calendar" aria-hidden="true"></span>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div>
+        <div><a><span>Search Distributors</span></a></div>
+        <div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="Distributor">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="Distributor"
+                           aria-describedby="Distributor" placeholder="Distributor Title">
+                </div><!-- /input-group -->
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <div><a><span>Search Contract Rights</span></a></div>
+        <div>
+
+            <div layout="row" layout-align="center center">
+                <div flex="45" class="calendar-node">
+                    <p-calendar [(value)]="dateValue" placeholder="Select A Date">
+                    </p-calendar>
+                    <span class="fa fa-calendar" aria-hidden="true"></span>
+
+                </div>
+                <div flex="10" layout-align="center center" class="text-center">
+                    to
+                </div>
+                <div flex="45" class="calendar-node">
+                    <p-calendar [(value)]="dateValue" placeholder="Select A Date">
+                    </p-calendar>
+                    <span class="fa fa-calendar" aria-hidden="true"></span>
+                </div>
+            </div>
+
+            <div class="input-group search-row">
+                <div class="has-success">
+                    <div class="">
+                        <label>
+                            <input type="checkbox" value="option1">
+                            Include Programs associated by Network Rights
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group search-row">
+                <div class="has-success">
+                    <div class="">
+                        <label>
+                            <input type="checkbox" value="option1">
+                            Episode has Remaining Runs
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group search-row">
+                <span class="input-group-addon">Exclusive</span>
+                <select class="form-control">
+                    <option>Select</option>
+                    <option>Y</option>
+                    <option>N</option>
+                    <option>R</option>
+                </select>
+            </div>
+
+
+        </div>
+    </div>
+    <div>
+        <div><a><span>Search Episodes </span></a></div>
+        <div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="EpisodeShowTitle">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="EpisodeShowTitle"
+                           aria-describedby="ShowTitle" placeholder="Show Title">
+                </div><!-- /input-group -->
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span class="sr-only">(success)</span>
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="EpisodeNumber">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">= <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"> = </a></li>
+                            <li><a href="#"> <= </a></li>
+                            <li><a href="#"> >= </a></li>
+                            <li><a href="#"> < </a></li>
+                            <li><a href="#"> > </a></li>
+                            <li><a href="#"> Range </a></li>
+                            <li><a href="#"> Is Empty </a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="number" class="form-control" id="EpisodeNumber"
+                           aria-describedby="EpisodeNumber" placeholder="Episode Number for Season">
+                </div><!-- /input-group -->
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="EpisodeProgram">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">= <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"> = </a></li>
+                            <li><a href="#"> <= </a></li>
+                            <li><a href="#"> >= </a></li>
+                            <li><a href="#"> < </a></li>
+                            <li><a href="#"> > </a></li>
+                            <li><a href="#"> Range </a></li>
+                            <li><a href="#"> Is Empty </a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="number" class="form-control" id="EpisodeProgram"
+                           aria-describedby="EpisodeProgram" placeholder="Episode Number for Program">
+                </div><!-- /input-group -->
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="EpisodeCode">Input group with success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="EpisodeCode"
+                           aria-describedby="EpisodeCode" placeholder="Code">
+                </div><!-- /input-group -->
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="EpisodeSynopsis">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="EpisodeSynopsis"
+                           aria-describedby="EpisodeSynopsis" placeholder="Synopsis">
+                </div><!-- /input-group -->
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="EpisodeNote">Input group with success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="EpisodeNote"
+                           aria-describedby="EpisodeNote" placeholder="Episode Note">
+                </div><!-- /input-group -->
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="CastNote">Input group with success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="CastNote"
+                           aria-describedby="CastNote" placeholder="Cast Note">
+                </div><!-- /input-group -->
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="AirWindowNote">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="AirWindowNote"
+                           aria-describedby="AirWindowNote" placeholder="Air Window Note">
+                </div><!-- /input-group -->
+            </div>
+
+            <div class="input-group search-row">
+                <span class="input-group-addon">Content Rating</span>
+                <select class="form-control">
+                    <option>Select</option>
+                </select>
+            </div>
+
+            <div class="input-group search-row">
+                <span class="input-group-addon">Status</span>
+                <select class="form-control">
+                    <option>Select</option>
+                </select>
+            </div>
+
+            <div class="input-group search-row">
+                <span class="input-group-addon">Production Status</span>
+                <select class="form-control">
+                    <option>Select</option>
+                </select>
+            </div>
+
+            <div class="input-group search-row">
+                <div class="has-success">
+                    <div class="">
+                        <label>
+                            <input type="checkbox" value="option1">
+                            Blackout Switching
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="RunTimeDuration">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">= <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"> = </a></li>
+                            <li><a href="#"> <= </a></li>
+                            <li><a href="#"> >= </a></li>
+                            <li><a href="#"> < </a></li>
+                            <li><a href="#"> > </a></li>
+                            <li><a href="#"> Range </a></li>
+                            <li><a href="#"> Is Empty </a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="number" class="form-control" id="RunTimeDuration"
+                           aria-describedby="RunTimeDuration" placeholder="Run Time Duration">
+                </div><!-- /input-group -->
+            </div>
+
+            <div class="input-group search-row">
+                <span class="input-group-addon">Genre</span>
+                <select class="form-control">
+                    <option>Select</option>
+                </select>
+            </div>
+
+            <div class="search-row">
+                <input type="number" class="form-control" id="MovieReleaseYear"
+                       aria-describedby="MovieReleaseYear" placeholder="Movie Release Year">
+            </div>
+            <h4>Episode Production</h4>
+            <div class="search-row">
+                <label class="control-label sr-only">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">= <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"> = </a></li>
+                            <li><a href="#"> <= </a></li>
+                            <li><a href="#"> >= </a></li>
+                            <li><a href="#"> < </a></li>
+                            <li><a href="#"> > </a></li>
+                            <li><a href="#"> Range </a></li>
+                            <li><a href="#"> Is Empty </a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <p-calendar [(value)]="dateValue" placeholder="Tape Date"></p-calendar>
+                    <span class="fa fa-calendar" aria-hidden="true"></span>
+                </div>
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="EpisodeProductionNumber">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="EpisodeProductionNumber"
+                           aria-describedby="EpisodeProductionNumber" placeholder="Production Number">
+                </div><!-- /input-group -->
+            </div>
+
+            <div class="input-group search-row">
+                <div class="has-success">
+                    <div class="">
+                        <label>
+                            <input type="checkbox" value="option1">
+                            Ordered
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group search-row">
+                <div class="has-success">
+                    <div class="">
+                        <label>
+                            <input type="checkbox" value="option1">
+                            Script In
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group search-row">
+                <div class="has-success">
+                    <div class="">
+                        <label>
+                            <input type="checkbox" value="option1">
+                            Title Confirmed
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group search-row">
+                <div class="has-success">
+                    <div class="">
+                        <label>
+                            <input type="checkbox" value="option1">
+                            Rough Cut In
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <h4>Episode Schedule</h4>
+            <div class="search-row">
+                <label class="control-label sr-only">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">= <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"> = </a></li>
+                            <li><a href="#"> <= </a></li>
+                            <li><a href="#"> >= </a></li>
+                            <li><a href="#"> < </a></li>
+                            <li><a href="#"> > </a></li>
+                            <li><a href="#"> Range </a></li>
+                            <li><a href="#"> Is Empty </a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <p-calendar [(value)]="dateValue" placeholder="Original Air Date"></p-calendar>
+                    <span class="fa fa-calendar" aria-hidden="true"></span>
+                </div>
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">= <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"> = </a></li>
+                            <li><a href="#"> <= </a></li>
+                            <li><a href="#"> >= </a></li>
+                            <li><a href="#"> < </a></li>
+                            <li><a href="#"> > </a></li>
+                            <li><a href="#"> Range </a></li>
+                            <li><a href="#"> Is Empty </a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <p-calendar [(value)]="dateValue" placeholder="Second Air Date"></p-calendar>
+                    <span class="fa fa-calendar" aria-hidden="true"></span>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div>
+        <div><a><span>Search Sports/Teams</span></a></div>
+        <div>
+
+            <div class="input-group search-row">
+                <div flex layout="row" layout-align="start center">
+                    <select multiple class="form-control">
+                        <option selected>AFL - Arena Football Leauge</option>
+                        <option>AHL - AHL</option>
+                        <option>AHL - IN WORK</option>
+                        <option>AUTO</option>
+                        <option>MLB</option>
+                        <option>NBA</option>
+                    </select>
+                </div>
+                <div flex layout="row" layout-align="end center">
+                    <input class="btn btn-default" type="button" value="All">
+                    <input class="btn btn-default" type="button" value="None">
+                </div>
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="Conference">Input group with success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="Conference"
+                           aria-describedby="Conference" placeholder="Conference">
+                </div><!-- /input-group -->
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span class="sr-only">(success)</span>
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="Team">Input group with success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="Team"
+                           aria-describedby="Team" placeholder="Team">
+                </div><!-- /input-group -->
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span class="sr-only">(success)</span>
+            </div>
+
+            <div class="input-group search-row">
+                <span class="input-group-addon">Game Type</span>
+                <select class="form-control">
+                    <option>Select</option>
+                </select>
+            </div>
+
+            <div class="input-group search-row">
+                <span class="input-group-addon">Home or Away</span>
+                <select class="form-control">
+                    <option>Select</option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <div><a><span>Search Venue</span></a></div>
+        <div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="VenueName">Input group with success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="VenueName"
+                           aria-describedby="VenueName" placeholder="Name">
+                </div><!-- /input-group -->
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span class="sr-only">(success)</span>
+            </div>
+
+            <div class="input-group search-row">
+                <span class="input-group-addon">State</span>
+                <select class="form-control">
+                    <option>Select</option>
+                </select>
+            </div>
+
+            <div class="input-group search-row">
+                <span class="input-group-addon">League</span>
+                <select class="form-control">
+                    <option>Select</option>
+                </select>
+            </div>
+
+
+        </div>
+    </div>
+    <div>
+        <div><a><span>Search Cast / Crew / Awards</span></a></div>
+        <div>
+
+            <div class="input-group search-row">
+                <div class="has-success">
+                    <div class="">
+                        <label>
+                            <input type="checkbox" value="option1">
+                            Cast
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="FirstName">Input group with success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="FirstName"
+                           aria-describedby="FirstName" placeholder="First Name">
+                </div><!-- /input-group -->
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="LastName">Input group with success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="LastName"
+                           aria-describedby="LastName" placeholder="Last Name">
+                </div><!-- /input-group -->
+            </div>
+
+            <div class="input-group search-row">
+                <div class="has-success">
+                    <div class="">
+                        <label>
+                            <input type="checkbox" value="option1">
+                            Crew
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="CrewFirstName">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="CrewFirstName"
+                           aria-describedby="CrewFirstName" placeholder="First Name">
+                </div><!-- /input-group -->
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="CrewLastName">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="CrewLastName"
+                           aria-describedby="CrewLastName" placeholder="Last Name">
+                </div><!-- /input-group -->
+            </div>
+
+            <h5>Crew Talent Types</h5>
+            <div class="input-group search-row">
+                <div flex layout="row" layout-align="start center">
+                    <select multiple class="form-control">
+                        <option>Music</option>
+                        <option>Other</option>
+                        <option>Producer</option>
+                        <option>Writer</option>
+                        <option>Actor</option>
+                    </select>
+                </div>
+                <div flex="" layout="row">
+                    <div flex="50" layout-align="start center" layout="row">
+                        <div flex="50">
+                            <div class="input-group">
+                                <span class="checkbox-node">
+                                    <input type="checkbox" aria-label="And">
+                                </span> And
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                        <div flex="50">
+                            <div class="input-group">
+                                <span class="checkbox-node">
+                                  <input type="checkbox" aria-label="...">
+                                </span> Or
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                </div>
+
+            </div>
+
+            <h5>Awards</h5>
+            <div class="input-group search-row">
+                <div flex layout="row" layout-align="start center">
+                    <select multiple class="form-control">
+                        <option>DGA Award</option>
+                        <option>Emmy</option>
+                        <option>Golden Globe</option>
+                        <option>Oscar</option>
+                        <option>Grammy</option>
+                    </select>
+                </div>
+                <div flex="" layout="row">
+                    <div flex="50" layout-align="start center" layout="row">
+                        <div flex="50">
+                            <div class="input-group">
+                                <span class="checkbox-node">
+                                    <input type="checkbox" aria-label="And">
+                                </span> And
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                        <div flex="50">
+                            <div class="input-group">
+                                <span class="checkbox-node">
+                                  <input type="checkbox" aria-label="...">
+                                </span> Or
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                </div>
+
+            </div>
+
+            <h5>Broadcast Years</h5>
+            <div class="input-group search-row">
+                <div flex layout="row" layout-align="start center">
+                    <select multiple class="form-control">
+                        <option>2020-21</option>
+                        <option>2019-20</option>
+                        <option>2018-19</option>
+                        <option>2017-18</option>
+                        <option>2016-17</option>
+                    </select>
+                </div>
+                <div flex="" layout="row">
+                    <div flex="50" layout-align="start center" layout="row">
+                        <div flex="50">
+                            <div class="input-group">
+                                <span class="checkbox-node">
+                                    <input type="checkbox" aria-label="And">
+                                </span> And
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                        <div flex="50">
+                            <div class="input-group">
+                                <span class="checkbox-node">
+                                  <input type="checkbox" aria-label="...">
+                                </span> Or
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <div><a><span>Search Media </span></a></div>
+        <div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="MediaLength">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">= <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"> = </a></li>
+                            <li><a href="#"> <= </a></li>
+                            <li><a href="#"> >= </a></li>
+                            <li><a href="#"> < </a></li>
+                            <li><a href="#"> > </a></li>
+                            <li><a href="#"> Range </a></li>
+                            <li><a href="#"> Is Empty </a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="MediaLength"
+                           aria-describedby="MediaLength" placeholder="Media Length">
+                </div><!-- /input-group -->
+            </div>
+            <div class="search-row">
+                <label class="control-label sr-only" for="TrafficCode">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="TrafficCode"
+                           aria-describedby="TrafficCode" placeholder="Traffic Code">
+                </div><!-- /input-group -->
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="RoughFormat">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="RoughFormat"
+                           aria-describedby="RoughFormat" placeholder="Rough Format">
+                </div><!-- /input-group -->
+            </div>
+
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="ShowFormat">Input group with success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="ShowFormat"
+                           aria-describedby="ShowFormat" placeholder="Show Format">
+                </div><!-- /input-group -->
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span class="sr-only">(success)</span>
+            </div>
+
+            <div class="input-group search-row">
+                <div class="has-success">
+                    <div class="">
+                        <label>
+                            <input type="checkbox" value="option1">
+                            No Format
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-row">
+                <label class="control-label sr-only" for="MediaComment">Input group with
+                    success</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contains <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contains</a></li>
+                            <li><a href="#">Starts with</a></li>
+                            <li><a href="#">Equals</a></li>
+                            <li><a href="#">Is Empty</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="MediaComment"
+                           aria-describedby="MediaComment" placeholder="Media Comment">
+                </div><!-- /input-group -->
+            </div>
+
+            <div class="input-group search-row">
+                <span class="input-group-addon">Status</span>
+                <select class="form-control">
+                    <option>Select</option>
+                </select>
+            </div>
+
+            <div class="input-group search-row">
+                <span class="input-group-addon">Segment Status</span>
+                <select class="form-control">
+                    <option>Select</option>
+                </select>
+            </div>
+
+
+        </div>
+    </div>
+    <div>
+        <div><a><span>Search Air Dates </span></a></div>
+        <div>
+
+            <h5>Broadcast Air Dates</h5>
+            <div layout="row" layout-align="center center">
+                <div flex="45" class="calendar-node">
+                    <p-calendar [(value)]="dateValue" placeholder="Select A Date">
+                    </p-calendar>
+                    <span class="fa fa-calendar" aria-hidden="true"></span>
+
+                </div>
+                <div flex="10" layout-align="center center" class="text-center">
+                    to
+                </div>
+                <div flex="45" class="calendar-node">
+                    <p-calendar [(value)]="dateValue" placeholder="Select A Date">
+                    </p-calendar>
+                    <span class="fa fa-calendar" aria-hidden="true"></span>
+                </div>
+            </div>
+
+            <h5>Times</h5>
+            <div layout="row" layout-align="center center">
+                <div flex="45" class="calendar-node">
+                    <input type="number" class="form-control">
+                </div>
+                <div flex="10" layout-align="center center" class="text-center">
+                    to
+                </div>
+                <div flex="45" class="calendar-node">
+                    <input type="number" class="form-control">
+                </div>
+            </div>
+
+            <h5>Air Date Status</h5>
+            <div class="input-group search-row">
+                <div flex layout="row" layout-align="start center">
+                    <select multiple class="form-control">
+                        <option selected>Working</option>
+                        <option>Scheduled</option>
+                        <option>Active</option>
+                    </select>
+                </div>
+                <div flex layout="row" layout-align="end center">
+                    <input class="btn btn-default" type="button" value="All">
+                    <input class="btn btn-default" type="button" value="None">
+                </div>
+            </div>
+
+            <h5>Air Date Type</h5>
+            <div class="input-group search-row">
+                <div flex layout="row" layout-align="start center">
+                    <select multiple class="form-control">
+                        <option selected>Delay</option>
+                        <option>Live</option>
+                        <option>Live in Some Time Zones</option>
+                        <option>None</option>
+                        <option>Original</option>
+                    </select>
+                </div>
+                <div flex layout="row" layout-align="end center">
+                    <input class="btn btn-default" type="button" value="All">
+                    <input class="btn btn-default" type="button" value="None">
+                </div>
+            </div>
+
+            <h5>Premiere / Finale</h5>
+            <div class="input-group search-row">
+                <div flex layout="row" layout-align="start center">
+                    <select multiple class="form-control">
+                        <option selected>OTO</option>
+                        <option>Cut to 1-Hr</option>
+                        <option>Eco</option>
+                    </select>
+                </div>
+                <div flex="" layout="row">
+                    <div flex="50" layout-align="start center" layout="row">
+                        <div flex="50">
+                            <div class="input-group">
+                                <span class="checkbox-node">
+                                    <input type="checkbox" aria-label="And">
+                                </span> And
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                        <div flex="50">
+                            <div class="input-group">
+                                <span class="checkbox-node">
+                                  <input type="checkbox" aria-label="...">
+                                </span> Or
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                    <div flex="50" layout-align="end center" layout="row">
+                        <input class="btn btn-default" type="button" value="All">
+                        <input class="btn btn-default" type="button" value="None">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div>
+        <div><a><span>Search Non-Linear Eligibility</span></a></div>
+        <div>
+            <h5>Network Targets</h5>
+            <div class="input-group search-row">
+                <div flex layout="row" layout-align="start center">
+                    <select multiple class="form-control">
+                        <option>SVOD</option>
+                        <option>VOD (Non_DAI)</option>
+                        <option>VOD Full Stack(Non_DAI)</option>
+                    </select>
+                </div>
+                <div flex layout="row" layout-align="end center">
+                    <input class="btn btn-default" type="button" value="All">
+                    <input class="btn btn-default" type="button" value="None">
+                </div>
+            </div>
+
+            <div class="input-group search-row">
+                <div class="has-success">
+                    <div class="">
+                        <label>
+                            <input type="checkbox" value="option1">
+                            Elgible for full Date Range
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <h5>Non-Linear window</h5>
+            <div layout="row" layout-align="center center">
+                <div flex="45" class="calendar-node">
+                    <p-calendar [(value)]="dateValue" placeholder="Select A Date">
+                    </p-calendar>
+                    <span class="fa fa-calendar" aria-hidden="true"></span>
+
+                </div>
+                <div flex="10" layout-align="center center" class="text-center">
+                    to
+                </div>
+                <div flex="45" class="calendar-node">
+                    <p-calendar [(value)]="dateValue" placeholder="Select A Date">
+                    </p-calendar>
+                    <span class="fa fa-calendar" aria-hidden="true"></span>
+                </div>
             </div>
         </div>
-    </p-panelMenu>
-
+    </div>
+</p-panelMenu>
 <!-- <ul id="tree" class="tree" ng-controller="MainController">
 
         <li> <a href="#" class="active-route">Program</a>
@@ -86,40 +1539,39 @@
         </li>
       </ul> -->
 
-
-      <ul id="edit-tree" class="tree" style="display: none;">
-        <li> <a href="#">Program</a>
-          <ul>
+<ul id="edit-tree" class="tree" style="display: none;">
+    <li><a href="#">Program</a>
+        <ul>
             <li><a href="#" class="genInfo">General Info</a></li>
             <li><span class="collapse">Production</span>
-              <ul>
-                <li><span class="collapse">Series Seasons / Episodes</span>
-                  <ul>
-                    <li><a href="#" class="genInfo">General Info</a></li>
-                    <li><a href="#">Format</a></li>
-                    <li><a href="#">Program Schedule Names</a></li>
-                    <li><a href="#">Non-Linear</a></li>
-                  </ul>
-                  <li>Program Schedules Names</li>
-                  <li>Non-Linear</li>
-              </ul>
+                <ul>
+                    <li><span class="collapse">Series Seasons / Episodes</span>
+                        <ul>
+                            <li><a href="#" class="genInfo">General Info</a></li>
+                            <li><a href="#">Format</a></li>
+                            <li><a href="#">Program Schedule Names</a></li>
+                            <li><a href="#">Non-Linear</a></li>
+                        </ul>
+                    <li>Program Schedules Names</li>
+                    <li>Non-Linear</li>
+                </ul>
 
-              <li><a href="#">Created By</a></li>
-              <li><a href="#">Program Titles</a></li>
-              <li><a href="#">Images</a></li>
-              <li><a href="#">Videos</a></li>
-              <li><a href="#">Alternative Names</a></li>
-              <li><a href="#">Format</a></li>
-              <li><a href="#">Episode Note</a></li>
-              <li><a href="#">Air Dates</a></li>
-              <li><a href="#">Media</a></li>
-              <li><a href="#">Submissions</a></li>
-              <li><a href="#">Program Schedule Names</a></li>
-              <li><a href="#">Creative Staff</a></li>
-              <li><a href="#">Linked Program</a></li>
-              <li><a href="#">Non-Linear Acquired</a></li>
-              <li><a href="#">Program Links</a></li>
-          </ul>
-          </li>
+            <li><a href="#">Created By</a></li>
+            <li><a href="#">Program Titles</a></li>
+            <li><a href="#">Images</a></li>
+            <li><a href="#">Videos</a></li>
+            <li><a href="#">Alternative Names</a></li>
+            <li><a href="#">Format</a></li>
+            <li><a href="#">Episode Note</a></li>
+            <li><a href="#">Air Dates</a></li>
+            <li><a href="#">Media</a></li>
+            <li><a href="#">Submissions</a></li>
+            <li><a href="#">Program Schedule Names</a></li>
+            <li><a href="#">Creative Staff</a></li>
+            <li><a href="#">Linked Program</a></li>
+            <li><a href="#">Non-Linear Acquired</a></li>
+            <li><a href="#">Program Links</a></li>
+        </ul>
+    </li>
 
-      </ul>
+</ul>

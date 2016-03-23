@@ -21,7 +21,6 @@ html, body {
     font-family: 'Work Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
-    font-size: 1em;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -299,7 +298,6 @@ md-toolbar h1 {
     padding: 15px;
     margin: 5px;
     width: 100%;
-    font-size: 1em;
     font-weight: 600;
 }
 
@@ -345,7 +343,6 @@ md-bottom-sheet md-icon {
 
 span.name {
     font-weight: bold;
-    font-size: 1.1em;
     padding-left: 5px;
 }
 
@@ -480,7 +477,10 @@ ol {
 ol ol {
     margin: 0 0 0 2em; /* Add some left margin for inner lists */
 }
-
+a:focus, a, a:visited {
+    outline: 0;
+}
+.router-link-active{ display:block; height: 25px; width: 100%;}
 .rounded-list a {
     position: relative;
     display: block;
@@ -493,13 +493,47 @@ ol ol {
     border-radius: .3em;
     transition: all .3s ease-out;
 }
-
+.ui-datepicker{ z-index: 99!important;}
+.hasDatepicker {
+    height: 34px;
+    width: 100%;
+}
+.ui-state-active{ border-radius: 0;
+    border:solid 1px rgba(11, 62, 111, 0.32);}
+h5{ font-weight: bold;}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{background: #75a1b3;}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active{ background: #75a1b3;}
+.ui-paginator{background: rgba(117, 161, 179, 0.31);}
+.ui-panelmenu-header, .ui-panelmenu-header a{ border-bottom-right-radius: 0;  border-bottom-left-radius: 0; border-top-left-radius: 0 ; border-top-right-radius: 0;}
+.ui-panelmenu-header{ border-bottom: 1px solid rgba(11, 62, 111, 0.32);}
+.ui-panelmenu-header{ border-top: 1px solid rgba(23, 146, 255, 0);}
+.checkbox-node input{ position: relative;
+    top:1px;}
+.input-group-addon:first-child { min-width: 93px;}
 .rounded-list a:hover {
     background: #eee;
+}
+tr:nth-child(even){ background-color: rgba(212, 226, 231, 0.33);}
+.ui-panelmenu-content .btn.btn-default {
+    margin-top: 5px;
+}
+
+.ui-panelmenu-content .dropdown-toggle.btn.btn-default {
+    margin-top: 0;
 }
 
 .rounded-list a:hover:before {
     transform: rotate(360deg);
+}
+
+.calendar-node {
+    position: relative;
+}
+
+.fa.fa-calendar {
+    position: absolute;
+    top: 8px;
+    right: 8px;
 }
 
 .rounded-list a:before {
@@ -542,12 +576,6 @@ ol ol {
     display: block;
     margin: auto;
     position: relative;
-}
-
-.btn {
-    cursor: pointer;
-    position: absolute;
-    color: #fff;
 }
 
 /*Nesting Example this will create styles .nav_bar and .nav_bar .container #toggle_nav WHITESPACE ADDED TO SHOW NESTING*/
@@ -596,6 +624,10 @@ ol ol {
     border-right: solid 10px #ddd;
 }
 
+.input-group-btn {
+    font-size: inherit;
+}
+
 /*PSP nesting creates styles #psp, #psp header, #psp header #psp_controls, #psp header #psp_controls #toggle_isi WHITESPACE ADDED TO SHOW NESTING*/
 #psp {
     height: 100%;
@@ -638,9 +670,9 @@ tbody tr.selected td, table.dataTable.display tbody tr.selected > .sorting_1 {
     color: #fff;
 }
 
-.form-control {
-    height: auto;
-    margin-bottom: 20px;
+.label.label-primary {
+    color: #fff;
+    margin-left: 5px;
 }
 
 .search-results li {
@@ -689,12 +721,11 @@ md-tab-item {
 
 .fa.pull-right {
     padding-right: 18px;
-    font-size: 1.5em;
     position: relative;;
     top: -3px;
 }
 
-table {
+outlet table {
     min-width: 1600px;
 }
 
@@ -728,7 +759,6 @@ table th {
 }
 
 .ui-widget .ui-widget a {
-    font-size: .8em;
 }
 
 .ui-state-highlight td {
@@ -769,6 +799,11 @@ table th {
     cursor: pointer;
 }
 
+.label.label-primary {
+    line-height: 2;
+    font-size: 100%;
+}
+
 .buttons-copy:before {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -778,6 +813,13 @@ table th {
     content: "\f0ea";
     padding: 0 10px 10px 10px;
     cursor: pointer;
+}
+
+.ui-panelmenu .ui-panelmenu-header .fa.fa-search {
+    right: 0;
+    left: auto;
+    color: #428bca;
+    margin-top: -7px;
 }
 
 .dt-buttons {
@@ -807,8 +849,56 @@ table th {
     line-height: 22px;
 }
 
+.ui-state-active .ui-panelmenu-icon.fa {
+    color: #fff;
+}
+
 .ui-widget-content a {
     color: gray;
+}
+
+.input-group {
+    width: 100%;
+}
+
+.ui-state-active a span {
+    color: #fff;
+}
+
+.ui-state-active {
+    background-color: #75a1b3;
+}
+
+.ui-panelmenu .ui-panelmenu-content {
+    padding: 15px;
+    background-color: rgb(241, 246, 247);
+    min-height: 350px;
+    border-top:solid 1px #fff;
+    border-bottom:solid 2px #75a1b3;
+}
+
+.search-row {
+    padding: 10px 0;
+    position: relative;
+}
+
+.has-feedback label.sr-only ~ .form-control-feedback {
+    top: 10px;
+}
+
+.btn-default {
+    background-color: #eeeeee;
+    color: #428bca;
+}
+
+.dropdown-menu.ui-menu-list.ui-helper-reset {
+    position: absolute;
+    font-size: 14px;
+}
+
+.form-control-feedback {
+    top: 10px;
+    z-index: 99;
 }
 
 @media (max-width: 620px) {
