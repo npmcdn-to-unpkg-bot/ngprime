@@ -15,25 +15,26 @@ import {StaffDatatable} from "./views/grids/staff";
 import {ShowParent} from "./views/buttons/showParent";
 import {SharedServices} from './sharedServices';
 @Component({
+    providers: [],
     selector: 'my-app',
     templateUrl: 'app/views/layout/layout.html',
     directives: [ROUTER_DIRECTIVES, NgClass, BreadcrumbComponent, GridsView, SidenavComponent, Header, ShowParent]
 })
+
+/*@RouteConfig([
+    { path: 'comp1', component: Component1, as: 'Comp 1', useAsDefault: true},
+    { path: 'comp1/comp2', component: Component2, as: 'Comp 2'},
+    { path: 'comp1/comp2/comp3', component: Component3, as: 'Comp 3'}
+])*/
+
 @RouteConfig([
-    {path: '/seriesSeason', name: 'SeasonsDatatable', component: SeasonsDatatable},
-    {path: '/broadcastSeriesSeason', name: 'BroadcastSeasonsDatatable', component: BroadcastSeasonsDatatable},
-    {path: '/contracts', name: 'ContractsDatatable', component: ContractsDatatable},
-    {path: '/contractAirDates', name: 'ContractAirDatesDatatable', component: ContractAirDatesDatatable},
-    {path: 'seriesSeason/seriesEpisodes', name: 'SeriesEpisodesDatatable', component: SeriesEpisodesDatatable},
-    {
-        path: '/nonLinearSchedulingRules',
-        name: 'NonLinearSchedulingRulesDatatable',
-        component: NonLinearSchedulingRulesDatatable
-    },
-    {path: '/staff', name: 'StaffDatatable', component: StaffDatatable},
-    {path: '/1', name: 'BreadcrumbComponent', component: BreadcrumbComponent},
-
-
+    {path: 'Series Season', as: 'Series Season', component: SeasonsDatatable},
+    {path: 'broadcastSeriesSeason', as: 'BroadcastSeasonsDatatable', component: BroadcastSeasonsDatatable},
+    {path: 'contracts', as: 'ContractsDatatable', component: ContractsDatatable},
+    {path: 'contractAirDates', as: 'ContractAirDatesDatatable', component: ContractAirDatesDatatable},
+    {path: 'Series Season/Series Episodes/', as: 'Series Episodes',component: SeriesEpisodesDatatable},
+    {path: 'nonLinearSchedulingRules',as: 'NonLinearSchedulingRulesDatatable',component: NonLinearSchedulingRulesDatatable},
+    {path: 'staff', as: 'StaffDatatable', component: StaffDatatable}
 ])
 export class AppComponent {
 
@@ -45,7 +46,7 @@ export class AppComponent {
 
     constructor(private router: Router, service:SharedServices) {
         // Read the RouteConfig annotation so we can pass it to the breadcrumb component
-        let annotations = Reflect.getOwnMetadata('annotations', AppComponent);
+        let annotations = <any>Reflect.getOwnMetadata('annotations', AppComponent);
         for (let i = 0; i < annotations.length; i += 1) {
             if (annotations[i].constructor.name === 'RouteConfig') {
                 this.routeConfig = annotations[i].configs;

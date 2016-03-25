@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {HTTP_PROVIDERS}    from 'angular2/http';
 import {NgClass} from 'angular2/common';
 import {DataTable} from '../../components/datatable/datatable';
@@ -20,7 +20,7 @@ import {ShowParent} from "../../views/buttons/showParent";
 @Component({
     templateUrl: 'app/views/grids/seriesEpisodeDatatable.html',
     directives: [DataTable, Header, Footer, Growl, TabPanel, TabView, CodeHighlighter, NgClass, SeasonsDatatable, ShowParent, ROUTER_DIRECTIVES],
-    providers: [HTTP_PROVIDERS, EpisodeService, SharedServices]
+    providers: [ROUTER_DIRECTIVES,HTTP_PROVIDERS, EpisodeService, SharedServices]
 })
 export class SeriesEpisodesDatatable implements OnInit {
 
@@ -38,7 +38,7 @@ export class SeriesEpisodesDatatable implements OnInit {
 
 
 
-    constructor(private episodeService:EpisodeService, service: SharedServices) {
+    constructor(private episodeService:EpisodeService, service: SharedServices, router: Router) {
 
     }
 

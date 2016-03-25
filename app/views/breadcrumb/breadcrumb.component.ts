@@ -77,16 +77,18 @@ export class BreadcrumbComponent {
                 }
             }
         }
-
+        console.log("friendly" + url)
         return url;
     }
 
     get urls() {
+        console.log("get" + this._urls)
         return this._urls;
     }
 
     set urls(value) {
         this._urls = value;
+        console.log("set" +  value)
     }
 
 }
