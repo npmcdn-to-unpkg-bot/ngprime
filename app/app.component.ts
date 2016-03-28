@@ -10,6 +10,7 @@ import {BroadcastSeasonsDatatable} from "./views/grids/broadcastSeasons";
 import {ContractsDatatable} from "./views/grids/contracts";
 import {ContractAirDatesDatatable} from "./views/grids/contractAirDates";
 import {SeriesEpisodesDatatable} from "./views/grids/seriesEpisodes";
+import {SearchResultsDatatable} from "./views/search-results/search.component";
 import {NonLinearSchedulingRulesDatatable} from "./views/grids/nonLinearSchedulingRules";
 import {StaffDatatable} from "./views/grids/staff";
 import {ShowParent} from "./views/buttons/showParent";
@@ -28,6 +29,7 @@ import {SharedServices} from './sharedServices';
 ])*/
 
 @RouteConfig([
+    {path: '/', as: 'Search Results', component: SearchResultsDatatable},
     {path: 'Series Season', as: 'Series Season', component: SeasonsDatatable},
     {path: 'broadcastSeriesSeason', as: 'BroadcastSeasonsDatatable', component: BroadcastSeasonsDatatable},
     {path: 'contracts', as: 'ContractsDatatable', component: ContractsDatatable},
