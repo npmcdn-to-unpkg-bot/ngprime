@@ -1,6 +1,6 @@
 <p-growl [value]="msgs"></p-growl>
-<show-parent>xhere</show-parent>
-<seasonsGrid [ngClass]="{'panel-open': isOpen}"></seasonsGrid>
+<show-parent></show-parent>
+<seasonsGrid [ngClass]="{'panel-open': isOpen}" class="panel-open test"></seasonsGrid>
 <div class="ContentSideSections Implementation" [ngClass]="{'panel-open': isOpen}">
     <p-dataTable [value]="episodes" [columns]="cols" selectionMode="single" (onRowSelect)="onRowSelect($event)"
                  (onRowUnselect)="onRowUnselect($event)" resizableColumns="true" columnResizeMode="expand"

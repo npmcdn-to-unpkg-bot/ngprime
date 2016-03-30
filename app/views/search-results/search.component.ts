@@ -5,8 +5,8 @@ import {DataTable} from '../../components/datatable/datatable';
 import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter';
 import {TabView} from '../../components/tabview/tabview';
 import {TabPanel} from '../../components/tabview/tabpanel';
-import {Season} from '../../views/domain/seasons';
-import {SeasonService} from '../service/seasonservice';
+import {Shows} from '../../views/domain/shows';
+import {ShowsService} from '../service/shows';
 import {Column} from '../../components/api/column';
 import {Header} from '../../components/common/header';
 import {Footer} from '../../components/common/footer';
@@ -15,49 +15,55 @@ import {Message} from '../../components/api/message';
 
 @Component({
     selector: 'search-results',
-    templateUrl: 'app/views/grids/staffDatatable.html',
+    templateUrl: 'app/views/search-results/search-results.html',
     directives: [DataTable, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
-    providers: [HTTP_PROVIDERS,SeasonService]
+    providers: [HTTP_PROVIDERS,ShowsService]
 })
 export class SearchResultsDatatable implements OnInit {
 
     msgs: Message[];
 
-    seasons: Season[];
+    shows: Shows[];
 
     cols: Column[];
 
-    selectedSeason1: Season;
+    selectedShows1: Shows;
 
-    selectedSeason2: Season;
+    selectedShows2: Shows;
 
-    selectedSeasons: Season[];
+    selectedShows: Shows[];
 
-    constructor(private seasonService: SeasonService) { }
+    constructor(private showsService: ShowsService) { }
 
     ngOnInit() {
-        this.seasonService.getSeasonsSmall().then(seasons => this.seasons = seasons);
+        this.showsService.getShows().then(shows => this.shows = shows);
 
         this.cols = [
-            {field: 'networkName', header: 'Network Name', sortable: true, filter: true},
+            {field: 'showName', header: 'Show Name', sortable: true, filter: true},
+            {field: 'showNetwork', header: 'Show Network', sortable: true, filter: true},
             {field: 'showCode', header: 'Show Code', sortable: true, filter: true},
-            {field: 'productionNumber', header: 'Production #', sortable: true, filter: true},
-            {field: 'status', header: 'Status', sortable: true, filter: true},
-            {field: 'note', header: 'Note', sortable: true, filter: true},
-            {field: 'fiscalYear', header: 'Fiscal Year', sortable: true, filter: true},
-            {field: 'broadcastSeason', header: 'Broadcast Season', sortable: true, filter: true},
-            {field: 'roughFormat', header: 'Rough Format', sortable: true, filter: true},
-            {field: 'episodeCount', header: 'Episode Count', sortable: true, filter: true},
-            {field: 'programCategory', header: 'Program Category', sortable: true, filter: true}
+            {field: 'showStatus', header: 'Show Status', sortable: true, filter: true},
+            {field: 'runTimeDuration', header: 'Run Time Duration', sortable: true, filter: true},
+            {field: 'showDescription', header: 'Show Description', sortable: true, filter: true},
+            {field: 'showCategory', header: 'Show Category', sortable: true, filter: true},
+            {field: 'showProductionCompany', header: 'Show Production Company', sortable: true, filter: true},
+            {field: 'showSupplier', header: 'Show Supplier', sortable: true, filter: true}
         ];
     }
     onRowSelect(event) {
         this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Season Selected', detail: event.data.seasonName + ' - ' + event.data.fiscalYear});
+        this.msgs.push({severity: 'info', summary: 'Show Selected', detail: event.data.showName + ' - ' + event.data.showCode});
+        console.log("Row Clicked");
     }
 
     onRowUnselect(event) {
         this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Season Unselected', detail: event.data.seasonName + ' - ' + event.data.fiscalYear});
+        this.msgs.push({severity: 'info', summary: 'Season Unselected', detail: event.data.showName + ' - ' + event.data.showCode});
     }
+
+    onRowDblclick(event) {
+        console.log("navigate to route");
+    }
+
+
 }

@@ -13,17 +13,20 @@ export class SharedServices {
     //  get and set method/function.
 
     isOpen = false;
-    isSplit:boolean = false;
+    isSplit = false;
+
     toggleOpen(event) {
-        event.preventDefault();
+        console.log('open parent');
         this.isOpen = !this.isOpen;
     }
 
     toggleSplitScreen(event) {
-        event.preventDefault();
+        console.log('split screen');
         this.isSplit = !this.isSplit;
     }
+
     constructor() {
+        let isOpen = false;
         console.log('hello hg');
     }
 }

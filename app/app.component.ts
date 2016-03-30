@@ -30,7 +30,7 @@ import {SharedServices} from './sharedServices';
 
 @RouteConfig([
     {path: '/', as: 'Search Results', component: SearchResultsDatatable},
-    {path: 'Series Season', as: 'Series Season', component: SeasonsDatatable},
+    {path: 'Series Season:showId', name: 'Series Season:showId', component: SeasonsDatatable},
     {path: 'broadcastSeriesSeason', as: 'BroadcastSeasonsDatatable', component: BroadcastSeasonsDatatable},
     {path: 'contracts', as: 'ContractsDatatable', component: ContractsDatatable},
     {path: 'contractAirDates', as: 'ContractAirDatesDatatable', component: ContractAirDatesDatatable},
@@ -45,6 +45,7 @@ export class AppComponent {
     }
 
     public routeConfig: String[];
+    public showId: String[];
 
     constructor(private router: Router, service:SharedServices) {
         // Read the RouteConfig annotation so we can pass it to the breadcrumb component

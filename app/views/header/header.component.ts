@@ -16,13 +16,17 @@ export class Header {
 goBack() {
   window.history.back();
 }
+    isOpen = false;
+    isSplit = false;
 
 splitScreen() {
-  console.log('split screen');
+    console.log('split screen');
+    this.isSplit = !this.isSplit;
 }
 
 showParent() {
   console.log('show parent');
+  this.isOpen = !this.isOpen;
 }
 
 }

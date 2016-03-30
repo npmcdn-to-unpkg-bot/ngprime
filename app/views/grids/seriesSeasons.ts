@@ -20,7 +20,7 @@ import {ShowParent} from "../../views/buttons/showParent";
     selector: 'seasonsGrid',
     templateUrl: 'app/views/grids/seasonsDatatable.html',
     directives: [DataTable, Header, Footer, NgClass, Growl, TabPanel, TabView, CodeHighlighter, ShowParent, ROUTER_DIRECTIVES],
-    providers: [ROUTER_DIRECTIVES,HTTP_PROVIDERS, SeasonService, SharedServices]
+    providers: [ROUTER_DIRECTIVES, HTTP_PROVIDERS, SeasonService, SharedServices]
 })
 export class SeasonsDatatable implements OnInit {
 
@@ -36,7 +36,7 @@ export class SeasonsDatatable implements OnInit {
 
     selectedSeasons:Season[];
 
-    constructor(private seasonService:SeasonService, service: SharedServices, router: Router) {
+    constructor(private seasonService:SeasonService, service:SharedServices, router:Router) {
     }
 
     ngOnInit() {
