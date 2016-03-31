@@ -1,8 +1,15 @@
 
 <p-growl [value]="msgs"></p-growl>
-<div class="ContentSideSections Implementation">
-    <p-dataTable [value]="contracts" [columns]="cols" selectionMode="single" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" resizableColumns="true" columnResizeMode="expand" reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3">
+
+<p-dataTable [value]="contracts" selectionMode="single" resizableColumns="true" columnResizeMode="expand" reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3" (onRowDblclick)="onRowDblclick($event)" (onRowSelect)="onRowSelect($event)">
     <header>Contract Air Dates</header>
-    <footer>There are 1 Contracts</footer>
-    </p-dataTable>
-</div>
+    <p-column field="numberOfRuns" header="Number of Runs"></p-column>
+    <p-column field="runCount" header="Run Count"></p-column>
+    <p-column field="adjRunCount" header="Adjusted Run Count"></p-column>
+    <p-column field="usageRestrictions" header="Usage Restrictions"></p-column>
+    <p-column field="airDateRestriction" header="Air Date Restriction"></p-column>
+    <p-column field="restrictionByEpisodeSeason" header="Restriction By Episode Season"></p-column>
+    <p-column field="marathonRules" header="Marathon Rules"></p-column>
+    <p-column field="windowStartDate" header="Window Start Date"></p-column>
+    <footer>There are 1 Contract Air Dates</footer>
+</p-dataTable>

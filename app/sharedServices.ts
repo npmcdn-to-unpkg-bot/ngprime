@@ -1,5 +1,6 @@
 import {Injectable} from 'angular2/core';
 import {Http, Response, HTTP_PROVIDERS} from 'angular2/http';
+import {Input} from 'angular2/core';
 import 'rxjs/Rx';
 import {Observable} from 'rxjs/Observable';
 
@@ -12,8 +13,8 @@ export class SharedServices {
     //  get and set keyword, you'll access it like a property. or
     //  get and set method/function.
 
-    isOpen = false;
-    isSplit = false;
+    @Input() isOpen:boolean = false;
+    @Input() isSplit:boolean = false;
 
     toggleOpen(event) {
         console.log('open parent');
@@ -26,7 +27,6 @@ export class SharedServices {
     }
 
     constructor() {
-        let isOpen = false;
         console.log('hello hg');
     }
 }

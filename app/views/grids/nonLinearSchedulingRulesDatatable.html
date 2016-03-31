@@ -1,8 +1,18 @@
-
 <p-growl [value]="msgs"></p-growl>
-<div class="ContentSideSections Implementation">
-    <p-dataTable [value]="nonLinearSchedulingRules" [columns]="cols" selectionMode="single" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" resizableColumns="true" columnResizeMode="expand" reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3">
+
+<p-dataTable [value]="nonLinearSchedulingRules" selectionMode="single" resizableColumns="true" columnResizeMode="expand"
+             reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3"
+             (onRowDblclick)="onRowDblclick($event)" (onRowSelect)="onRowSelect($event)">
     <header>Non-Linear Scheduling Rules</header>
+    <p-column field="status" header="Status"></p-column>
+    <p-column field="networkTargets" header="Network Targets"></p-column>
+    <p-column field="ruleType" header="Rule Type"></p-column>
+    <p-column field="windowGroup" header="Window Group"></p-column>
+    <p-column field="maxStreamingDays" header="Max Streaming Days"></p-column>
+    <p-column field="rollingCount" header="Rolling Count"></p-column>
+    <p-column field="broadcastSeason" header="Broadcast Season"></p-column>
+    <p-column field="roughFormat" header="Rough Format"></p-column>
+    <p-column field="sunsetRule" header="Sunset Rule"></p-column>
+    <p-column field="numberOfDays" header="Number of Days"></p-column>
     <footer>There are 4 Rules</footer>
-    </p-dataTable>
-</div>
+</p-dataTable>

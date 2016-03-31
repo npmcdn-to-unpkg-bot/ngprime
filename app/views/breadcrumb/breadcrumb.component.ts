@@ -14,7 +14,7 @@ import {ROUTER_DIRECTIVES, RouteConfig, Router, RouteDefinition} from 'angular2/
       <div>
           <ul class="breadcrumb">
               <li *ngFor="#url of urls; #last = last" [ngClass]="{'active': last}"> <!-- disable link of last item -->
-                  <a *ngIf="!last" (click)="navigateTo(url)">{{friendlyName(url)}}{{RouteConfig.showId }} </a>
+                  <a *ngIf="!last" (click)="navigateTo(url)">{{friendlyName(url)}} </a>
                   <span *ngIf="last">{{friendlyName(url)}}</span>
               </li>
           </ul>
@@ -48,18 +48,11 @@ export class BreadcrumbComponent {
     routeConfig:RouteDefinition[];
     private _urls:String[];
     private _ids:String[];
-    public showId: String[];
     constructor(private router:Router) {
         this._urls = new Array();
         this.router.subscribe((value) => {
             this._urls.length = 0; //Fastest way to clear out array
             this.generateBreadcrumbTrail(value);
-        })
-
-        this._ids = new Array();
-        this.router.subscribe((id) => {
-            this._ids.length = 0; //Fastest way to clear out array
-            this.generateBreadcrumbTrail(id);
         })
     }
 
@@ -87,27 +80,10 @@ export class BreadcrumbComponent {
         return url;
     }
 
-    userSelection(id:String):String {
-        if (this.routeConfig && id) {
-            let route:RouteDefinition;
-            for (let i = 0; i < this.routeConfig.length; i += 1) {
-                route = this.routeConfig[i];
-                if (id == route.path) {
-                    return route.as;
-                }
-            }
-        }
-        return id;
-    }
-
     get urls() {
         return this._urls;
     }
-
-    get ids() {
-        return "h";
-    }
-
+    
     set urls(value) {
         this._urls = value;
     }

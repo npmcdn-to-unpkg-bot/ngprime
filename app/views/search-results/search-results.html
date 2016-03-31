@@ -1,8 +1,36 @@
 
 <p-growl [value]="msgs"></p-growl>
+<p-dataTable [value]="shows" selectionMode="single" resizableColumns="true" columnResizeMode="expand" reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3" (onRowDblclick)="onRowDblclick($event)" (onRowSelect)="onRowSelect($event)">
+    <header>Shows</header>
+    <p-column field="showName" header="Show Name"></p-column>
+    <p-column field="showNetwork" header="Show Network"></p-column>
+    <p-column field="showCode" header="Show Code"></p-column>
+    <p-column field="showStatus" header="Show Status"></p-column>
+    <p-column field="runTimeDuration" header="Run Time Duration"></p-column>
+    <p-column field="showDescription" header="Show Description"></p-column>
+    <p-column field="showCategory" header="Show Category"></p-column>
+    <p-column field="showProductionCompany" header="Show Production Company"></p-column>
+    <p-column field="showSupplier" header="Show Supplier"></p-column>
+    <footer>There are 6 Shows</footer>
+</p-dataTable>
+
+<!--
+showName;
+showNetwork;
+showCode;
+showStatus;
+runTimeDuration;
+showDescription;
+showCategory;
+showProductionCompany;
+showSupplier;
+-->
+
+
+<!--
 <div class="ContentSideSections Implementation">
     <p-dataTable [value]="shows" [columns]="cols" selectionMode="single" resizableColumns="true" columnResizeMode="expand" reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3" (onRowDblclick)="onRowDblclick($event)" (onRowSelect)="onRowSelect($event)">
         <header>Shows</header>
         <footer>There are 6 Shows</footer>
     </p-dataTable>
-</div>
+</div>-->

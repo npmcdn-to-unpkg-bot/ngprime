@@ -3,7 +3,9 @@ import {Component, ElementRef, AfterViewInit, OnDestroy, DoCheck, SimpleChange, 
 @Component({
     selector: 'p-lineChart',
     template: `
-        <canvas [attr.width]="width" [attr.height]="height" (click)="onCanvasClick($event)"></canvas>
+        <div>
+            <canvas [attr.width]="width" [attr.height]="height" (click)="onCanvasClick($event)"></canvas>
+        </div>
     `
 })
 export class LineChart implements AfterViewInit, OnDestroy, DoCheck {
@@ -82,7 +84,7 @@ export class LineChart implements AfterViewInit, OnDestroy, DoCheck {
 
     @Input() multiTooltipTemplate: string = "<%= value %>";
 
-    @Input() value: LinearChartData;
+    @Input() value: any;
 
     @Input() width: string;
 
@@ -168,14 +170,51 @@ export class LineChart implements AfterViewInit, OnDestroy, DoCheck {
         if(this.chart) {
             let activePoints = this.chart.getPointsAtEvent(event);
             if(activePoints) {
-                this.onPointsSelect.next({originalEvent: event, points: activePoints});
+                this.onPointsSelect.emit({originalEvent: event, points: activePoints});
             }
         }
     }
 
     initChart() {
         if(this.value) {
-            this.chart = new Chart(this.el.nativeElement.children[0].getContext("2d")).Line(this.value, {
+            this.chart = new Chart(this.el.nativeElement.children[0].children[0].getContext("2d")).Line(this.value, {
+                animation: this.animation,
+                animationSteps: this.animationSteps,
+                animationEasing: this.animationEasing,
+                showScale: this.showScale,
+                scaleOverride: this.scaleOverride,
+                scaleSteps: this.scaleSteps,
+                scaleStepWidth: this.scaleStepWidth,
+                scaleStartValue: this.scaleStartValue,
+                scaleLineColor: this.scaleLineColor,
+                scaleLineWidth: this.scaleLineWidth,
+                scaleLabel: this.scaleLabel,
+                scaleShowLabels: this.scaleShowLabels,
+                scaleIntegersOnly: this.scaleIntegersOnly,
+                scaleBeginAtZero: this.scaleBeginAtZero,
+                scaleFontFamily: this.scaleFontFamily,
+                scaleFontSize: this.scaleFontSize,
+                scaleFontStyle: this.scaleFontStyle,
+                scaleFontColor: this.scaleFontColor,
+                responsive: this.responsive,
+                maintainAspectRatio: this.maintainAspectRatio,
+                showTooltips: this.showTooltips,
+                tooltipFillColor: this.tooltipFillColor,
+                tooltipFontFamily: this.tooltipFontFamily,
+                tooltipFontSize: this.tooltipFontSize,
+                tooltipFontStyle: this.tooltipFontStyle,
+                tooltipFontColor: this.tooltipFontColor,
+                tooltipTitleFontFamily: this.tooltipTitleFontFamily,
+                tooltipTitleFontSize: this.tooltipTitleFontSize,
+                tooltipTitleFontStyle: this.tooltipTitleFontStyle,
+                tooltipTitleFontColor: this.tooltipTitleFontColor,
+                tooltipYPadding: this.tooltipYPadding,
+                tooltipXPadding: this.tooltipXPadding,
+                tooltipCaretSize: this.tooltipCaretSize,
+                tooltipCornerRadius: this.tooltipCornerRadius,
+                tooltipXOffset: this.tooltipXOffset,
+                tooltipTemplate: this.tooltipTemplate,
+                multiTooltipTemplate: this.multiTooltipTemplate,
                 scaleShowGridLines: this.scaleShowGridLines,
                 scaleGridLineColor: this.scaleGridLineColor,
                 scaleGridLineWidth: this.scaleGridLineWidth,

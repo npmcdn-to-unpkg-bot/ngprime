@@ -8,7 +8,8 @@ import {Component, ElementRef, OnInit, OnDestroy, OnChanges, SimpleChange, Input
                 <input #cb type="checkbox" name="{{name}}" value="{{value}}" [checked]="isChecked(cb.value)"/>
             </div>
             <div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default" (click)="onClick(cb)"
-                        (mouseover)="hover = true" (mouseout)="hover = false" [ngClass]="{'ui-state-hover':hover,'ui-state-active':cb.checked,'ui-state-disabled':disabled}">
+                        (mouseover)="hover=true" (mouseout)="hover=false" 
+                        [ngClass]="{'ui-state-hover':hover&&!disabled,'ui-state-active':cb.checked,'ui-state-disabled':disabled}">
                 <span class="ui-chkbox-icon ui-c" [ngClass]="{'fa fa-fw fa-check':cb.checked}"></span>
             </div>
         </div>
@@ -23,27 +24,42 @@ export class Checkbox {
     @Input() disabled: boolean;
 
     @Input() model: any;
+    
+    @Input() checked: any;
 
     @Output() onChange: EventEmitter<any> = new EventEmitter();
 
     @Output() modelChange: EventEmitter<any> = new EventEmitter();
+    
+    @Output() checkedChange: EventEmitter<any> = new EventEmitter();
 
     hover: boolean;
 
     onClick(input) {
-        input.checked = !input.checked;
-        this.onChange.next(input.checked);
+        if(this.disabled) {
+            return;
+        }
+        
+        this.onChange.emit(!input.checked);
 
-        if (input.checked)
-            this.addValue(input.value);
-        else
-            this.removeValue(input.value);
+        if(this.model) {
+            if (!input.checked)
+                this.addValue(input.value);
+            else
+                this.removeValue(input.value);
 
-        this.modelChange.next(this.model);
+            this.modelChange.emit(this.model);
+        }
+        else {
+            this.checkedChange.emit(!input.checked);
+        }
     }
 
     isChecked(value) {
-        return this.findValueIndex(value) !== -1;
+        if(this.model)
+            return this.findValueIndex(value) !== -1;
+        else
+            return this.checked;
     }
 
     removeValue(value) {

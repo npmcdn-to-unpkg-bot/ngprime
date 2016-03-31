@@ -1,11 +1,17 @@
 <p-growl [value]="msgs"></p-growl>
 <show-parent></show-parent>
-<seasonsGrid [ngClass]="{'panel-open': isOpen}" class="panel-open test"></seasonsGrid>
-<div class="ContentSideSections Implementation" [ngClass]="{'panel-open': isOpen}">
-    <p-dataTable [value]="episodes" [columns]="cols" selectionMode="single" (onRowSelect)="onRowSelect($event)"
-                 (onRowUnselect)="onRowUnselect($event)" resizableColumns="true" columnResizeMode="expand"
-                 reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3">
-        <header>Series Episodes</header>
-        <footer>There are 8 Episodes</footer>
-    </p-dataTable>
-</div>
+
+<seasonsGrid [ngClass]="{'panel-open': isOpen}" class="panel-open test" (isOpenChanged)="isOpen = $event"></seasonsGrid>
+
+<p-dataTable [value]="episodes" selectionMode="single" resizableColumns="true" columnResizeMode="expand" reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3" (onRowDblclick)="onRowDblclick($event)" (onRowSelect)="onRowSelect($event)">
+    <header>Episodes</header>
+    <p-column field="episodeTitle" header="Episode Title"></p-column>
+    <p-column field="code" header="Code"></p-column>
+    <p-column field="linkCode" header="Link Code"></p-column>
+    <p-column field="episodeNumber" header="Episode Number"></p-column>
+    <p-column field="seriesEpisodeNumber" header="Series Episode Number"></p-column>
+    <p-column field="days" header="Days"></p-column>
+    <p-column field="runTimeDuration" header="Run Time Duration"></p-column>
+    <p-column field="origAirDate" header="Original Air Date"></p-column>
+    <footer>There are 8 Episodes</footer>
+</p-dataTable>

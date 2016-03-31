@@ -1,8 +1,11 @@
-
 <p-growl [value]="msgs"></p-growl>
-<div class="ContentSideSections Implementation">
-    <p-dataTable [value]="seasons" [columns]="cols" selectionMode="single" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" resizableColumns="true" columnResizeMode="expand" reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3">
+
+<p-dataTable [value]="staff" selectionMode="single" resizableColumns="true" columnResizeMode="expand"
+             reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3"
+             (onRowDblclick)="onRowDblclick($event)" (onRowSelect)="onRowSelect($event)">
     <header>Staff</header>
-    <footer>There are 10 Seasons</footer>
-    </p-dataTable>
-</div>
+    <p-column field="contactName" header="Contact Name"></p-column>
+    <p-column field="contactTitle" header="Contact Title"></p-column>
+    <p-column field="contactNumber" header="Contact Number"></p-column>
+    <footer>There are 1 Staff</footer>
+</p-dataTable>

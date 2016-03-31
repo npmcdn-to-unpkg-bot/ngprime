@@ -1,5 +1,6 @@
 import {Component} from 'angular2/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Injectable} from 'angular2/core';
 import {NgClass} from 'angular2/common';
 import {BreadcrumbComponent} from './views/breadcrumb/breadcrumb.component';
 import {GridsView} from './views/grids/grid';
@@ -7,7 +8,7 @@ import {SidenavComponent} from './views/sidenav/sidenav.component';
 import {Header} from './views/header/header.component';
 import {SeasonsDatatable} from "./views/grids/seriesSeasons";
 import {BroadcastSeasonsDatatable} from "./views/grids/broadcastSeasons";
-import {ContractsDatatable} from "./views/grids/contracts";
+import {RightsDatatable} from "./views/grids/contracts";
 import {ContractAirDatesDatatable} from "./views/grids/contractAirDates";
 import {SeriesEpisodesDatatable} from "./views/grids/seriesEpisodes";
 import {SearchResultsDatatable} from "./views/search-results/search.component";
@@ -29,15 +30,18 @@ import {SharedServices} from './sharedServices';
 ])*/
 
 @RouteConfig([
-    {path: '/', as: 'Search Results', component: SearchResultsDatatable},
-    {path: 'Series Season:showId', name: 'Series Season:showId', component: SeasonsDatatable},
-    {path: 'broadcastSeriesSeason', as: 'BroadcastSeasonsDatatable', component: BroadcastSeasonsDatatable},
-    {path: 'contracts', as: 'ContractsDatatable', component: ContractsDatatable},
-    {path: 'contractAirDates', as: 'ContractAirDatesDatatable', component: ContractAirDatesDatatable},
-    {path: 'Series Season/Series Episodes/', as: 'Series Episodes',component: SeriesEpisodesDatatable},
-    {path: 'nonLinearSchedulingRules',as: 'NonLinearSchedulingRulesDatatable',component: NonLinearSchedulingRulesDatatable},
-    {path: 'staff', as: 'StaffDatatable', component: StaffDatatable}
+    {path: '/', name: 'Search Results', component: SearchResultsDatatable},
+    {path: 'Series Season', name: 'Series Season', component: SeasonsDatatable},
+    {path: 'broadcastSeriesSeason', name: 'BroadcastSeasonsDatatable', component: BroadcastSeasonsDatatable},
+    {path: 'rights', name: 'RightsDatatable', component: RightsDatatable},
+    {path: 'contractAirDates', name: 'ContractAirDatesDatatable', component: ContractAirDatesDatatable},
+    {path: 'Series Season/Series Episodes/', name: 'Series Episodes',component: SeriesEpisodesDatatable},
+    {path: 'nonLinearSchedulingRules',name: 'NonLinearSchedulingRulesDatatable',component: NonLinearSchedulingRulesDatatable},
+    {path: 'staff', name: 'StaffDatatable', component: StaffDatatable}
 ])
+
+@Injectable()
+
 export class AppComponent {
 
     goBack() {
@@ -45,7 +49,6 @@ export class AppComponent {
     }
 
     public routeConfig: String[];
-    public showId: String[];
 
     constructor(private router: Router, service:SharedServices) {
         // Read the RouteConfig annotation so we can pass it to the breadcrumb component

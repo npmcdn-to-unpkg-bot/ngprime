@@ -1,8 +1,16 @@
-
 <p-growl [value]="msgs"></p-growl>
-<div class="ContentSideSections Implementation">
-    <p-dataTable [value]="seasons" [columns]="cols" selectionMode="single" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" resizableColumns="true" columnResizeMode="expand" reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3">
-    <header>Broadcast Series Seasons</header>
+<p-dataTable [value]="seasons" selectionMode="single" resizableColumns="true" columnResizeMode="expand" reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3" (onRowDblclick)="onRowDblclick($event)" (onRowSelect)="onRowSelect($event)">
+    <header>Broadcast Seasons</header>
+    <p-column field="seasonName" header="Season Name"></p-column>
+    <p-column field="showCode" header="Show Code"></p-column>
+    <p-column field="productionNumber" header="Production Number"></p-column>
+    <p-column field="status" header="Status"></p-column>
+    <p-column field="note" header="Note"></p-column>
+    <p-column field="fiscalYear" header="Fiscal Year"></p-column>
+    <p-column field="broadcastSeason" header="Broadcast Season"></p-column>
+    <p-column field="roughFormat" header="Rough Format"></p-column>
+    <p-column field="episodeCount" header="Episode Count"></p-column>
+    <p-column field="programCategory" header="Program Category"></p-column>
     <footer>There are 10 Broadcast Seasons</footer>
-    </p-dataTable>
-</div>
+</p-dataTable>
+

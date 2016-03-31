@@ -1,5 +1,7 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, EventEmitter} from 'angular2/core';
+import {Input, Output} from 'angular2/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Injectable} from 'angular2/core';
 import {HTTP_PROVIDERS}    from 'angular2/http';
 import {NgClass} from 'angular2/common';
 import {DataTable} from '../../components/datatable/datatable';
@@ -8,7 +10,7 @@ import {TabView} from '../../components/tabview/tabview';
 import {TabPanel} from '../../components/tabview/tabpanel';
 import {Episode} from '../../views/domain/episodes';
 import {EpisodeService} from '../service/episodeService';
-import {Column} from '../../components/api/column';
+import {Column} from '../../components/column/column';
 import {Header} from '../../components/common/header';
 import {Footer} from '../../components/common/footer';
 import {Growl} from '../../components/growl/growl';
@@ -19,9 +21,13 @@ import {ShowParent} from "../../views/buttons/showParent";
 
 @Component({
     templateUrl: 'app/views/grids/seriesEpisodeDatatable.html',
-    directives: [DataTable, Header, Footer, Growl, TabPanel, TabView, CodeHighlighter, NgClass, SeasonsDatatable, ShowParent, ROUTER_DIRECTIVES],
-    providers: [ROUTER_DIRECTIVES,HTTP_PROVIDERS, EpisodeService, SharedServices]
+    directives: [DataTable, Column, Header, Footer, Growl, TabPanel, TabView, CodeHighlighter, NgClass, SeasonsDatatable, ShowParent, ROUTER_DIRECTIVES],
+    providers: [ROUTER_DIRECTIVES,HTTP_PROVIDERS, EpisodeService],
+    inputs: ['isOpen']
 })
+
+@Injectable()
+
 export class SeriesEpisodesDatatable implements OnInit {
 
     msgs:Message[];
@@ -36,16 +42,26 @@ export class SeriesEpisodesDatatable implements OnInit {
 
     selectedEpisodes:Episode[];
 
+    @Input() isOpen:boolean = false;
+    @Input() isSplit:boolean = false;
+    @Output() isOpenChanged:boolean = false;
 
+    isOpenChanged = new EventEmitter<boolean>();
 
-    constructor(private episodeService:EpisodeService, service: SharedServices, router: Router) {
+    toggleOpen(event) {
+        console.log('open parent');
+        this.isOpenChanged.emit(this.isOpen);
+        this.isOpen = !this.isOpen;
+    }
+
+    constructor(private _router: Router, private episodeService:EpisodeService, private service: SharedServices) {
 
     }
 
     ngOnInit() {
         this.episodeService.getEpisodesSmall().then(episodes => this.episodes = episodes);
 
-        this.cols = [
+        /*this.cols = [
             {field: 'episodeTitle', header: 'Episode Title', sortable: true, filter: true},
             {field: 'code', header: 'Code', sortable: true, filter: true},
             {field: 'linkCode', header: 'Link Code', sortable: true, filter: true},
@@ -54,7 +70,7 @@ export class SeriesEpisodesDatatable implements OnInit {
             {field: 'days', header: 'Days', sortable: true, filter: true},
             {field: 'runTimeDuration', header: 'Run Time Duration', sortable: true, filter: true},
             {field: 'origAirDate', header: 'Original Air Date Format', sortable: true, filter: true}
-        ];
+        ];*/
     }
 
     onRowSelect(event) {
@@ -73,6 +89,11 @@ export class SeriesEpisodesDatatable implements OnInit {
             summary: 'Episode Unselected',
             detail: event.data.episodeTitle + ' - ' + event.data.episodeNumber
         });
+    }
+
+    onRowDblclick(event) {
+        //this._router.navigate(['Series Episodes']);
+        console.log("navigate to route");
     }
 
 }
