@@ -16,7 +16,6 @@ import {Footer} from '../../components/common/footer';
 import {Growl} from '../../components/growl/growl';
 import {Message} from '../../components/api/message';
 import {SeasonsDatatable} from "../../views/grids/seriesSeasons";
-import {SharedServices} from '../../sharedServices';
 import {ShowParent} from "../../views/buttons/showParent";
 
 @Component({
@@ -28,7 +27,7 @@ import {ShowParent} from "../../views/buttons/showParent";
 
 @Injectable()
 
-export class SeriesEpisodesDatatable implements OnInit {
+export class SeriesEpisodesDatatable  {
 
     msgs:Message[];
 
@@ -42,19 +41,7 @@ export class SeriesEpisodesDatatable implements OnInit {
 
     selectedEpisodes:Episode[];
 
-    @Input() isOpen:boolean = false;
-    @Input() isSplit:boolean = false;
-    @Output() isOpenChanged:boolean = false;
-
-    isOpenChanged = new EventEmitter<boolean>();
-
-    toggleOpen(event) {
-        console.log('open parent');
-        this.isOpenChanged.emit(this.isOpen);
-        this.isOpen = !this.isOpen;
-    }
-
-    constructor(private _router: Router, private episodeService:EpisodeService, private service: SharedServices) {
+    constructor(private _router: Router, private episodeService:EpisodeService) {
 
     }
 

@@ -5,13 +5,11 @@ import {Injectable} from 'angular2/core';
 import {Button} from '../../components/button/button';
 import {Growl} from '../../components/growl/growl';
 import {NgClass} from 'angular2/common';
-import {SharedServices} from '../../sharedServices';
-import {ShowParent} from "../../views/buttons/showParent";
 
 @Component({
     selector:'outlet',
     templateUrl: 'app/views/grids/grid.html',
-    directives: [Button,Growl,NgClass, ShowParent, ROUTER_DIRECTIVES],
+    directives: [Button,Growl,NgClass, ROUTER_DIRECTIVES],
     styles: [`
         .ui-grid-row {
             text-align: center;
@@ -31,19 +29,6 @@ import {ShowParent} from "../../views/buttons/showParent";
 
 export class GridsView {
 
-    constructor(private _router: Router, private service: SharedServices) {
+    constructor(private _router: Router) {    }
 
-    }
-    @Input() isOpen:boolean = false;
-    @Input() isSplit:boolean = false;
-
-    toggleOpen(event) {
-        console.log('open parent');
-        this.isOpen = !this.isOpen;
-    }
-
-    toggleSplitScreen(event) {
-        console.log('split screen');
-        this.isSplit = !this.isSplit;
-    }
 }

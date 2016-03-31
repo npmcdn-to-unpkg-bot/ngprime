@@ -30,6 +30,23 @@ html, body {
     background: #fff;
 }
 
+
+.parent {
+    border: 1px solid #ccc;
+    background-color: #eee;
+    padding: 10px;
+}
+
+.child {
+    border: 1px solid black;
+    background-color: #ccc;
+    padding: 10px;
+}
+
+.green{ color: #00AA00;}
+.red{ color: #aa0005;}
+.blue{ color: #0c75aa;}
+.highlight{ background-color: #0ac2d2;}
 /* Toolbar area */
 .secondary {
     opacity: .75;

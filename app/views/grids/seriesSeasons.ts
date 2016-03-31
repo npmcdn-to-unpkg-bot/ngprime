@@ -15,22 +15,18 @@ import {Header} from '../../components/common/header';
 import {Footer} from '../../components/common/footer';
 import {Growl} from '../../components/growl/growl';
 import {Message} from '../../components/api/message';
-import {SharedServices} from '../../sharedServices';
-import {ShowParent} from "../../views/buttons/showParent";
 
 @Component({
     selector: 'seasonsGrid',
     templateUrl: 'app/views/grids/seasonsDatatable.html',
-    directives: [DataTable, Column, Header, Footer, NgClass, Growl, TabPanel, TabView, CodeHighlighter, ShowParent, ROUTER_DIRECTIVES],
+    directives: [DataTable, Column, Header, Footer, NgClass, Growl, TabPanel, TabView, CodeHighlighter,ROUTER_DIRECTIVES],
     providers: [ROUTER_DIRECTIVES, HTTP_PROVIDERS, SeasonService]
 })
 
 @Injectable()
 
 export class SeasonsDatatable implements OnInit {
-
-    @Input() isOpen:boolean = false;
-    @Input() isSplit:boolean = false;
+    
 
     msgs:Message[];
 
@@ -44,7 +40,7 @@ export class SeasonsDatatable implements OnInit {
 
     selectedSeasons:Season[];
 
-    constructor(private _router:Router, private seasonService:SeasonService, private service:SharedServices) {
+    constructor(private _router:Router, private seasonService:SeasonService) {
     }
 
     ngOnInit() {
@@ -85,15 +81,5 @@ export class SeasonsDatatable implements OnInit {
     onRowDblclick(event) {
         this._router.navigate(['Series Episodes']);
         console.log("navigate to route");
-    }
-
-    toggleOpen(event) {
-        console.log('open parent');
-        this.isOpen = !this.isOpen;
-    }
-
-    toggleSplitScreen(event) {
-        console.log('split screen');
-        this.isSplit = !this.isSplit;
     }
 }

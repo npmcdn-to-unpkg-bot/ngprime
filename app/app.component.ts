@@ -1,5 +1,6 @@
-import {Component} from 'angular2/core';
+import {Component, EventEmitter} from 'angular2/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Input} from "angular2/core";
 import {Injectable} from 'angular2/core';
 import {NgClass} from 'angular2/common';
 import {BreadcrumbComponent} from './views/breadcrumb/breadcrumb.component';
@@ -43,6 +44,8 @@ import {SharedServices} from './sharedServices';
 @Injectable()
 
 export class AppComponent {
+
+
 
     goBack() {
         window.history.back();

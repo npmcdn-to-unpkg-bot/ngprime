@@ -5,7 +5,7 @@ import {DataTable} from '../../components/datatable/datatable';
 import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter';
 import {TabView} from '../../components/tabview/tabview';
 import {TabPanel} from '../../components/tabview/tabpanel';
-import {Season} from '../../views/domain/seasons';
+import {Staff} from '../../views/domain/staff';
 import {StaffService} from '../service/staff';
 import {Column} from '../../components/column/column';
 import {Header} from '../../components/common/header';
@@ -22,15 +22,15 @@ export class StaffDatatable implements OnInit {
 
     msgs: Message[];
 
-    staff: Season[];
+    staff: Staff[];
 
     cols: Column[];
 
-    selectedSeason1: Season;
+    selectedSeason1: Staff;
 
-    selectedSeason2: Season;
+    selectedSeason2: Staff;
 
-    selectedSeasons: Season[];
+    selectedSeasons: Staff[];
 
     constructor(private _router:Router, private staffService: StaffService) { }
 

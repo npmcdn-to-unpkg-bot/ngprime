@@ -2,25 +2,21 @@ import {Component, EventEmitter} from 'angular2/core';
 import {Input, Output} from 'angular2/core';
 import {Injectable} from 'angular2/core';
 import {NgClass} from 'angular2/common';
-import {SharedServices} from '../../sharedServices';
 
 @Component({
     selector: 'show-parent',
-    inputs: ['isOpen'],
     directives: [NgClass],
-    templateUrl: 'app/views/buttons/showParent.html',
+    templateUrl: 'app/views/buttons/showParent.html'
 })
 
 @Injectable()
 
 export class ShowParent {
-    constructor(public sharedServices: SharedServices) {
-
-    }
+    constructor() {    }
 
     @Input() isOpen:boolean = false;
     @Input() isSplit:boolean = false;
-    @Output() isOpenChanged:boolean = false;
+
 
     isOpenChanged = new EventEmitter<boolean>();
 
