@@ -1,7 +1,5 @@
 <p-growl [value]="msgs"></p-growl>
 
-<seasonsGrid [ngClass]="{'panel-open': isOpen}" class="panel-open test" (isOpenChanged)="isOpen = $event"></seasonsGrid>
-
 <p-dataTable [value]="episodes" selectionMode="single" resizableColumns="true" columnResizeMode="expand" reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3" (onRowDblclick)="onRowDblclick($event)" (onRowSelect)="onRowSelect($event)">
     <header>Episodes</header>
     <p-column field="episodeTitle" header="Episode Title"></p-column>

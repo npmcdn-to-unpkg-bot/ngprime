@@ -30,7 +30,8 @@ html, body {
     background: #fff;
 }
 
-
+.testParent{ display: none;}
+.testParent.panel-open{ display: block;}
 .parent {
     border: 1px solid #ccc;
     background-color: #eee;

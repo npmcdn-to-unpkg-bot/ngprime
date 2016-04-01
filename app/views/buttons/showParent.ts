@@ -1,38 +1,29 @@
-import {Component, EventEmitter} from 'angular2/core';
-import {Input, Output} from 'angular2/core';
-import {Injectable} from 'angular2/core';
+import {Component} from 'angular2/core';
 import {NgClass} from 'angular2/common';
+import {SharedServices} from '../../sharedServices';
+import {SeasonsDatatable} from "../../views/grids/seriesSeasons";
 
 @Component({
     selector: 'show-parent',
-    directives: [NgClass],
+    directives: [NgClass, SeasonsDatatable],
     templateUrl: 'app/views/buttons/showParent.html'
 })
-
-@Injectable()
-
 export class ShowParent {
-    constructor() {    }
+    constructor(private service: SharedServices) {
 
-    @Input() isOpen:boolean = false;
-    @Input() isSplit:boolean = false;
+    }
 
-
-    isOpenChanged = new EventEmitter<boolean>();
+    isOpen = false;
+    isSplit = false;
 
     toggleOpen(event) {
-        console.log('open parent');
-        this.isOpenChanged.emit(this.isOpen);
+        event.preventDefault();
         this.isOpen = !this.isOpen;
+        console.log('tf');
     }
 
     toggleSplitScreen(event) {
-        console.log('split screen');
+        event.preventDefault();
         this.isSplit = !this.isSplit;
     }
-
 }
-
-
-
-
