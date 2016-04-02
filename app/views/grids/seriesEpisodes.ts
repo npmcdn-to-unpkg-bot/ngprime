@@ -4,6 +4,8 @@ import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {Injectable} from 'angular2/core';
 import {HTTP_PROVIDERS}    from 'angular2/http';
 import {NgClass} from 'angular2/common';
+import {SplitButton} from 'primeng/primeng';
+import {SplitButtonItem} from 'primeng/primeng';
 import {DataTable} from '../../components/datatable/datatable';
 import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter';
 import {TabView} from '../../components/tabview/tabview';
@@ -20,11 +22,14 @@ import {ShowParent} from "../../views/buttons/showParent";
 
 @Component({
     templateUrl: 'app/views/grids/seriesEpisodeDatatable.html',
-    directives: [DataTable, Column, Header, Footer, Growl, TabPanel, TabView, CodeHighlighter, NgClass, SeasonsDatatable, ShowParent, ROUTER_DIRECTIVES],
+    directives: [DataTable, Column, Header, Footer, Growl, SplitButton, SplitButtonItem, TabPanel, TabView, CodeHighlighter, NgClass, SeasonsDatatable, ShowParent, ROUTER_DIRECTIVES],
     providers: [ROUTER_DIRECTIVES,HTTP_PROVIDERS, EpisodeService],
     inputs: ['isOpen']
 })
 
+/*@RouteConfig([
+    {path: 'Episode Info', name: 'EpisodeInfo', component: EpisodeInfo}
+])*/
 @Injectable()
 
 export class SeriesEpisodesDatatable  {
@@ -47,17 +52,6 @@ export class SeriesEpisodesDatatable  {
 
     ngOnInit() {
         this.episodeService.getEpisodesSmall().then(episodes => this.episodes = episodes);
-
-        /*this.cols = [
-            {field: 'episodeTitle', header: 'Episode Title', sortable: true, filter: true},
-            {field: 'code', header: 'Code', sortable: true, filter: true},
-            {field: 'linkCode', header: 'Link Code', sortable: true, filter: true},
-            {field: 'episodeNumber', header: 'Episode Number', sortable: true, filter: true},
-            {field: 'seriesEpisodeNumber', header: 'Series Episode Number', sortable: true, filter: true},
-            {field: 'days', header: 'Days', sortable: true, filter: true},
-            {field: 'runTimeDuration', header: 'Run Time Duration', sortable: true, filter: true},
-            {field: 'origAirDate', header: 'Original Air Date Format', sortable: true, filter: true}
-        ];*/
     }
 
     onRowSelect(event) {
@@ -79,8 +73,11 @@ export class SeriesEpisodesDatatable  {
     }
 
     onRowDblclick(event) {
-        //this._router.navigate(['Series Episodes']);
+        this._router.navigate(['EpisodeInfo']);
         console.log("navigate to route");
+    }
+    editInfo(event){
+        this._router.navigate(['EpisodeInfo']);
     }
 
 }

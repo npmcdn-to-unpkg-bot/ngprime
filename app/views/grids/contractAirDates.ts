@@ -2,64 +2,86 @@ import {Component,OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES, Router} from 'angular2/router';
 import {HTTP_PROVIDERS}    from 'angular2/http';
 import {DataTable} from '../../components/datatable/datatable';
+import {Button} from '../../components/button/button';
+import {InputText} from '../../components/inputtext/inputtext';
 import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter';
 import {TabView} from '../../components/tabview/tabview';
 import {TabPanel} from '../../components/tabview/tabpanel';
+import {Dialog} from '../../components/dialog/dialog';
 import {Contract} from '../../views/domain/contracts';
 import {ContractService} from '../service/contractService';
 import {Column} from '../../components/column/column';
 import {Header} from '../../components/common/header';
 import {Footer} from '../../components/common/footer';
-import {Growl} from '../../components/growl/growl';
-import {Message} from '../../components/api/message';
 
 @Component({
     templateUrl: 'app/views/grids/contractAirDatesDatatable.html',
-    directives: [DataTable, Column, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
+    directives: [DataTable, Dialog, Button, Column, InputText, Header,Footer,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
     providers: [HTTP_PROVIDERS,ContractService]
 })
 export class ContractAirDatesDatatable implements OnInit {
 
-    msgs: Message[];
+    displayDialog:boolean;
 
-    contracts: Contract[];
+    contract:Contract = <any>new EntityContract();
 
-    cols: Column[];
+    selectedContract:Contract;
 
-    selectedContract1: Contract;
+    newContract:boolean;
 
-    selectedContract2: Contract;
+    contracts:Contract[];
 
-    selectedContract: Contract[];
-
-    constructor(private _router: Router, private contractService: ContractService) { }
+    constructor(private _router:Router, private contractService:ContractService) {
+    }
 
     ngOnInit() {
         this.contractService.getContractSmall().then(contracts => this.contracts = contracts);
-
-        /*this.cols = [
-            {field: 'numberOfRuns', header: 'Number of Runs', sortable: true, filter: true},
-            {field: 'runCount', header: 'Run Count', sortable: true, filter: true},
-            {field: 'adjRunCount', header: 'Adj Run Count', sortable: true, filter: true},
-            {field: 'usageRestrictions', header: 'Usage Restrictions', sortable: true, filter: true},
-            {field: 'airDateRestriction', header: 'Air Date Restrictions', sortable: true, filter: true},
-            {field: 'restrictionByEpisodeSeason', header: 'Restriction By Episode', sortable: true, filter: true},
-            {field: 'marathonRules', header: 'Marathon Rules', sortable: true, filter: true},
-            {field: 'windowStartDate', header: 'Windows Start Date', sortable: true, filter: true}
-        ];*/
-    }
-     onRowSelect(event) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Contract Selected', detail: event.data.windowStartDate + ' - ' + event.data.windowStartDate});
     }
 
-    onRowUnselect(event) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Contract Unselected', detail: event.data.numberOfRuns + ' - ' + event.data.numberOfRuns});
+    showDialogToAdd() {
+        this.newContract = true;
+        this.contract = <any>new EntityContract();
+        this.displayDialog = true;
     }
 
-    onRowDblclick(event) {
-        //this._router.navigate(['Series Episodes']);
-        console.log("navigate to route");
+    save() {
+        if (this.newContract)
+            this.contracts.push(this.contract);
+        else
+            this.contracts[this.findSelectedContractIndex()] = this.contract;
+
+        this.contract = null;
+        this.displayDialog = false;
     }
+
+    delete() {
+        this.contracts.splice(this.findSelectedContractIndex(), 1);
+        this.contract = null;
+        this.displayDialog = false;
+    }
+
+    onRowSelect(event) {
+        this.newContract = false;
+        this.contract = this.cloneContract(event.data);
+        this.displayDialog = true;
+    }
+
+    cloneContract(c:Contract):Contract {
+        let contract = <any>new EntityContract();
+        for (let prop in c) {
+            contract[prop] = c[prop];
+        }
+        return contract;
+    }
+
+    findSelectedContractIndex():number {
+        return this.contracts.indexOf(this.selectedContract);
+    }
+}
+
+
+
+class EntityContract implements Contract {
+    [key: string]: any;
+    constructor(public numberOfRuns?, public runCount?, public adjRunCount?, public usageRestrictions?, public airDateRestriction?, public restrictionByEpisodeSeason?, public marathonRules?, public windowStartDate?) {}
 }

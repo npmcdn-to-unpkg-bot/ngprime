@@ -1,4 +1,11 @@
 <p-growl [value]="msgs"></p-growl>
+
+<div layout="row" layout-align="end center">
+    <p-splitButton label="Edit" icon="fa fa-pencil" (onClick)="editInfo()">
+        <p-splitButtonItem icon="fa fa-sitemap" label="Show Parent"></p-splitButtonItem>
+        <p-splitButtonItem icon="fa fa-th-large" label="Split Screen"></p-splitButtonItem>
+    </p-splitButton>
+</div>
 <p-dataTable [value]="seasons" selectionMode="single" resizableColumns="true" columnResizeMode="expand" reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3" (onRowDblclick)="onRowDblclick($event)" (onRowSelect)="onRowSelect($event)">
     <header>Seasons</header>
     <p-column field="seasonName" header="Season Name"></p-column>

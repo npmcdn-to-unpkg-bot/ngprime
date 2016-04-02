@@ -10,6 +10,9 @@ import {Header} from './views/header/header.component';
 import {SeasonsDatatable} from "./views/grids/seriesSeasons";
 import {BroadcastSeasonsDatatable} from "./views/grids/broadcastSeasons";
 import {RightsDatatable} from "./views/grids/contracts";
+import {ShowInfo} from "./views/edit-nodes/showInfo.component";
+import {EpisodeInfo} from "./views/edit-nodes/episodeInfo.component";
+import {SeasonInfo} from "./views/edit-nodes/seasonInfo.component";
 import {ContractAirDatesDatatable} from "./views/grids/contractAirDates";
 import {SeriesEpisodesDatatable} from "./views/grids/seriesEpisodes";
 import {SearchResultsDatatable} from "./views/search-results/search.component";
@@ -38,7 +41,10 @@ import {SharedServices} from './sharedServices';
     {path: 'contractAirDates', name: 'ContractAirDatesDatatable', component: ContractAirDatesDatatable},
     {path: 'Series Season/Series Episodes/', name: 'Series Episodes',component: SeriesEpisodesDatatable},
     {path: 'nonLinearSchedulingRules',name: 'NonLinearSchedulingRulesDatatable',component: NonLinearSchedulingRulesDatatable},
-    {path: 'staff', name: 'StaffDatatable', component: StaffDatatable}
+    {path: 'staff', name: 'StaffDatatable', component: StaffDatatable},
+    {path: 'Episode Info', name: 'EpisodeInfo', component: EpisodeInfo},
+    {path: 'Season Info', name: 'SeasonInfo', component: SeasonInfo},
+    {path: 'Show Info', name: 'ShowInfo', component: ShowInfo}
 ])
 
 @Injectable()

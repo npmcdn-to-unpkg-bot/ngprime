@@ -7,7 +7,7 @@ declare var PUI: any;
     selector: 'p-overlayPanel',
     template: `
         <div [ngClass]="'ui-overlaypanel ui-widget ui-widget-content ui-corner-all ui-shadow'" [attr.style]="style" [attr.styleClass]="styleClass"
-            [style.display]="visible ? 'block' : 'none'" (click)="$event.stopPropagation()">
+            [style.display]="visible ? 'block' : 'none'" (click)="onPanelClick()">
             <div class="ui-overlaypanel-content">
                 <ng-content></ng-content>
             </div>
@@ -40,18 +40,52 @@ export class OverlayPanel implements OnInit, OnDestroy {
     hoverCloseIcon: boolean;
 
     documentClickListener: any;
+    
+    selfClick: boolean;
+    
+    targetEvent: boolean;
+    
+    target: any;
 
     constructor(private el: ElementRef, private domHandler: DomHandler, private renderer: Renderer) {}
 
     ngOnInit() {
         if(this.dismissable) {
             this.documentClickListener = this.renderer.listenGlobal('body', 'click', () => {
-                this.hide();
+                if(!this.selfClick&&!this.targetEvent) {
+                    this.hide();
+                }
+                this.selfClick = false;
+                this.targetEvent = false;
             });
         }
     }
+    
+    toggle(event,target?) {
+        let currentTarget = (target||event.currentTarget||event.target);
+                                
+        if(!this.target||this.target == currentTarget) {
+            if(this.visible)
+                this.hide();
+            else
+                this.show(event, target);
+        }
+        else {
+            this.show(event, target);
+        }
+        
+        if(this.dismissable) {
+            this.targetEvent = true;
+        }
+
+        this.target = currentTarget;
+    }
 
     show(event,target?) {
+        if(this.dismissable) {
+            this.targetEvent = true;
+        }
+        
         this.onBeforeShow.emit(null);
         let elementTarget = target||event.currentTarget||event.target;
         let container = this.el.nativeElement.children[0];
@@ -59,9 +93,6 @@ export class OverlayPanel implements OnInit, OnDestroy {
 
         if(this.visible) {
             this.domHandler.absolutePosition(container, elementTarget);
-            if(this.dismissable) {
-                this.hide();
-            }
         }
         else {
             this.visible = true;
@@ -69,8 +100,6 @@ export class OverlayPanel implements OnInit, OnDestroy {
             this.domHandler.fadeIn(container, 250);
         }
         this.onAfterShow.emit(null);
-
-        event.stopPropagation();
     }
 
     hide() {
@@ -80,9 +109,20 @@ export class OverlayPanel implements OnInit, OnDestroy {
             this.onAfterHide.emit(null);
         }
     }
+    
+    onPanelClick() {
+        if(this.dismissable) {
+            this.selfClick = true;
+        }
+    }
 
     onCloseClick(event) {
         this.hide();
+        
+        if(this.dismissable) {
+            this.selfClick = true;
+        }
+        
         event.preventDefault();
     }
 
@@ -90,5 +130,7 @@ export class OverlayPanel implements OnInit, OnDestroy {
         if(this.documentClickListener) {
             this.documentClickListener();
         }
+        
+        this.target = null;
     }
 }

@@ -1,8 +1,5 @@
-
-<p-growl [value]="msgs"></p-growl>
-
-<p-dataTable [value]="contracts" selectionMode="single" resizableColumns="true" columnResizeMode="expand" reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3" (onRowDblclick)="onRowDblclick($event)" (onRowSelect)="onRowSelect($event)">
-    <header>Contract Air Dates</header>
+<p-dataTable [value]="contracts" selectionMode="single" [(selection)]="selectedContract" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true">
+    <header>CRUD for Contracts</header>
     <p-column field="numberOfRuns" header="Number of Runs"></p-column>
     <p-column field="runCount" header="Run Count"></p-column>
     <p-column field="adjRunCount" header="Adjusted Run Count"></p-column>
@@ -11,5 +8,32 @@
     <p-column field="restrictionByEpisodeSeason" header="Restriction By Episode Season"></p-column>
     <p-column field="marathonRules" header="Marathon Rules"></p-column>
     <p-column field="windowStartDate" header="Window Start Date"></p-column>
-    <footer>There are 1 Contract Air Dates</footer>
+    <footer><div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></footer>
 </p-dataTable>
+
+<p-dialog header="Contract Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
+    <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="contract">
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="numberOfRuns">Number of Runs</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="numberOfRuns" [(ngModel)]="contract.numberOfRuns" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="runCount">Run Count</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="runCount" [(ngModel)]="contract.runCount" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="adjustedRunCount">Adjusted Run Count</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="adjustedRunCount" [(ngModel)]="contract.adjRunCount" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="usageRestrictions">Usage Restrictions</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="usageRestrictions" [(ngModel)]="contract.usageRestrictions" /></div>
+        </div>
+    </div>
+    <footer>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+            <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
+            <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+        </div>
+    </footer>
+</p-dialog>

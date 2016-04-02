@@ -2,7 +2,7 @@
 
 <p-dataTable [value]="nonLinearSchedulingRules" selectionMode="single" resizableColumns="true" columnResizeMode="expand"
              reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3"
-             (onRowDblclick)="onRowDblclick($event)" (onRowSelect)="onRowSelect($event)">
+             (onRowDblclick)="onRowDblclick($event)" (onRowSelect)="onRowSelect($event)" [editable]="true">
     <header>Non-Linear Scheduling Rules</header>
     <p-column field="status" header="Status"></p-column>
     <p-column field="networkTargets" header="Network Targets"></p-column>
