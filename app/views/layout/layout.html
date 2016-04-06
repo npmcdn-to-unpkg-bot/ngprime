@@ -5,17 +5,16 @@
             <sidenav></sidenav>
         </div>
 
-        <div flex="80" tabIndex="-1" role="main">
+        <div flex="80" tabIndex="-1" role="main" class="main-content">
             <breadcrumb></breadcrumb>
-            <show-parent></show-parent>
             <outlet></outlet>
         </div>
 
-        <div id="psp">
-            <header>
+        <div id="psp" [ngClass]="{'designer-open': isDesignerOpen}" class="designer-open">
+            <header layout="row" layout-align="end center">
                 <div id="psp_controls">
-                    <div id="toggle_isi" class="btn">
-                        <md-icon md-svg-icon="assets/svg/designer.svg"></md-icon>
+                    <div id="toggle_isi" class="" (click)="toggleDesignerOpen($event)">
+                        <i class="fa fa-cogs"></i>
                     </div>
                 </div>
             </header>
@@ -53,27 +52,29 @@
 
 
                     <h3>Theme Creator</h3>
-
                     <ul class="mc-controls">
                         <li>
                             <div class="form-group">
-                                <label for="hidden-input">Primary Background Color</label>
+                                <label>Primary Background Color</label>
                                 <br>
-                                <input type="hidden" id="mc-primary" class="demo" value="#74A0B3">
+                                <div>Color picker <input [(colorPicker)]="primaryBackgroundColor" [style.background]="primaryBackgroundColor"
+                                                         [value]="primaryBackgroundColor" class="color-picker"/></div>
                             </div>
                         </li>
+                         <li>
+                             <div class="form-group">
+                                 <label>Primary Font Color</label>
+                                 <br>
+                                 <div>Color picker<input [(colorPicker)]="primaryFontColor" [style.background]="primaryFontColor"
+                                                         [value]="primaryFontColor" class="color-picker"/></div>
+                             </div>
+                         </li>
                         <li>
                             <div class="form-group">
-                                <label for="hidden-input">Primary Font Color</label>
+                                <label>Table Data Color</label>
                                 <br>
-                                <input type="hidden" id="mc-font" class="demo" value="#74A0B3">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="form-group">
-                                <label for="hidden-input">Table Data Color</label>
-                                <br>
-                                <input type="hidden" id="mc-table-data" class="demo" value="#a7a37e">
+                                <div>Color picker <input [(colorPicker)]="tableDataColor" [style.background]="tableDataColor"
+                                                         [value]="tableDataColor" class="color-picker"/></div>
                             </div>
                         </li>
                     </ul>

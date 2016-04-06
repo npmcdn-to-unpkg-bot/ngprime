@@ -80,4 +80,18 @@ export class SeriesEpisodesDatatable  {
         this._router.navigate(['EpisodeInfo']);
     }
 
+    isOpen = false;
+    isSplit = false;
+
+    toggleOpen(event) {
+        event.preventDefault();
+        this.isOpen = !this.isOpen;
+        console.log('tf');
+    }
+
+    toggleSplitScreen(event) {
+        event.preventDefault();
+        this.isSplit = !this.isSplit;
+    }
+
 }

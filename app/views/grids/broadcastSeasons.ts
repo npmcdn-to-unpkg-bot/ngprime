@@ -4,6 +4,8 @@ import {HTTP_PROVIDERS}    from 'angular2/http';
 import {DataTable} from '../../components/datatable/datatable';
 import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter';
 import {TabView} from '../../components/tabview/tabview';
+import {SplitButton} from 'primeng/primeng';
+import {SplitButtonItem} from 'primeng/primeng';
 import {TabPanel} from '../../components/tabview/tabpanel';
 import {Season} from '../../views/domain/seasons';
 import {SeasonService} from '../service/seasonservice';
@@ -15,7 +17,7 @@ import {Message} from '../../components/api/message';
 
 @Component({
     templateUrl: 'app/views/grids/broadcastSeasonsDatatable.html',
-    directives: [DataTable, Column, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
+    directives: [DataTable, Column, Header,SplitButton, SplitButtonItem,Footer,Growl,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
     providers: [HTTP_PROVIDERS,SeasonService]
 })
 export class BroadcastSeasonsDatatable implements OnInit {
@@ -37,6 +39,19 @@ export class BroadcastSeasonsDatatable implements OnInit {
     ngOnInit() {
         this.seasonService.getSeasonsSmall().then(seasons => this.seasons = seasons);
 
+    }
+    isOpen = false;
+    isSplit = false;
+
+    toggleOpen(event) {
+        event.preventDefault();
+        this.isOpen = !this.isOpen;
+        console.log('tf');
+    }
+
+    toggleSplitScreen(event) {
+        event.preventDefault();
+        this.isSplit = !this.isSplit;
     }
 
 }

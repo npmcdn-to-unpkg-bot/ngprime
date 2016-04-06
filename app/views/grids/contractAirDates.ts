@@ -3,6 +3,8 @@ import {ROUTER_DIRECTIVES, Router} from 'angular2/router';
 import {HTTP_PROVIDERS}    from 'angular2/http';
 import {DataTable} from '../../components/datatable/datatable';
 import {Button} from '../../components/button/button';
+import {SplitButton} from 'primeng/primeng';
+import {SplitButtonItem} from 'primeng/primeng';
 import {InputText} from '../../components/inputtext/inputtext';
 import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter';
 import {TabView} from '../../components/tabview/tabview';
@@ -16,7 +18,7 @@ import {Footer} from '../../components/common/footer';
 
 @Component({
     templateUrl: 'app/views/grids/contractAirDatesDatatable.html',
-    directives: [DataTable, Dialog, Button, Column, InputText, Header,Footer,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
+    directives: [DataTable, Dialog, Button,SplitButton, SplitButtonItem, Column, InputText, Header,Footer,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
     providers: [HTTP_PROVIDERS,ContractService]
 })
 export class ContractAirDatesDatatable implements OnInit {
@@ -77,6 +79,21 @@ export class ContractAirDatesDatatable implements OnInit {
     findSelectedContractIndex():number {
         return this.contracts.indexOf(this.selectedContract);
     }
+
+    isOpen = false;
+    isSplit = false;
+
+    toggleOpen(event) {
+        event.preventDefault();
+        this.isOpen = !this.isOpen;
+        console.log('tf');
+    }
+
+    toggleSplitScreen(event) {
+        event.preventDefault();
+        this.isSplit = !this.isSplit;
+    }
+    
 }
 
 

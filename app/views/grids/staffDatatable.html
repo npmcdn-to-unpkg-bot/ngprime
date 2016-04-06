@@ -1,9 +1,29 @@
 <p-growl [value]="msgs"></p-growl>
-
+<seasonsGrid [ngClass]="{'panel-open': isOpen}" class="panel-open testParent"></seasonsGrid>
 <p-dataTable [value]="staff" selectionMode="single" resizableColumns="true" columnResizeMode="expand"
-             reorderableColumns="true" style="margin-top:30px" [rows]="10" [paginator]="true" [pageLinks]="3"
+             reorderableColumns="true" [rows]="10" [paginator]="true" [pageLinks]="3"
              (onRowDblclick)="onRowDblclick($event)" (onRowSelect)="onRowSelect($event)">
-    <header>Staff</header>
+    <header>
+
+        <div layout="row" layout-align="space-between center">
+            <div class="hi-icon-wrap hi-icon-effect-2 hi-icon-effect-2a">
+                <i class="fa fa-sitemap hi-icon" (click)="toggleOpen($event)"></i>
+                <i class="fa fa-th-large hi-icon" (click)="toggleSplitScreen($event)"></i>
+            </div>
+            <div>
+                <h3>Staff</h3>
+            </div>
+            <div>
+
+                <p-splitButton label="Edit" icon="fa fa-pencil" (onClick)="editInfo()">
+                    <p-splitButtonItem icon="fa fa-pencil" label="Inline Edit"></p-splitButtonItem>
+                    <p-splitButtonItem icon="fa fa-external-link" label="Crud Edit"></p-splitButtonItem>
+                </p-splitButton>
+
+            </div>
+        </div>
+
+    </header>
     <p-column field="contactName" header="Contact Name"></p-column>
     <p-column field="contactTitle" header="Contact Title"></p-column>
     <p-column field="contactNumber" header="Contact Number"></p-column>

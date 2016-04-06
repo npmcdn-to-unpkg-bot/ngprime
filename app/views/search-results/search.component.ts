@@ -22,9 +22,8 @@ import {Message} from '../../components/api/message';
 export class SearchResultsDatatable implements OnInit {
 
     msgs: Message[];
-
+    private tableDataColor: string = "green";
     shows: Shows[];
-
     cols: Column[];
 
     selectedShows1: Shows;

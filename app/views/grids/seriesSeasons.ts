@@ -21,7 +21,7 @@ import {Message} from '../../components/api/message';
 @Component({
     selector: 'seasonsGrid',
     templateUrl: 'app/views/grids/seasonsDatatable.html',
-    directives: [DataTable, Column, Header, Footer,  SplitButton, SplitButtonItem, NgClass, Growl, TabPanel, TabView, CodeHighlighter,ROUTER_DIRECTIVES],
+    directives: [DataTable, Column, Header, Footer, SplitButton, SplitButtonItem, NgClass, Growl, TabPanel, TabView, CodeHighlighter,ROUTER_DIRECTIVES],
     providers: [ROUTER_DIRECTIVES, HTTP_PROVIDERS, SeasonService]
 })
 
@@ -74,5 +74,19 @@ export class SeasonsDatatable implements OnInit {
 
     editInfo(event){
         this._router.navigate(['SeasonInfo']);
+    }
+
+    isOpen = false;
+    isSplit = false;
+
+    toggleOpen(event) {
+        event.preventDefault();
+        this.isOpen = !this.isOpen;
+        console.log('tf');
+    }
+
+    toggleSplitScreen(event) {
+        event.preventDefault();
+        this.isSplit = !this.isSplit;
     }
 }

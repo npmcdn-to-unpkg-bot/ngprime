@@ -19,19 +19,14 @@ import {SearchResultsDatatable} from "./views/search-results/search.component";
 import {NonLinearSchedulingRulesDatatable} from "./views/grids/nonLinearSchedulingRules";
 import {StaffDatatable} from "./views/grids/staff";
 import {ShowParent} from "./views/buttons/showParent";
+import {ColorPickerDirective} from './views/service/color-picker/color-picker.directive'
 import {SharedServices} from './sharedServices';
 @Component({
     providers: [],
     selector: 'my-app',
     templateUrl: 'app/views/layout/layout.html',
-    directives: [ROUTER_DIRECTIVES, NgClass, BreadcrumbComponent, GridsView, SidenavComponent, Header, ShowParent]
+    directives: [ROUTER_DIRECTIVES, NgClass,ColorPickerDirective, BreadcrumbComponent, GridsView, SidenavComponent, Header, ShowParent]
 })
-
-/*@RouteConfig([
-    { path: 'comp1', component: Component1, as: 'Comp 1', useAsDefault: true},
-    { path: 'comp1/comp2', component: Component2, as: 'Comp 2'},
-    { path: 'comp1/comp2/comp3', component: Component3, as: 'Comp 3'}
-])*/
 
 @RouteConfig([
     {path: '/', name: 'Search Results', component: SearchResultsDatatable},
@@ -51,11 +46,21 @@ import {SharedServices} from './sharedServices';
 
 export class AppComponent {
 
+    isDesignerOpen = false;
 
+    toggleDesignerOpen(event) {
+        event.preventDefault();
+        this.isDesignerOpen = !this.isDesignerOpen;
+        console.log('tf');
+    }
 
     goBack() {
         window.history.back();
     }
+
+    private primaryBackgroundColor: string = "#127bdc";
+    private primaryFontColor: string = "hsla(300,82%,52%)";
+    private tableDataColor: string = "#fff500";
 
     public routeConfig: String[];
 

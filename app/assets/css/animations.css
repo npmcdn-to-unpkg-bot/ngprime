@@ -713,7 +713,7 @@
 	-webkit-animation: rotateSlideOut 1s both ease;
 	animation: rotateSlideOut 1s both ease;
 }
-.pt-page-rotateSlideIn,.ContentSideSections {
+.pt-page-rotateSlideIn,.ContentSideSections, p-datatable {
 	-webkit-animation: rotateSlideIn 1s both ease;
 	animation: rotateSlideIn 1s both ease;
 }

@@ -60,29 +60,14 @@
 
             <div class="input-group search-row">
                 <span class="input-group-addon">Select</span>
-                <select class="form-control">
-                    <option>Networks by Group</option>
-                    <option>CW</option>
-                    <option>EMPIRE</option>
-                    <option>FBC SPORTS</option>
-                    <option>FOX</option>
-                    <option>FOX COLLEGE SPORTS</option>
-                </select>
+                <p-dropdown [options]="networks" [(value)]="selectedNetwork"></p-dropdown>
             </div>
             <div class="input-group search-row">
                 <div flex layout="row" layout-align="start center">
-                    <select multiple class="form-control">
-                        <option>CW</option>
-                        <option>EMPIRE</option>
-                        <option>FBC SPORTS</option>
-                        <option>FOX</option>
-                        <option>FOX COLLEGE SPORTS</option>
-                    </select>
+                    <p-multiSelect [options]="networks" [(value)]="selectedMultiNetwork"></p-multiSelect>
+
                 </div>
-                <div flex layout="row" layout-align="end center">
-                    <input class="btn btn-default" type="button" value="All">
-                    <input class="btn btn-default" type="button" value="None">
-                </div>
+
             </div>
 
         </div>

@@ -1,10 +1,10 @@
 {
   "data": [
-    {"showName": "X-Files", "showNetwork": "Fox", "showCode": "Active", "showStatus": 1, "runTimeDuration": "60", "showDescription": "ipsum dolar lolar zorn" , "showCategory": "1" , "showProductionCompany": "HD", "showSupplier": "MNGMNT"},
-    {"showName": "Full House", "showNetwork": "CBS", "showCode": "Active", "showStatus": 1, "runTimeDuration": "60", "showDescription": "ipsum dolar lolar zorn" , "showCategory": "1" , "showProductionCompany": "HD", "showSupplier": "MNGMNT"},
+    {"showName": "X-Files", "showNetwork": "FOX", "showCode": "CCC", "showStatus": 1, "runTimeDuration": "60", "showDescription": "ipsum dolar lolar zorn" , "showCategory": "1" , "showProductionCompany": "HD", "showSupplier": "MNGMNT"},
+    {"showName": "Full House", "showNetwork": "ABC", "showCode": "Active", "showStatus": 1, "runTimeDuration": "60", "showDescription": "ipsum dolar lolar zorn" , "showCategory": "1" , "showProductionCompany": "HD", "showSupplier": "MNGMNT"},
     {"showName": "Rosewood", "showNetwork": "ABC", "showCode": "Active", "showStatus": 1, "runTimeDuration": "60", "showDescription": "ipsum dolar lolar zorn" , "showCategory": "1" , "showProductionCompany": "HD", "showSupplier": "MNGMNT"},
     {"showName": "Fargo", "showNetwork": "FNG", "showCode": "Active", "showStatus": 1, "runTimeDuration": "60", "showDescription": "ipsum dolar lolar zorn" , "showCategory": "1" , "showProductionCompany": "HD", "showSupplier": "MNGMNT"},
     {"showName": "Top Ten", "showNetwork": "MTV", "showCode": "Active", "showStatus": 1, "runTimeDuration": "60", "showDescription": "ipsum dolar lolar zorn" , "showCategory": "1" , "showProductionCompany": "HD", "showSupplier": "MNGMNT"},
-    {"showName": "Breaking Bad", "showNetwork": "AMC", "showCode": "Active", "showStatus": 1, "runTimeDuration": "60", "showDescription": "ipsum dolar lolar zorn" , "showCategory": "1" , "showProductionCompany": "HD", "showSupplier": "MNGMNT"}
+    {"showName": "Breaking Bad", "showNetwork": "CBS", "showCode": "Active", "showStatus": 1, "runTimeDuration": "60", "showDescription": "ipsum dolar lolar zorn" , "showCategory": "1" , "showProductionCompany": "HD", "showSupplier": "MNGMNT"}
   ]
 }

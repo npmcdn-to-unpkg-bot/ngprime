@@ -24,7 +24,6 @@ import {ROUTER_DIRECTIVES, RouteConfig, Router, RouteDefinition} from 'angular2/
         `
       .breadcrumb {
         padding: 8px 15px;
-        margin-bottom: 20px;
         list-style: none;
         background-color: transparent;
         border-radius: 3px;

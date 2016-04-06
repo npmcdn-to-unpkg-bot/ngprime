@@ -6,16 +6,19 @@ import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter'
 import {TabView} from '../../components/tabview/tabview';
 import {TabPanel} from '../../components/tabview/tabpanel';
 import {Staff} from '../../views/domain/staff';
+import {SplitButton} from 'primeng/primeng';
+import {SplitButtonItem} from 'primeng/primeng';
 import {StaffService} from '../service/staff';
 import {Column} from '../../components/column/column';
 import {Header} from '../../components/common/header';
 import {Footer} from '../../components/common/footer';
 import {Growl} from '../../components/growl/growl';
 import {Message} from '../../components/api/message';
+import {SeasonsDatatable} from "../../views/grids/seriesSeasons";
 
 @Component({
     templateUrl: 'app/views/grids/staffDatatable.html',
-    directives: [DataTable, Column, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
+    directives: [DataTable, Column, Header,Footer,Growl,SplitButton, SplitButtonItem,TabPanel,TabView,SeasonsDatatable,CodeHighlighter,ROUTER_DIRECTIVES],
     providers: [HTTP_PROVIDERS,StaffService]
 })
 export class StaffDatatable implements OnInit {
@@ -51,5 +54,19 @@ export class StaffDatatable implements OnInit {
     onRowDblclick(event) {
         //this._router.navigate(['Series Episodes']);
         console.log("navigate to route");
+    }
+
+    isOpen = false;
+    isSplit = false;
+
+    toggleOpen(event) {
+        event.preventDefault();
+        this.isOpen = !this.isOpen;
+        console.log('tf');
+    }
+
+    toggleSplitScreen(event) {
+        event.preventDefault();
+        this.isSplit = !this.isSplit;
     }
 }
