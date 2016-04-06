@@ -1,21 +1,44 @@
 <p-growl [value]="msgs"></p-growl>
 <div>
 
-<p-dataTable [value]="shows" selectionMode="single" resizableColumns="true" columnResizeMode="expand" reorderableColumns="true" [rows]="10" [paginator]="true" [pageLinks]="3" (onRowDblclick)="onRowDblclick($event)" (onRowSelect)="onRowSelect($event)">
-    <header>Shows</header>
-    <p-column field="showName" header="Show Name" [sortable]="true" [filter]="true" filterMatchMode="contains"></p-column>
-    <p-column field="showNetwork" header="Show Network" [sortable]="true">
-        <template #col #car="rowData">
-            <span [style.color]="tableDataColor">{{car[col.field]}}</span>
-        </template>
-    </p-column>
-    <p-column field="showCode" header="Show Code" [sortable]="true"></p-column>
-    <p-column field="showStatus" header="Show Status" [sortable]="true"></p-column>
-    <p-column field="runTimeDuration" header="Run Time Duration" [sortable]="true"></p-column>
-    <p-column field="showDescription" header="Show Description" [sortable]="true"></p-column>
-    <p-column field="showCategory" header="Show Category" [sortable]="true"></p-column>
-    <p-column field="showProductionCompany" header="Show Production Company" [sortable]="true"></p-column>
-    <p-column field="showSupplier" header="Show Supplier" [sortable]="true"></p-column>
-    <footer>There are 6 Shows</footer>
-</p-dataTable>
+    <p-dataTable [value]="shows" selectionMode="single" resizableColumns="true" columnResizeMode="expand"
+                 reorderableColumns="true" [stacked]="stacked" [rows]="10" [paginator]="true" [pageLinks]="3"
+                 (onRowDblclick)="onRowDblclick($event)" (onRowSelect)="onRowSelect($event)" [ngClass]="{'panel-split': isSplit}" class="panel-split testSplit">
+        <header>
+
+            <div layout="row" layout-align="space-between center">
+                <div class="hi-icon-wrap hi-icon-effect-2 hi-icon-effect-2a">
+                    <i class="fa fa-th-large hi-icon" (click)="toggleSplitScreen($event)"></i>
+                </div>
+                <div>
+                    <h3>Shows</h3>
+                </div>
+                <div>
+
+                    <p-splitButton label="Edit" icon="fa fa-pencil" (onClick)="editInfo()">
+                        <p-splitButtonItem icon="fa-list" label="Toggle List View" (onClick)="toggle()"></p-splitButtonItem>
+                        <p-splitButtonItem icon="fa fa-pencil" label="Inline Edit"></p-splitButtonItem>
+                        <p-splitButtonItem icon="fa fa-external-link" label="Crud Edit"></p-splitButtonItem>
+                    </p-splitButton>
+
+                </div>
+            </div>
+
+        </header>
+        <p-column field="showName" header="Show Name" [sortable]="true" [filter]="true"
+                  filterMatchMode="contains"></p-column>
+        <p-column field="showNetwork" header="Show Network" [sortable]="true">
+            <template #col #car="rowData">
+                <span [style.color]="tableDataColor">{{car[col.field]}}</span>
+            </template>
+        </p-column>
+        <p-column field="showCode" header="Show Code" [sortable]="true"></p-column>
+        <p-column field="showStatus" header="Show Status" [sortable]="true"></p-column>
+        <p-column field="runTimeDuration" header="Run Time Duration" [sortable]="true"></p-column>
+        <p-column field="showDescription" header="Show Description" [sortable]="true"></p-column>
+        <p-column field="showCategory" header="Show Category" [sortable]="true"></p-column>
+        <p-column field="showProductionCompany" header="Show Production Company" [sortable]="true"></p-column>
+        <p-column field="showSupplier" header="Show Supplier" [sortable]="true"></p-column>
+        <footer>There are 6 Shows</footer>
+    </p-dataTable>
 </div>

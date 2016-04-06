@@ -82,11 +82,12 @@ export class SeasonsDatatable implements OnInit {
     toggleOpen(event) {
         event.preventDefault();
         this.isOpen = !this.isOpen;
-        console.log('tf');
+        console.log('toggleOpen');
     }
 
     toggleSplitScreen(event) {
         event.preventDefault();
         this.isSplit = !this.isSplit;
+        console.log('splitScreen');
     }
 }

@@ -3,7 +3,10 @@ import {ROUTER_DIRECTIVES, Router} from 'angular2/router';
 import {HTTP_PROVIDERS}    from 'angular2/http';
 import {DataTable} from '../../components/datatable/datatable';
 import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter';
+import {SplitButton} from 'primeng/primeng';
+import {SplitButtonItem} from 'primeng/primeng';
 import {TabView} from '../../components/tabview/tabview';
+import {Button} from '../../components/button/button';
 import {TabPanel} from '../../components/tabview/tabpanel';
 import {Shows} from '../../views/domain/shows';
 import {ShowsService} from '../service/shows';
@@ -16,7 +19,7 @@ import {Message} from '../../components/api/message';
 @Component({
     selector: 'search-results',
     templateUrl: 'app/views/search-results/search-results.html',
-    directives: [DataTable,Column, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
+    directives: [DataTable,Column, Button,SplitButton, SplitButtonItem, Header,Footer,Growl,TabPanel,TabView,CodeHighlighter,ROUTER_DIRECTIVES],
     providers: [HTTP_PROVIDERS,ShowsService]
 })
 export class SearchResultsDatatable implements OnInit {
@@ -32,6 +35,9 @@ export class SearchResultsDatatable implements OnInit {
 
     selectedShows: Shows[];
 
+    stacked: boolean;
+    isSplit = false;
+
     constructor(private _router: Router, private showsService: ShowsService) { }
 
     ngOnInit() {
@@ -39,7 +45,15 @@ export class SearchResultsDatatable implements OnInit {
 
 
     }
-    
+    toggle() {
+        console.log('toggled card');
+        this.stacked = !this.stacked;
+    }
+    toggleSplitScreen(event) {
+        event.preventDefault();
+        this.isSplit = !this.isSplit;
+        console.log('splitScreen');
+    }
     onRowSelect(event) {
         this.msgs = [];
         this.msgs.push({severity: 'info', summary: 'Show Selected', detail: event.data.showName + ' - ' + event.data.showCode});

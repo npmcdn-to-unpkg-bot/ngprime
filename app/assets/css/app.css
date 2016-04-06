@@ -880,7 +880,7 @@ header, footer, th {
 }
 
 header .ui-menu {
-    width: 130px;
+    width: 160px;
 }
 
 header .ui-state-default, header .ui-widget-content .ui-state-default, header .ui-widget-header .ui-state-default {
@@ -906,7 +906,7 @@ header .ui-state-default, header .ui-widget-content .ui-state-default, header .u
 }
 
 .ui-paginator-bottom {
-    height: 35px;
+    min-height: 35px;
     display: block;
 }
 
@@ -1065,10 +1065,17 @@ table th {
 .parent-grid {
     display: none;
 }
-
+table{ min-height: 300px;}
 .panel-open.parent-grid {
     display: block;
 }
+.panel-split{
+    -webkit-flex: 1 2 50%;
+    -ms-flex: 1 1 50%;
+    flex: 1 1 50%;
+    max-width: 50%;
+    float: left;
+    box-sizing: border-box;}
 
 .buttons-pdf:before {
     display: inline-block;

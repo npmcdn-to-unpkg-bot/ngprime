@@ -4,7 +4,7 @@ import {SharedServices} from './sharedServices';
 import {ROUTER_PROVIDERS, APP_BASE_HREF, LocationStrategy, HashLocationStrategy} from 'angular2/router';
 import 'rxjs/Rx';
 import {AppComponent} from './app.component';
-import {ColorPickerService} from 'app/views/service/color-picker/color-picker.service'
+import {ColorPickerService} from '../app/views/service/color-picker/color-picker.service'
 
 bootstrap(AppComponent, [
     ROUTER_PROVIDERS,

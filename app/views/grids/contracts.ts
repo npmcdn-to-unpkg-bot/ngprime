@@ -17,6 +17,7 @@ import {Message} from '../../components/api/message';
 import {SeasonsDatatable} from "../../views/grids/seriesSeasons";
 
 @Component({
+    selector: 'rights-grid',
     templateUrl: 'app/views/grids/rightsDatatable.html',
     directives: [DataTable, Column, Header,Footer,Growl,SplitButton, SplitButtonItem,TabPanel,TabView,SeasonsDatatable,CodeHighlighter,ROUTER_DIRECTIVES],
     providers: [HTTP_PROVIDERS,ContractService]

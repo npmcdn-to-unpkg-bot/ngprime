@@ -21,6 +21,7 @@ import {SeasonsDatatable} from "../../views/grids/seriesSeasons";
 import {ShowParent} from "../../views/buttons/showParent";
 
 @Component({
+    selector: 'episode-grid',
     templateUrl: 'app/views/grids/seriesEpisodeDatatable.html',
     directives: [DataTable, Column, Header, Footer, Growl, SplitButton, SplitButtonItem, TabPanel, TabView, CodeHighlighter, NgClass, SeasonsDatatable, ShowParent, ROUTER_DIRECTIVES],
     providers: [ROUTER_DIRECTIVES,HTTP_PROVIDERS, EpisodeService],
@@ -86,12 +87,13 @@ export class SeriesEpisodesDatatable  {
     toggleOpen(event) {
         event.preventDefault();
         this.isOpen = !this.isOpen;
-        console.log('tf');
+        console.log('toggleOpen');
     }
 
     toggleSplitScreen(event) {
         event.preventDefault();
         this.isSplit = !this.isSplit;
+        console.log('splitScreen');
     }
 
 }

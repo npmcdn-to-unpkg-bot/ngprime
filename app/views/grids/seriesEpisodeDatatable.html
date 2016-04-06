@@ -1,8 +1,8 @@
 <p-growl [value]="msgs"></p-growl>
-<seasonsGrid [ngClass]="{'panel-open': isOpen}" class="panel-open testParent"></seasonsGrid>
+<seasonsGrid [ngClass]="{'panel-open': isOpen, 'panel-split': isSplit}" class="panel-open panel-split testParent"></seasonsGrid>
 <p-dataTable [value]="episodes" selectionMode="single" resizableColumns="true" columnResizeMode="expand"
              reorderableColumns="true" [rows]="10" [paginator]="true" [pageLinks]="3"
-             (onRowDblclick)="onRowDblclick($event)" (onRowSelect)="onRowSelect($event)">
+             (onRowDblclick)="onRowDblclick($event)" (onRowSelect)="onRowSelect($event)" [ngClass]="{'panel-split': isSplit}" class="panel-split testSplit">
     <header>
 
         <div layout="row" layout-align="space-between center">

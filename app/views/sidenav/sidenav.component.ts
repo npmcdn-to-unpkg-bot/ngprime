@@ -31,21 +31,20 @@ export class SidenavComponent {
 		this.networks.push({label:'CBS', value:'CBS'});
 		this.networks.push({label:'NBC', value:'NBC'});
 		this.networks.push({label:'AMC', value:'AMC'});
-	}
 
 
-	multiNetworks: SelectItem[];
-
-	selectedMultiNetwork: string[];
-
-	constructor() {
 		this.multiNetworks = [];
 		this.multiNetworks.push({label:'FOX', value:'FOX'});
 		this.multiNetworks.push({label:'FS', value:'FS'});
 		this.multiNetworks.push({label:'CBS', value:'CBS'});
 		this.multiNetworks.push({label:'NBC', value:'NBC'});
 		this.multiNetworks.push({label:'AMC', value:'AMC'});
+
 	}
+
+	multiNetworks: SelectItem[];
+
+	selectedMultiNetwork: string[];
 
 
 }

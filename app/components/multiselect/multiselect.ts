@@ -1,8 +1,18 @@
-import {Component,ElementRef,OnInit,AfterViewInit,AfterViewChecked,DoCheck,OnDestroy,Input,Output,Renderer,EventEmitter,ContentChild,TemplateRef,IterableDiffers} from 'angular2/core';
+import {Component,ElementRef,OnInit,AfterViewInit,AfterViewChecked,DoCheck,OnDestroy,Input,Output,Renderer,EventEmitter,
+            ContentChild,TemplateRef,IterableDiffers,forwardRef,Provider} from 'angular2/core';
 import {SelectItem} from '../api/selectitem';
 import {DomHandler} from '../dom/domhandler';
+import {NG_VALUE_ACCESSOR, ControlValueAccessor} from 'angular2/common';
+import {CONST_EXPR} from 'angular2/src/facade/lang';
 
 declare var PUI: any;
+
+const MULTISELECT_VALUE_ACCESSOR: Provider = CONST_EXPR(
+    new Provider(NG_VALUE_ACCESSOR, {
+        useExisting: forwardRef(() => MultiSelect),
+        multi: true
+    })
+);
 
 @Component({
     selector: 'p-multiSelect',
@@ -18,7 +28,7 @@ declare var PUI: any;
             <div [ngClass]="{'ui-multiselect-trigger ui-state-default ui-corner-right':true,'ui-state-hover':hover,'ui-state-focus':focus}">
                 <span class="fa fa-fw fa-caret-down"></span>
             </div>
-            <div class="ui-multiselect-panel ui-widget ui-widget-content ui-corner-all" [style.display]="panelVisible ? 'block' : 'none'" (click)="panelClick=true">
+            <div class="ui-multiselect-panel ui-widget ui-widget-content ui-corner-all" [style.display]="overlayVisible ? 'block' : 'none'" (click)="panelClick=true">
                 <div class="ui-widget-header ui-corner-all ui-multiselect-header ui-helper-clearfix">
                     <div class="ui-chkbox ui-widget">
                         <div class="ui-helper-hidden-accessible">
@@ -31,7 +41,7 @@ declare var PUI: any;
                     </div>
                     <div class="ui-multiselect-filter-container">
                         <input type="text" aria-multiline="false" aria-readonly="false" aria-disabled="false" role="textbox" (input)="onFilter($event)"
-                                    class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all">
+                                    class="ui-inputtext ui-widget ui-state-default ui-corner-all">
                         <span class="fa fa-fw fa-search"></span>
                     </div>
                     <a class="ui-multiselect-close ui-corner-all" href="#" (click)="close($event)">
@@ -58,15 +68,11 @@ declare var PUI: any;
             </div>
         </div>
     `,
-    providers: [DomHandler]
+    providers: [DomHandler,MULTISELECT_VALUE_ACCESSOR]
 })
-export class MultiSelect implements OnInit,AfterViewInit,AfterViewChecked,DoCheck,OnDestroy {
-
-    @Input() value: any[];
+export class MultiSelect implements OnInit,AfterViewInit,AfterViewChecked,DoCheck,OnDestroy,ControlValueAccessor {
 
     @Input() options: SelectItem[];
-
-    @Output() valueChange: EventEmitter<any> = new EventEmitter();
 
     @Output() onChange: EventEmitter<any> = new EventEmitter();
 
@@ -80,13 +86,19 @@ export class MultiSelect implements OnInit,AfterViewInit,AfterViewChecked,DoChec
 
     @Input() disabled: boolean;
     
+    @Input() overlayVisible: boolean;
+    
+    value: any[];
+    
+    onModelChange: Function = () => {};
+    
+    onModelTouched: Function = () => {};
+    
     private valuesAsString: string;
     
     private hover: boolean;
     
     private focus: boolean;
-    
-    private panelVisible: boolean;
     
     private documentClickListener: any;
     
@@ -114,7 +126,7 @@ export class MultiSelect implements OnInit,AfterViewInit,AfterViewChecked,DoChec
         this.updateLabel();
         
         this.documentClickListener = this.renderer.listenGlobal('body', 'click', () => {
-            if(!this.selfClick && this.panelVisible) {
+            if(!this.selfClick && this.overlayVisible) {
                 this.hide();
             }
             
@@ -126,6 +138,10 @@ export class MultiSelect implements OnInit,AfterViewInit,AfterViewChecked,DoChec
     ngAfterViewInit() {
         this.container = this.el.nativeElement.children[0];
         this.panel = this.domHandler.findSingle(this.el.nativeElement, 'div.ui-multiselect-panel');
+        
+        if(this.overlayVisible) {
+            this.show();
+        }
     }
     
     ngAfterViewChecked() {
@@ -143,6 +159,18 @@ export class MultiSelect implements OnInit,AfterViewInit,AfterViewChecked,DoChec
         }
     }
     
+    writeValue(value: any) : void {
+        this.value = value;
+    }
+    
+    registerOnChange(fn: Function): void {
+        this.onModelChange = fn;
+    }
+
+    registerOnTouched(fn: Function): void {
+        this.onModelTouched = fn;
+    }
+    
     onItemClick(event, value) {
         let selectionIndex = this.findSelectionIndex(value);
         if(selectionIndex != -1) {
@@ -153,8 +181,8 @@ export class MultiSelect implements OnInit,AfterViewInit,AfterViewChecked,DoChec
             this.value.push(value);
         }
         
+        this.onModelChange(this.value);
         this.onChange.emit({originalEvent: event, value: this.value});
-        this.valueChange.emit(this.value);
     }   
     
     isSelected(value) {
@@ -190,8 +218,8 @@ export class MultiSelect implements OnInit,AfterViewInit,AfterViewChecked,DoChec
             }
         }
         checkbox.checked = !checkbox.checked;
+        this.onModelChange(this.value);
         this.onChange.emit({originalEvent: event, value: this.value});
-        this.valueChange.emit(this.value);
     } 
     
     isAllChecked() {
@@ -202,14 +230,14 @@ export class MultiSelect implements OnInit,AfterViewInit,AfterViewChecked,DoChec
     } 
     
     show() {
-        this.panelVisible = true;
+        this.overlayVisible = true;
         this.panel.style.zIndex = ++PUI.zindex;
         this.domHandler.relativePosition(this.panel, this.container);
         this.domHandler.fadeIn(this.panel, 250);
     }
     
     hide() {
-        this.panelVisible = false;
+        this.overlayVisible = false;
     }
     
     close(event) {
@@ -227,7 +255,7 @@ export class MultiSelect implements OnInit,AfterViewInit,AfterViewChecked,DoChec
     
     onMouseclick(event,input) {
         if(!this.panelClick) {
-            if(this.panelVisible) {
+            if(this.overlayVisible) {
                 this.hide();
             }
             else {
@@ -245,6 +273,7 @@ export class MultiSelect implements OnInit,AfterViewInit,AfterViewChecked,DoChec
     
     onBlur(event) {
         this.focus = false;
+        this.onModelTouched();
     }
     
     updateLabel() {
