@@ -56,11 +56,21 @@ export class BreadcrumbComponent {
     }
 
     generateBreadcrumbTrail(url:String):void {
-        this._urls.unshift(url); //Add url to beginning of array (since the url is being recursively broken down from full url to its parent paths)
-        if (url.lastIndexOf('/') > 0) {
-            this.generateBreadcrumbTrail(url.substr(0, url.lastIndexOf('/'))); //Recursively add parent url
+
+        let parentRoute = url.substr(0, url.lastIndexOf('/'));
+        let currentRoute = url.substring(url.lastIndexOf("/") + 1);
+
+        // if current route is not empty.
+        if(currentRoute !== "") {
+            this._urls.unshift(currentRoute); // Add url to beginning of array (since the url is being recursively broken down from full url to its parent paths)
         }
+
+        if (url.lastIndexOf('/') > 0) {
+            this.generateBreadcrumbTrail(parentRoute); // Recursively add parent url
+        }
+
     }
+
 
     navigateTo(url:string):void {
         this.router.navigateByUrl(url);

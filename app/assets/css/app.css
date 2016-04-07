@@ -884,7 +884,7 @@ header .ui-menu {
 }
 
 header .ui-state-default, header .ui-widget-content .ui-state-default, header .ui-widget-header .ui-state-default {
-    border: 1px solid #2e6da4 !important;
+    border: solid 1px #6b95a6 !important;
     background: rgba(117, 161, 179, 0.72) !important;
     font-weight: normal;
     color: #f6f6f6 !important;

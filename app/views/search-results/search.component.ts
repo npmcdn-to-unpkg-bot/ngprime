@@ -45,6 +45,9 @@ export class SearchResultsDatatable implements OnInit {
 
 
     }
+    editInfo(event){
+        this._router.navigate(['ShowInfo']);
+    }
     toggle() {
         console.log('toggled card');
         this.stacked = !this.stacked;
