@@ -8,7 +8,7 @@ export class SeasonService {
     constructor(private http: Http) {}
 
     getSeasonsSmall() {
-        return this.http.get('app/resources/data/seasons.json')
+        return this.http.get('app/resources/local/data/seasons.json')
                     .toPromise()
                     .then(res => <Season[]> res.json().data)
                     .then(data => { return data; });

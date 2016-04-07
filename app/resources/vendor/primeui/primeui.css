@@ -160,7 +160,7 @@ button.ui-button::-moz-focus-inner{border:0;padding:0;}
 .ui-datascroller .ui-datascroller-list{list-style-type:none;margin:0;padding:0;}
 .ui-datascroller .ui-datascroller-item{border:0 none;}
 .ui-datascroller .ui-datascroller-loader{text-align:center;padding:4px 10px;}
-.ui-datascroller .ui-datascroller-loading{background:url("./images/loadingbar.gif") center center no-repeat;width:220px;height:19px;padding:0;margin:0;display:inline-block;}.ui-dialog{position:fixed;padding:0;overflow:hidden;}
+.ui-datascroller .ui-datascroller-loading{background:url("images/loadingbar.gif") center center no-repeat;width:220px;height:19px;padding:0;margin:0;display:inline-block;}  .ui-dialog{position:fixed;padding:0;overflow:hidden;}
 .ui-dialog .ui-dialog-titlebar{padding:.4em .4em .4em 1em;position:relative;border:0;}
 .ui-dialog .ui-dialog-title{float:left;margin:.3em 16px .1em 0;}
 .ui-dialog .ui-dialog-content{position:relative;border:0;padding:.5em 1em;background:none;overflow:auto;zoom:1;}
@@ -260,7 +260,7 @@ button.ui-button::-moz-focus-inner{border:0;padding:0;}
 .ui-lightbox-nav-right,.ui-lightbox-nav-left{position:absolute;top:50%;cursor:pointer;}
 .ui-lightbox-nav-left{left:0;}
 .ui-lightbox-nav-right{right:0;}
-.ui-lightbox-loading{background:url("./images/loading.gif") #000 center center no-repeat;}
+.ui-lightbox-loading{background:url("images/loading.gif") #000 center center no-repeat;}
 .ui-lightbox-caption{padding:.2em .4em;display:none;}
 .ui-lightbox-caption-text{margin:.3em 0 .1em 0;float:left;}
 .ui-lightbox-close{float:right;margin:0;padding:1px;}
@@ -381,7 +381,7 @@ button.ui-button::-moz-focus-inner{border:0;padding:0;}
 .ui-panel-collapsed-h .ui-panel-titlebar-icon,.ui-panel-collapsed-h .ui-panel-titlebar-icon:hover,.ui-panel-collapsed-h .ui-panel-titlebar-icon:focus{*margin:-0.2em 0 0 .1em;}
 .ui-panel.ui-panel-collapsed-h{width:42px;}
 .ui-panel.ui-panel-collapsed-h .ui-panel-title{display:none;}.ui-password-panel{padding:4px 10px;width:150px;margin-top:2px;}
-.ui-password-panel .ui-password-meter{height:10px;background:transparent url("./images/password-meter.png") no-repeat left top;padding:0;margin:0;}
+.ui-password-panel .ui-password-meter{height:10px;background:transparent url("images/password-meter.png") no-repeat left top;padding:0;margin:0;}
 .ui-password-info{margin-top:4px;}
 .ui-password-panel-overlay{position:absolute;}.ui-picklist>div{float:left;}
 .ui-picklist .ui-picklist-buttons{height:200px;padding:0 5px;}
@@ -428,7 +428,7 @@ button.ui-button::-moz-focus-inner{border:0;padding:0;}
 .ui-progressbar .ui-progressbar-label{text-align:center;height:100%;width:100%;position:absolute;display:none;font-weight:bold;}.ui-radiobutton{position:relative;width:16px;margin:2px 0;line-height:16px;cursor:pointer;}
 .ui-radiobutton .ui-radiobutton-box{width:16px;height:16px;line-height:16px;-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;}
 .ui-radiobutton-icon{font-size:10px;margin-top:3px;margin-left:2px;display:block;}.ui-rating-star,.ui-rating-cancel{float:left;display:block;overflow:hidden;text-indent:-999em;cursor:pointer;}
-.ui-rating-star a,.ui-rating-cancel a{width:16px;height:15px;display:block;background:url("./images/rating.png") no-repeat 0 0;}
+.ui-rating-star a,.ui-rating-cancel a{width:16px;height:15px;display:block;background:url("images/rating.png") no-repeat 0 0;}
 .ui-rating-star a{background-position:0 -32px;}
 .ui-rating-star-on a{background-position:0 -48px;}
 .ui-rating-star-hover a{background-position:0 -64px;}

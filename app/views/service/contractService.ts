@@ -8,7 +8,7 @@ export class ContractService {
     constructor(private http: Http) {}
 
     getContractSmall() {
-        return this.http.get('app/resources/data/contracts.json')
+        return this.http.get('app/resources/local/data/contracts.json')
                     .toPromise()
                     .then(res => <Contract[]> res.json().data)
                     .then(data => { return data; });

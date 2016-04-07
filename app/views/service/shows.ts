@@ -8,7 +8,7 @@ export class ShowsService {
     constructor(private http: Http) {}
 
     getShows() {
-        return this.http.get('app/resources/data/shows.json')
+        return this.http.get('app/resources/local/data/shows.json')
             .toPromise()
             .then(res => <Shows[]> res.json().data)
             .then(data => { return data; });

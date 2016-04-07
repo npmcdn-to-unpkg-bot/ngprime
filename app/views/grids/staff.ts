@@ -1,19 +1,19 @@
 import {Component,OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES, Router} from 'angular2/router';
 import {HTTP_PROVIDERS}    from 'angular2/http';
-import {DataTable} from '../../components/datatable/datatable';
-import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter';
-import {TabView} from '../../components/tabview/tabview';
-import {TabPanel} from '../../components/tabview/tabpanel';
+import {DataTable} from '../../components/vendor/primeng/datatable/datatable';
+import {CodeHighlighter} from '../../components/vendor/primeng/codehighlighter/codehighlighter';
+import {TabView} from '../../components/vendor/primeng/tabview/tabview';
+import {TabPanel} from '../../components/vendor/primeng/tabview/tabpanel';
 import {Staff} from '../../views/domain/staff';
 import {SplitButton} from 'primeng/primeng';
 import {SplitButtonItem} from 'primeng/primeng';
 import {StaffService} from '../service/staff';
-import {Column} from '../../components/column/column';
-import {Header} from '../../components/common/header';
-import {Footer} from '../../components/common/footer';
-import {Growl} from '../../components/growl/growl';
-import {Message} from '../../components/api/message';
+import {Column} from '../../components/vendor/primeng/column/column';
+import {Header} from '../../components/vendor/primeng/common/header';
+import {Footer} from '../../components/vendor/primeng/common/footer';
+import {Growl} from '../../components/vendor/primeng/growl/growl';
+import {Message} from '../../components/vendor/primeng/api/message';
 import {SeasonsDatatable} from "../../views/grids/seriesSeasons";
 
 @Component({

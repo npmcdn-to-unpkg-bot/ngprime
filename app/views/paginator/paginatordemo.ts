@@ -1,9 +1,9 @@
 import {Component} from 'angular2/core';
-import {Paginator} from '../../components/paginator/paginator';
-import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter';
-import {TabView} from '../../components/tabview/tabview';
-import {TabPanel} from '../../components/tabview/tabpanel';
-import {Button} from '../../components/button/button';
+import {Paginator} from '../../components/vendor/primeng/paginator/paginator';
+import {CodeHighlighter} from '../../components/vendor/primeng/codehighlighter/codehighlighter';
+import {TabView} from '../../components/vendor/primeng/tabview/tabview';
+import {TabPanel} from '../../components/vendor/primeng/tabview/tabpanel';
+import {Button} from '../../components/vendor/primeng/button/button';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({

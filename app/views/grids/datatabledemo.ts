@@ -1,17 +1,17 @@
 import {Component,OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {HTTP_PROVIDERS}    from 'angular2/http';
-import {DataTable} from '../../components/datatable/datatable';
-import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter';
-import {TabView} from '../../components/tabview/tabview';
-import {TabPanel} from '../../components/tabview/tabpanel';
+import {DataTable} from '../../components/vendor/primeng/datatable/datatable';
+import {CodeHighlighter} from '../../components/vendor/primeng/codehighlighter/codehighlighter';
+import {TabView} from '../../components/vendor/primeng/tabview/tabview';
+import {TabPanel} from '../../components/vendor/primeng/tabview/tabpanel';
 import {Season} from '../../views/domain/seasons';
 import {SeasonService} from '../service/seasonservice';
-import {Column} from '../../components/api/column';
-import {Header} from '../../components/common/header';
-import {Footer} from '../../components/common/footer';
-import {Growl} from '../../components/growl/growl';
-import {Message} from '../../components/api/message';
+import {Column} from '../../components/vendor/primeng/api/column';
+import {Header} from '../../components/vendor/primeng/common/header';
+import {Footer} from '../../components/vendor/primeng/common/footer';
+import {Growl} from '../../components/vendor/primeng/growl/growl';
+import {Message} from '../../components/vendor/primeng/api/message';
 
 @Component({
     templateUrl: 'app/views/grids/datatabledemo.html',

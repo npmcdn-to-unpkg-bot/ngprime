@@ -8,7 +8,7 @@ export class NonLinearSchedulingRulesService {
     constructor(private http: Http) {}
 
     getNonLinearSchedulingRules() {
-        return this.http.get('app/resources/data/nonLinearSchedulingRules.json')
+        return this.http.get('app/resources/local/data/nonLinearSchedulingRules.json')
                     .toPromise()
                     .then(res => <NonLinearSchedulingRules[]> res.json().data)
                     .then(data => { return data; });

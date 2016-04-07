@@ -8,7 +8,7 @@ export class StaffService {
     constructor(private http: Http) {}
 
     getStaff() {
-        return this.http.get('app/resources/data/staff.json')
+        return this.http.get('app/resources/local/data/staff.json')
             .toPromise()
             .then(res => <Staff[]> res.json().data)
             .then(data => { return data; });

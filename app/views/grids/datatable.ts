@@ -1,13 +1,13 @@
 import {Component,OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {HTTP_PROVIDERS}    from 'angular2/http';
-import {DataTable} from '../../components/datatable/datatable';
-import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter';
-import {TabView} from '../../components/tabview/tabview';
-import {TabPanel} from '../../components/tabview/tabpanel';
+import {DataTable} from '../../components/vendor/primeng/datatable/datatable';
+import {CodeHighlighter} from '../../components/vendor/primeng/codehighlighter/codehighlighter';
+import {TabView} from '../../components/vendor/primeng/tabview/tabview';
+import {TabPanel} from '../../components/vendor/primeng/tabview/tabpanel';
 import {Car} from '../../views/domain/car';
-import {Column} from '../../components/api/column';
-import {Header} from '../../components/common/header';
+import {Column} from '../../components/vendor/primeng/api/column';
+import {Header} from '../../components/vendor/primeng/common/header';
 import {CarService} from '../service/carservice';
 
 @Component({

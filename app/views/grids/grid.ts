@@ -2,8 +2,8 @@ import {Component} from 'angular2/core';
 import {Input} from 'angular2/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {Injectable} from 'angular2/core';
-import {Button} from '../../components/button/button';
-import {Growl} from '../../components/growl/growl';
+import {Button} from '../../components/vendor/primeng/button/button';
+import {Growl} from '../../components/vendor/primeng/growl/growl';
 import {NgClass} from 'angular2/common';
 
 @Component({

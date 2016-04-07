@@ -8,7 +8,7 @@ export class EpisodeService {
     constructor(private http: Http, sharedServices: SharedServices) {}
 
     getEpisodesSmall() {
-        return this.http.get('app/resources/data/episodes.json')
+        return this.http.get('app/resources/local/data/episodes.json')
                     .toPromise()
                     .then(res => <Episode[]> res.json().data)
                     .then(data => { return data; });

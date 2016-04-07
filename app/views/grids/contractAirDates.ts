@@ -1,20 +1,20 @@
 import {Component,OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES, Router} from 'angular2/router';
 import {HTTP_PROVIDERS}    from 'angular2/http';
-import {DataTable} from '../../components/datatable/datatable';
-import {Button} from '../../components/button/button';
+import {DataTable} from '../../components/vendor/primeng/datatable/datatable';
+import {Button} from '../../components/vendor/primeng/button/button';
 import {SplitButton} from 'primeng/primeng';
 import {SplitButtonItem} from 'primeng/primeng';
-import {InputText} from '../../components/inputtext/inputtext';
-import {CodeHighlighter} from '../../components/codehighlighter/codehighlighter';
-import {TabView} from '../../components/tabview/tabview';
-import {TabPanel} from '../../components/tabview/tabpanel';
-import {Dialog} from '../../components/dialog/dialog';
+import {InputText} from '../../components/vendor/primeng/inputtext/inputtext';
+import {CodeHighlighter} from '../../components/vendor/primeng/codehighlighter/codehighlighter';
+import {TabView} from '../../components/vendor/primeng/tabview/tabview';
+import {TabPanel} from '../../components/vendor/primeng/tabview/tabpanel';
+import {Dialog} from '../../components/vendor/primeng/dialog/dialog';
 import {Contract} from '../../views/domain/contracts';
 import {ContractService} from '../service/contractService';
-import {Column} from '../../components/column/column';
-import {Header} from '../../components/common/header';
-import {Footer} from '../../components/common/footer';
+import {Column} from '../../components/vendor/primeng/column/column';
+import {Header} from '../../components/vendor/primeng/common/header';
+import {Footer} from '../../components/vendor/primeng/common/footer';
 
 @Component({
     templateUrl: 'app/views/grids/contractAirDatesDatatable.html',
