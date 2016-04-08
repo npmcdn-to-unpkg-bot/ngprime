@@ -20,6 +20,14 @@
             </header>
             <main>
                 <section>
+                    <p-pickList [source]="sourceShows" [target]="targetShows" sourceHeader="Available" targetHeader="Selected" [responsive]="true" sourceStyle="height:300px" targetStyle="height:300px">
+                        <template #show>
+                            <li class="ui-picklist-item ui-helper-clearfix">
+                                <img src="showcase/resources/demo/images/car/{{show.showName}}.gif" style="display:inline-block;margin:2px 0 2px 2px"/>
+                                <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{show.showName}} - {{show.showName}} - {{show.showName}}</div>
+                            </li>
+                        </template>
+                    </p-pickList>
                     <div class="season-columns" style="display: none;">
                         <h3>Show/Hide Season Table Columns</h3>
 
@@ -80,7 +88,7 @@
                     </ul>
 
 
-                    <div flex class="transition-setting">
+                    <!--<div flex class="transition-setting">
                         <div class="pt-triggers">
                             <div id="dl-menu" class="dl-menuwrapper">
                                 <button class="dl-trigger">Choose a transition</button>
@@ -219,11 +227,11 @@
                                     <li data-animation="67"><a href="#">Slide</a></li>
                                 </ul>
                             </div>
-                            <!-- /dl-menu-wrapper-->
+                            &lt;!&ndash; /dl-menu-wrapper&ndash;&gt;
                             <button id="iterateEffects" class="pt-touch-button">Show next page transition</button>
 
                         </div>
-                        <!-- /triggers -->
+                        &lt;!&ndash; /triggers &ndash;&gt;
 
                         <div id="pt-main" class="pt-perspective">
                             <div class="pt-page pt-page-1">
@@ -239,7 +247,7 @@
                             <div class="pt-page pt-page-6">
                                 <h1><span>A collection of</span><strong>View</strong> Transitions</h1></div>
                         </div>
-                    </div>
+                    </div>-->
                 </section>
             </main>
         </div>
