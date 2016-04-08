@@ -1,5 +1,5 @@
 import {Component,Input,Output,EventEmitter,Inject,forwardRef,Host} from 'angular2/core';
-import {Tree} from 'tree';
+import {Tree} from './tree';
 import {TreeNode} from '../api/treenode';
 import {TreeNodeTemplateLoader} from './treenodetemplateloader';
 
